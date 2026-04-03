@@ -1732,7 +1732,7 @@ const ALL_DATA = {
   },
 };
 // ============================================================
-// 画像取得システム v6 - 全ジャンル最大カバー
+// 画像取得システム v7 - 全ジャンル強化版
 // ============================================================
 const imageCache = {};
 
@@ -1782,8 +1782,9 @@ async function fetchWikiEn(title) {
   } catch(e) { return null; }
 }
 
-// ジャンル別英語キーワードマッピング
+// 日英対応マップ
 const EN_MAP = {
+  // ギネス
   'ブルーウェール（シロナガスクジラ）':'Blue whale','チーター':'Cheetah',
   'ミツバチ':'Honey bee','ゾウガメ（アルダブラ）':'Aldabra giant tortoise',
   'バオバブの木':'Baobab tree','マッコウクジラ':'Sperm whale',
@@ -1794,53 +1795,97 @@ const EN_MAP = {
   'グレートウォール（万里の長城）':'Great Wall of China',
   '国際宇宙ステーション':'International Space Station',
   'ハッブル宇宙望遠鏡':'Hubble Space Telescope',
+  // 中古車
   'トヨタ プリウス':'Toyota Prius','ホンダ フィット':'Honda Fit',
   'トヨタ アクア':'Toyota Aqua','スズキ アルト':'Suzuki Alto',
-  'ダイハツ ミラ イース':'Daihatsu Mira e:S',
-  'トヨタ ヴィッツ':'Toyota Vitz','日産 ノート e-POWER':'Nissan Note e-POWER',
-  'ホンダ N-BOX':'Honda N-Box','スズキ ワゴンR':'Suzuki Wagon R',
-  'ダイハツ タント':'Daihatsu Tanto','トヨタ ハリアー':'Toyota Harrier',
-  'トヨタ アルファード':'Toyota Alphard','ホンダ ヴェゼル':'Honda Vezel',
-  '日産 エクストレイル':'Nissan X-Trail','トヨタ ヴォクシー':'Toyota Voxy',
-  'スズキ ジムニー':'Suzuki Jimny','ホンダ ステップワゴン':'Honda Stepwgn',
-  'マツダ CX-5':'Mazda CX-5','トヨタ RAV4':'Toyota RAV4',
-  '三菱 デリカ D:5':'Mitsubishi Delica D:5','日産 GT-R':'Nissan GT-R',
-  'トヨタ GR86':'Toyota GR86','マツダ ロードスター':'Mazda MX-5',
-  'ホンダ シビック タイプR':'Honda Civic Type R',
-  'スバル WRX STI':'Subaru WRX STI','ミツビシ ランサーエボリューション':'Mitsubishi Lancer Evolution',
-  '日産 フェアレディZ':'Nissan Fairlady Z','トヨタ スープラ':'Toyota Supra',
-  'ホンダ S2000':'Honda S2000','スバル BRZ':'Subaru BRZ',
-  'BMW 3シリーズ':'BMW 3 Series','メルセデス・ベンツ Cクラス':'Mercedes-Benz C-Class',
-  'フォルクスワーゲン ゴルフ':'Volkswagen Golf','アウディ A3':'Audi A3',
+  'トヨタ ヴィッツ':'Toyota Vitz','ホンダ N-BOX':'Honda N-Box',
+  '日産 GT-R':'Nissan GT-R','トヨタ GR86':'Toyota GR86',
+  'マツダ ロードスター':'Mazda MX-5','テスラ モデル3':'Tesla Model 3',
   'ポルシェ 911':'Porsche 911','ミニ クーパー':'Mini Cooper',
-  'ジープ ラングラー':'Jeep Wrangler','テスラ モデル3':'Tesla Model 3',
-  'プジョー 208':'Peugeot 208','ボルボ XC40':'Volvo XC40',
-  'Baby Shark Dance':'Baby Shark','MrBeast':'MrBeast',
-  'Cocomelon':'Cocomelon','PewDiePie':'PewDiePie',
+  'BMW 3シリーズ':'BMW 3 Series','フォルクスワーゲン ゴルフ':'Volkswagen Golf',
   // スポーツ
-  'ナイキ ズームフライ':'Nike Zoom Fly',
-  'バボラ ピュアドライブ':'Babolat Pure Drive',
+  'ナイキ ズームフライ':'Nike Zoom Fly','バボラ ピュアドライブ':'Babolat Pure Drive',
   'ウィルソン プロ スタッフ':'Wilson Pro Staff',
   // 犬・猫
   'トイ・プードル':'Toy Poodle','チワワ':'Chihuahua',
   '柴犬':'Shiba Inu','ポメラニアン':'Pomeranian',
-  'フレンチ・ブルドッグ':'French Bulldog',
-  'ゴールデン・レトリーバー':'Golden Retriever',
-  'ウェルシュ・コーギー':'Welsh Corgi',
-  'スコティッシュフォールド':'Scottish Fold',
+  'フレンチ・ブルドッグ':'French Bulldog','ゴールデン・レトリーバー':'Golden Retriever',
+  'ウェルシュ・コーギー':'Welsh Corgi','スコティッシュフォールド':'Scottish Fold',
   'マンチカン':'Munchkin cat','ラグドール':'Ragdoll cat',
   'ロシアンブルー':'Russian Blue','メインクーン':'Maine Coon',
   'ベンガル':'Bengal cat',
   // グルメ
-  'パエリア':'Paella','ビリヤニ':'Biryani',
-  'シュニッツェル':'Schnitzel',
+  'パエリア':'Paella','ビリヤニ':'Biryani','シュニッツェル':'Schnitzel',
   // 旅行
-  'サントリーニ島':'Santorini',
-  'バルセロナ':'Barcelona','プラハ':'Prague',
-  'アイスランド':'Iceland',
+  'サントリーニ島':'Santorini','バルセロナ':'Barcelona',
+  'プラハ':'Prague','アイスランド':'Iceland',
+  // 音楽・YouTuber
+  'Baby Shark Dance':'Baby Shark','MrBeast':'MrBeast',
+  'Cocomelon':'Cocomelon','PewDiePie':'PewDiePie',
 };
 
-// メイン画像取得
+// 芸能人・政治家用の英語名マップ
+const CELEB_EN_MAP = {
+  // 日本芸能人
+  '米津玄師':'Kenshi Yonezu','星野源':'Gen Hoshino','羽生結弦':'Yuzuru Hanyu',
+  '浜崎あゆみ':'Ayumi Hamasaki','HIKAKIN':'Hikakin',
+  '渡辺直美':'Naomi Watanabe','新垣結衣':'Yui Aragaki','松本人志':'Hitoshi Matsumoto',
+  '明石家さんま':'Sanma Akashiya','松坂桃李':'Tori Matsuzaka',
+  '山田裕貴':'Yuki Yamada','綾瀬はるか':'Haruka Ayase','有村架純':'Kasumi Arimura',
+  '石原さとみ':'Satomi Ishihara','吉高由里子':'Yuriko Yoshitaka','坂口健太郎':'Kentaro Sakaguchi',
+  '役所広司':'Koji Yakusho','阿部寛':'Hiroshi Abe',
+  // K-POP
+  'BTS（防弾少年団）':'BTS band','BLACKPINK':'Blackpink',
+  // 音楽アーティスト
+  'YOASOBI':'Yoasobi','Official髭男dism':'Official Hige Dandism',
+  'あいみょん':'Aimyon','Mr.Children':'Mr. Children','Ado':'Ado singer',
+  'スピッツ':'Spitz band','Aimer':'Aimer singer','King Gnu':'King Gnu',
+  // お笑い
+  'ダウンタウン（浜田・松本）':'Downtown comedy duo',
+  'ビートたけし':'Beat Takeshi','有吉弘行':'Hiroyuki Ariyoshi',
+  '内村光良（ウッチャン）':'Uchimura Kōyasu','爆笑問題':'Bakusho Mondai',
+  'くりぃむしちゅー':'Cream Stew duo','サンドウィッチマン':'Sandwich Man duo',
+  '千鳥':'Chidori comedy','マツコ・デラックス':'Matsuko Deluxe',
+  // 国内政治家
+  '安倍晋三':'Shinzo Abe','小泉純一郎':'Junichiro Koizumi',
+  '田中角栄':'Kakuei Tanaka','岸田文雄':'Fumio Kishida',
+  '石破茂':'Shigeru Ishiba','鳩山由紀夫':'Yukio Hatoyama',
+  '小池百合子':'Yuriko Koike','河野太郎':'Taro Kono',
+  '山本太郎':'Taro Yamamoto','吉村洋文':'Hirofumi Yoshimura',
+  '玉木雄一郎':'Yuichiro Tamaki','泉健太':'Kenta Izumi',
+  // 海外政治家
+  'バラク・オバマ':'Barack Obama','ウラジーミル・プーチン':'Vladimir Putin',
+  '習近平':'Xi Jinping','ドナルド・トランプ':'Donald Trump',
+  'マンデラ':'Nelson Mandela','アンゲラ・メルケル':'Angela Merkel',
+  'ジャシンダ・アーダーン':'Jacinda Ardern','エマニュエル・マクロン':'Emmanuel Macron',
+  'ジョン・F・ケネディ':'John F. Kennedy','エイブラハム・リンカーン':'Abraham Lincoln',
+  'フランクリン・ルーズベルト':'Franklin D. Roosevelt',
+  'ジョー・バイデン':'Joe Biden','ロナルド・レーガン':'Ronald Reagan',
+  'ビル・クリントン':'Bill Clinton','ジョージ・W・ブッシュ':'George W. Bush',
+  'ナレンドラ・モディ':'Narendra Modi','リー・クアンユー':'Lee Kuan Yew',
+  'マハティール・モハマド':'Mahathir Mohamad','習近平':'Xi Jinping',
+  'ウィンストン・チャーチル':'Winston Churchill','オラフ・ショルツ':'Olaf Scholz',
+  // 職業
+  '医師':'physician doctor','弁護士':'lawyer attorney',
+  'パイロット':'pilot aviation','AIエンジニア':'AI engineer',
+  '宇宙飛行士':'astronaut','YouTuber・クリエイター':'YouTube creator',
+  '消防士':'firefighter','警察官':'police officer',
+  '教師・教員':'teacher education','介護士':'caregiver nursing home',
+  '料理人・シェフ':'chef restaurant','薬剤師':'pharmacist',
+  // 石・鉱物
+  'ダイヤモンド':'diamond gemstone','ルビー':'ruby gemstone',
+  'サファイア':'sapphire gemstone','エメラルド':'emerald gemstone',
+  'アメジスト':'amethyst crystal','ラピスラズリ':'lapis lazuli',
+  'タイガーアイ':'tiger eye stone','ローズクォーツ':'rose quartz',
+  'ムーンストーン':'moonstone gem','水晶（クォーツ）':'clear quartz crystal',
+  'マラカイト':'malachite mineral','フローライト':'fluorite crystal',
+  'オブシディアン':'obsidian stone','ターコイズ':'turquoise stone',
+  'アズライト':'azurite mineral','ロードナイト':'rhodonite',
+  'パライバトルマリン':'paraiba tourmaline','アレキサンドライト':'alexandrite',
+  'ブラックオパール':'black opal','デマントイドガーネット':'demantoid garnet',
+};
+
+// メイン画像取得関数
 async function fetchItemImage(genreId, item) {
   const key = genreId + '_' + item.title;
   if (imageCache[key] !== undefined) return imageCache[key];
@@ -1850,27 +1895,68 @@ async function fetchItemImage(genreId, item) {
     if (genreId === 'book') {
       img = await fetchBookImage(item.title);
       if (!img) img = await fetchWikiJa(item.title);
+
     } else if (genreId === 'music') {
       img = await fetchiTunesImage(item.title, 'music');
       if (!img) img = await fetchWikiJa(item.title);
-      if (!img && EN_MAP[item.title]) img = await fetchWikiEn(EN_MAP[item.title]);
+      if (!img) {
+        const en = CELEB_EN_MAP[item.title] || EN_MAP[item.title] || item.sub;
+        if (en) img = await fetchWikiEn(en);
+      }
+
     } else if (genreId === 'game') {
       img = await fetchiTunesImage(item.title, 'software');
       if (!img) img = await fetchWikiJa(item.title);
-    } else if (genreId === 'movie') {
-      img = await fetchiTunesImage(item.title, 'movie');
-      if (!img) img = await fetchWikiJa(item.title);
-    } else if (genreId === 'anime') {
+      if (!img) img = await fetchWikiEn(item.title);
+
+    } else if (genreId === 'movie' || genreId === 'anime') {
       img = await fetchiTunesImage(item.title, 'movie');
       if (!img) img = await fetchWikiJa(item.title);
       if (!img) img = await fetchBookImage(item.title);
+
     } else if (genreId === 'youtube') {
       img = await fetchiTunesImage(item.title, 'music');
       if (!img) img = await fetchWikiJa(item.title);
-      if (!img && EN_MAP[item.title]) img = await fetchWikiEn(EN_MAP[item.title]);
+      if (!img) {
+        const en = CELEB_EN_MAP[item.title] || EN_MAP[item.title];
+        if (en) img = await fetchWikiEn(en);
+      }
+      if (!img) img = await fetchWikiEn(item.title);
+
+    } else if (genreId === 'geino') {
+      // 芸能人：日本語Wikipedia → 英語Wikipedia（英語名マップ使用）
+      img = await fetchWikiJa(item.title);
+      if (!img) {
+        const en = CELEB_EN_MAP[item.title];
+        if (en) img = await fetchWikiEn(en);
+      }
+      if (!img) img = await fetchWikiEn(item.title);
+      // iTunes（音楽アーティスト系）
+      if (!img) img = await fetchiTunesImage(item.title, 'music');
+
+    } else if (genreId === 'seijika_jp' || genreId === 'seijika_world') {
+      // 政治家：英語名マップ優先（写真が多い）
+      const en = CELEB_EN_MAP[item.title];
+      if (en) img = await fetchWikiEn(en);
+      if (!img) img = await fetchWikiJa(item.title);
+      if (!img) img = await fetchWikiEn(item.title);
+
+    } else if (genreId === 'shokugyo') {
+      // 職業：英語で画像検索
+      const en = CELEB_EN_MAP[item.title];
+      if (en) img = await fetchWikiEn(en);
+      if (!img) img = await fetchWikiJa(item.title);
+
+    } else if (genreId === 'ishi') {
+      // 石・鉱物：英語名で検索（写真が豊富）
+      const en = CELEB_EN_MAP[item.title] || EN_MAP[item.title];
+      if (en) img = await fetchWikiEn(en);
+      if (!img) img = await fetchWikiJa(item.title);
+
     } else if (genreId === 'keyword') {
       img = await fetchWikiJa(item.title);
       if (!img) img = await fetchWikiEn(item.title);
+
     } else {
       // cosme, gourmet, travel, sports, dog, cat, gadget, guinness, usedcar
       img = await fetchWikiJa(item.title);
@@ -2061,29 +2147,60 @@ let currentCategory = ALL_DATA.book.categories[0];
 let currentSubMode = 'category'; // category / today / monthly
 let monthlyRendered = false;
 
+let yearlyRendered = false;
+let overallRendered = false;
+
 function switchMode(mode) {
   currentMode = mode;
+
+  // まずsub-mode-tabsを非表示（カテゴリ別のみ表示）
+  const subTabs = document.getElementById('sub-mode-tabs');
+  if (subTabs) subTabs.style.display = 'none';
+
   document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('mode-' + mode).classList.add('active');
+  const modeBtn = document.getElementById('mode-' + mode);
+  if (modeBtn) modeBtn.classList.add('active');
 
-  const isToday = mode === 'today';
+  const isToday   = mode === 'today';
   const isMonthly = mode === 'monthly';
-  const isCat = mode === 'category';
+  const isYearly  = mode === 'yearly';
+  const isOverall = mode === 'overall';
+  const isCat     = mode === 'category';
 
-  document.getElementById('today-section').style.display = isToday ? 'block' : 'none';
-  document.getElementById('monthly-section').style.display = isMonthly ? 'block' : 'none';
-  document.getElementById('category-section').style.display = isCat ? 'block' : 'none';
-  document.getElementById('genre-nav').style.display = isCat ? 'block' : 'none';
-  document.getElementById('cat-section').style.display = isCat ? 'block' : 'none';
-  document.getElementById('action-wrap').style.display = 'none'; // カテゴリ別では不要に
-  document.getElementById('ad-bottom').style.display = 'none';
+  // 全セクションをいったん非表示
+  ['today-section','monthly-section','yearly-section','overall-section','category-section'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
 
-  const label = document.getElementById('banner-label');
+  // 対象セクションを表示
+  const targetId = isToday ? 'today-section' : isMonthly ? 'monthly-section' :
+                   isYearly ? 'yearly-section' : isOverall ? 'overall-section' : 'category-section';
+  const targetEl = document.getElementById(targetId);
+  if (targetEl) targetEl.style.display = 'block';
+
+  document.getElementById('genre-nav').style.display  = isCat ? 'block' : 'none';
+  document.getElementById('cat-section').style.display= isCat ? 'block' : 'none';
+  document.getElementById('action-wrap').style.display= 'none';
+  document.getElementById('ad-bottom').style.display  = 'none';
+
+  const label  = document.getElementById('banner-label');
   const dateEl = document.getElementById('today-date');
-  if (isToday) { label.textContent = '🔥 今日'; dateEl.textContent = TODAY_STR; }
-  else if (isMonthly) { label.textContent = '📅 月間'; dateEl.textContent = MONTH_STR;
+  if (isToday) {
+    label.textContent = '🔥 今日'; dateEl.textContent = TODAY_STR;
+  } else if (isMonthly) {
+    label.textContent = '📅 月間'; dateEl.textContent = MONTH_STR;
     if (!monthlyRendered) { monthlyRendered = true; renderMonthlyRanking(); }
-  } else { label.textContent = '📂 カテゴリ'; dateEl.textContent = 'ジャンルを選んでください'; }
+  } else if (isYearly) {
+    label.textContent = '📆 年間'; dateEl.textContent = YEAR_STR;
+    if (!yearlyRendered) { yearlyRendered = true; renderYearlyRanking(); }
+  } else if (isOverall) {
+    label.textContent = '🏆 総合'; dateEl.textContent = '全ジャンル横断ベスト';
+    if (!overallRendered) { overallRendered = true; renderOverallRanking(); }
+  } else {
+    label.textContent = '📂 カテゴリ'; dateEl.textContent = 'ジャンルを選んでください';
+    if (subTabs) subTabs.style.display = 'flex';
+  }
 }
 
 // ============================================================
