@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何でもランキング｜AIが厳選する15ジャンルTOP10</title>
+<meta name="description" content="本・ガジェット・アニメ・コスメ・グルメ・旅行・映画・スポーツ・音楽・ゲーム・犬・猫・ギネス・中古車・YouTube。AIが厳選する何でもランキング！">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6023646963661694" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;background:#f2f2f2;color:#222;}
+
+/* ===== ヘッダー ===== */
+#site-header{
+  background:linear-gradient(135deg,#c0392b 0%,#e74c3c 60%,#e67e22 100%);
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  position:sticky;top:0;z-index:200;
+}
+#header-inner{
+  max-width:1200px;margin:0 auto;
+  padding:10px 20px;
+  display:flex;align-items:center;gap:16px;
+}
+#site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+#site-logo .logo-icon{font-size:26px;}
+#site-logo .logo-text{font-size:20px;font-weight:900;color:white;letter-spacing:1px;text-shadow:0 1px 3px rgba(0,0,0,0.3);}
+#site-logo .logo-sub{font-size:10px;color:rgba(255,255,255,0.75);}
+#header-tagline{
+  margin-left:auto;font-size:11px;color:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.15);padding:4px 12px;
+  border-radius:20px;border:1px solid rgba(255,255,255,0.25);
+  white-space:nowrap;
+}
+
+/* ===== モードタブ ===== */
+#mode-nav{background:white;border-bottom:2px solid #e74c3c;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+#mode-nav-inner{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+#mode-nav-inner::-webkit-scrollbar{display:none;}
+.mode-btn{
+  padding:12px 20px;border:none;background:transparent;
+  font-size:13px;font-weight:700;cursor:pointer;color:#666;
+  border-bottom:3px solid transparent;white-space:nowrap;
+  transition:all 0.15s;font-family:inherit;
+  display:flex;align-items:center;gap:5px;
+  margin-bottom:-2px;
+}
+.mode-btn:hover{color:#e74c3c;background:#fff5f5;}
+.mode-btn.active{color:#e74c3c;border-bottom-color:#e74c3c;background:#fff8f8;}
+
+/* ===== バナー ===== */
+#info-banner{
+  background:#fff8f5;border-bottom:1px solid #ffd8cc;
+  padding:5px 20px;font-size:11px;color:#888;
+  display:flex;align-items:center;gap:8px;
+}
+.banner-label{
+  color:white;font-weight:700;font-size:11px;
+  background:#e74c3c;padding:2px 10px;border-radius:10px;
+}
+
+/* ===== ジャンルナビ（アイコングリッド） ===== */
+#genre-nav{
+  background:white;
+  border-bottom:1px solid #e0e0e0;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+}
+#genre-nav-inner{
+  max-width:1200px;margin:0 auto;
+  padding:12px 16px 0;
+}
+#genre-nav-title{
+  font-size:11px;color:#aaa;font-weight:600;
+  letter-spacing:1px;margin-bottom:8px;
+  text-transform:uppercase;
+}
+#genre-grid{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding-bottom:12px;
+}
+.genre-item{
+  display:flex;flex-direction:column;align-items:center;
+  gap:4px;padding:8px 10px;border-radius:10px;
+  cursor:pointer;transition:all 0.15s;
+  border:2px solid transparent;
+  background:#f8f8f8;min-width:62px;
+  position:relative;
+}
+.genre-item:hover{background:#fff5f5;border-color:#ffcccc;}
+.genre-item.active{
+  background:#e74c3c;border-color:#c0392b;
+  box-shadow:0 2px 8px rgba(231,76,60,0.35);
+}
+.genre-item .genre-emoji{font-size:22px;line-height:1;}
+.genre-item .genre-name{
+  font-size:10px;font-weight:700;color:#444;
+  white-space:nowrap;text-align:center;
+}
+.genre-item.active .genre-name{color:white;}
+.genre-item .genre-count{
+  position:absolute;top:-4px;right:-4px;
+  background:#e74c3c;color:white;
+  font-size:9px;font-weight:700;
+  padding:1px 5px;border-radius:8px;
+  border:2px solid white;
+}
+.genre-item.active .genre-count{background:#c0392b;}
+
+/* ===== カテゴリタブ（大きめタブ） ===== */
+#cat-section{
+  background:white;
+  border-bottom:2px solid #e0e0e0;
+}
+#cat-section-inner{
+  max-width:1200px;margin:0 auto;
+  padding:0 16px;
+}
+#cat-label{
+  font-size:11px;color:#aaa;font-weight:600;
+  padding-top:8px;margin-bottom:6px;
+  letter-spacing:1px;display:flex;align-items:center;gap:6px;
+}
+#cat-label::after{content:'';flex:1;height:1px;background:#f0f0f0;}
+#cat-tabs-inner{
+  display:flex;gap:4px;overflow-x:auto;
+  scrollbar-width:none;padding-bottom:0;
+}
+#cat-tabs-inner::-webkit-scrollbar{display:none;}
+.cat-btn{
+  padding:9px 18px;border:none;background:transparent;
+  font-size:13px;font-weight:600;cursor:pointer;
+  color:#555;border-bottom:3px solid transparent;
+  white-space:nowrap;transition:all 0.15s;
+  font-family:inherit;margin-bottom:-2px;
+  border-radius:0;
+}
+.cat-btn:hover{color:#e74c3c;background:#fff5f5;}
+.cat-btn.active{
+  color:#e74c3c;border-bottom-color:#e74c3c;
+  font-weight:700;background:#fff8f8;
+}
+
+/* ===== アクションバー ===== */
+#action-wrap{max-width:1200px;margin:0 auto;padding:0 16px;}
+#action-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 0 12px;border-bottom:1px solid #eee;
+  margin-bottom:16px;
+}
+#section-title{font-size:16px;font-weight:700;color:#222;}
+#section-badge-cat{
+  font-size:10px;padding:2px 8px;border-radius:4px;
+  background:#e74c3c;color:white;font-weight:700;margin-left:8px;
+}
+#show-btn{
+  padding:9px 22px;
+  background:linear-gradient(135deg,#e74c3c,#c0392b);
+  color:white;border:none;border-radius:6px;font-size:13px;
+  cursor:pointer;font-weight:700;font-family:inherit;
+  transition:all 0.2s;box-shadow:0 2px 8px rgba(231,76,60,0.3);
+}
+#show-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(231,76,60,0.4);}
+
+/* ===== メインレイアウト ===== */
+#main-wrap{max-width:1200px;margin:0 auto;padding:16px;}
+#main-layout{display:flex;gap:20px;align-items:flex-start;}
+#content-area{flex:1;min-width:0;}
+#sidebar{width:260px;flex-shrink:0;}
+
+/* ===== セクションヘッダー ===== */
+.section-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.section-header h2{font-size:17px;font-weight:900;color:#222;}
+.section-badge{
+  font-size:10px;padding:2px 9px;border-radius:4px;
+  background:#e74c3c;color:white;font-weight:700;
+}
+.section-date{font-size:11px;color:#aaa;margin-left:auto;}
+
+/* ===== 広告エリア ===== */
+.ad-area{
+  background:white;border:1px dashed #ddd;border-radius:8px;
+  padding:12px;text-align:center;color:#ccc;
+  font-size:11px;letter-spacing:2px;margin-bottom:14px;
+}
+
+/* ===== 初期状態 ===== */
+#initial{
+  text-align:center;padding:60px 20px;
+  background:white;border-radius:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);color:#bbb;
+}
+#initial .big-icon{font-size:56px;margin-bottom:12px;opacity:0.35;}
+#initial p{font-size:14px;line-height:2.2;color:#aaa;}
+#initial .hint{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:12px;padding:8px 16px;background:#fff5f5;
+  border-radius:20px;font-size:12px;color:#e74c3c;font-weight:700;
+  border:1px solid #ffcdd2;
+}
+
+/* ===== カード ===== */
+#ranking-list,#today-list,#monthly-list{
+  display:flex;flex-direction:column;gap:8px;
+}
+.card{
+  background:white;border-radius:10px;
+  padding:14px 16px;display:flex;gap:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.07);
+  border:1px solid #f0f0f0;
+  animation:fadeUp 0.3s ease both;opacity:0;
+  transition:all 0.18s;position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:4px;background:#eee;border-radius:10px 0 0 10px;
+}
+.card.top1::before{background:linear-gradient(180deg,#ffd700,#f39c12);}
+.card.top2::before{background:linear-gradient(180deg,#c0c0c0,#95a5a6);}
+.card.top3::before{background:linear-gradient(180deg,#cd7f32,#a04000);}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1);border-color:#ffe0e0;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.rank-col{
+  min-width:44px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;flex-shrink:0;gap:2px;
+}
+.rank-crown{font-size:14px;line-height:1;}
+.rank-num{font-weight:900;line-height:1;font-family:'Georgia',serif;text-align:center;}
+.rank-num.gold{color:#d4a000;}
+.rank-num.silver{color:#909090;}
+.rank-num.bronze{color:#a05000;}
+.rank-num.normal{color:#ccc;}
+
+/* サムネ */
+.thumb{
+  width:72px;height:90px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;overflow:hidden;position:relative;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+.thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+
+/* カード情報 */
+.card-info{flex:1;min-width:0;}
+.card-genre-label{
+  font-size:10px;color:#e74c3c;font-weight:700;
+  margin-bottom:3px;display:flex;align-items:center;gap:3px;
+  background:#fff5f5;display:inline-flex;padding:1px 7px;
+  border-radius:4px;margin-bottom:5px;
+}
+.card-title{font-size:14px;font-weight:700;line-height:1.4;margin-bottom:3px;color:#1a1a1a;}
+.card-sub{font-size:11px;color:#999;margin-bottom:5px;}
+.card-tags{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:5px;}
+.tag{font-size:10px;padding:2px 7px;border-radius:4px;background:#f5f5f5;color:#777;border:1px solid #ebebeb;}
+.card-reason{font-size:11px;color:#777;line-height:1.6;padding-top:5px;border-top:1px solid #f5f5f5;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:4px;}
+.card-price{font-size:13px;font-weight:700;color:#e74c3c;}
+.link-btns{display:flex;gap:4px;}
+.link-btn{
+  display:inline-flex;align-items:center;padding:4px 9px;
+  color:white;border-radius:4px;font-size:10px;
+  text-decoration:none;font-weight:700;transition:opacity 0.2s;white-space:nowrap;
+}
+.link-btn:hover{opacity:0.85;}
+
+/* ===== サイドバー ===== */
+#sidebar{display:flex;flex-direction:column;gap:14px;}
+.sidebar-box{background:white;border-radius:10px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,0.07);border:1px solid #f0f0f0;}
+.sidebar-title{
+  font-size:13px;font-weight:700;color:#222;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:2px solid #e74c3c;
+  display:flex;align-items:center;gap:6px;
+}
+.sidebar-item{
+  display:flex;align-items:center;gap:8px;
+  padding:6px 0;border-bottom:1px solid #f8f8f8;cursor:pointer;
+}
+.sidebar-item:last-child{border-bottom:none;}
+.sidebar-rank{
+  width:22px;height:22px;border-radius:50%;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:white;
+}
+.sidebar-rank.r1{background:#d4a000;}
+.sidebar-rank.r2{background:#909090;}
+.sidebar-rank.r3{background:#a05000;}
+.sidebar-rank.rn{background:#ccc;}
+.sidebar-item-title{font-size:12px;font-weight:600;color:#333;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sidebar-item-genre{font-size:10px;color:#bbb;}
+
+/* ===== フッター ===== */
+footer{background:#1a1a1a;color:#888;text-align:center;padding:20px;font-size:12px;margin-top:32px;}
+footer a{color:#e74c3c;cursor:pointer;}
+.footer-links{margin-top:6px;display:flex;justify-content:center;gap:20px;}
+
+/* ===== モーダル ===== */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;overflow-y:auto;}
+.modal-box{background:white;max-width:580px;margin:40px auto;padding:28px;border-radius:12px;position:relative;}
+.modal-close{position:absolute;top:12px;right:12px;border:none;background:#f0f0f0;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:15px;}
+.modal-box h2{font-size:17px;margin-bottom:14px;color:#e74c3c;padding-bottom:8px;border-bottom:2px solid #e74c3c;}
+.modal-box h3{font-size:13px;margin:14px 0 5px;color:#333;}
+.modal-box p{font-size:12px;line-height:1.8;color:#666;}
+
+/* ===== レスポンシブ ===== */
+@media(max-width:900px){
+  #sidebar{display:none;}
+  #main-layout{display:block;}
+}
+@media(max-width:600px){
+  #site-logo .logo-text{font-size:17px;}
+  #header-tagline{display:none;}
+  .mode-btn{padding:10px 14px;font-size:12px;}
+  #genre-grid{gap:4px;}
+  .genre-item{min-width:54px;padding:6px 8px;}
+  .genre-item .genre-emoji{font-size:18px;}
+  .genre-item .genre-name{font-size:9px;}
+  #main-wrap{padding:10px;}
+  .card{padding:10px 12px;}
+  .thumb{width:58px;height:74px;font-size:22px;}
+  .card-title{font-size:13px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header id="site-header">
+  <div id="header-inner">
+    <a id="site-logo" href="#">
+      <div class="logo-icon">🏆</div>
+      <div>
+        <div class="logo-text">何でもランキング</div>
+        <div class="logo-sub">AIが厳選・毎日自動更新</div>
+      </div>
+    </a>
+    <div id="header-tagline">15ジャンル・600アイテムのランキング</div>
+  </div>
+</header>
+
+<!-- モードタブ -->
+<nav id="mode-nav">
+  <div id="mode-nav-inner">
+    <button class="mode-btn active" id="mode-today" onclick="switchMode('today')">🔥 今日のランキング</button>
+    <button class="mode-btn" id="mode-monthly" onclick="switchMode('monthly')">📅 月間ランキング</button>
+    <button class="mode-btn" id="mode-yearly" onclick="switchMode('yearly')">📆 年間ランキング</button>
+    <button class="mode-btn" id="mode-overall" onclick="switchMode('overall')">🏆 総合ランキング</button>
+    <button class="mode-btn" id="mode-category" onclick="switchMode('category')">📂 カテゴリ別</button>
+  </div>
+</nav>
+
+<!-- バナー -->
+<div id="info-banner">
+  <span class="banner-label" id="banner-label">🔥 今日</span>
+  <span id="today-date"></span>
+  <span style="margin-left:auto;">毎日自動更新 ✨</span>
+</div>
+
+<!-- ジャンルナビ（アイコングリッド） -->
+<div id="genre-nav">
+  <div id="genre-nav-inner">
+    <div id="genre-nav-title">ジャンルを選ぶ</div>
+    <div id="genre-grid"></div>
+  </div>
+</div>
+
+<!-- カテゴリタブ -->
+<div id="cat-section">
+  <div id="cat-section-inner">
+    <div id="cat-label">カテゴリ</div>
+    <div id="cat-tabs-inner"></div>
+  </div>
+</div>
+
+<!-- アクションバー -->
+<div id="action-wrap">
+  <div id="action-bar" style="display:none;">
+    <div>
+      <span id="section-title">ランキング</span>
+      <span id="section-badge-cat">TOP10</span>
+    </div>
+    <button id="show-btn" onclick="showRanking()">▶ 表示する</button>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<div id="main-wrap">
+  <div class="ad-area">広告エリア（Google AdSense）</div>
+
+  <div id="main-layout">
+    <div id="content-area">
+
+      <!-- 今日のランキング -->
+      <div id="today-section">
+        <div class="section-header">
+          <h2>🔥 今日のおすすめランキング</h2>
+          <span class="section-badge">DAILY</span>
+          <span class="section-date" id="daily-date-label"></span>
+        </div>
+        <div id="today-list"></div>
+      </div>
+
+      <!-- 月間ランキング -->
+      <div id="monthly-section" style="display:none;">
+        <div class="section-header">
+          <h2>📅 今月の人気ランキング</h2>
+          <span class="section-badge">MONTHLY</span>
+          <span class="section-date" id="monthly-date-label"></span>
+        </div>
+        <div id="monthly-list"></div>
+      </div>
+
+      <!-- 年間ランキング -->
+      <div id="yearly-section" style="display:none;">
+        <div class="section-header">
+          <h2>📆 年間ベストランキング</h2>
+          <span class="section-badge">YEARLY</span>
+          <span class="section-date" id="yearly-date-label"></span>
+        </div>
+        <div id="yearly-list"></div>
+      </div>
+
+      <!-- 総合ランキング -->
+      <div id="overall-section" style="display:none;">
+        <div class="section-header">
+          <h2>🏆 総合ベストランキング</h2>
+          <span class="section-badge">OVERALL</span>
+          <span class="section-date">全ジャンル横断ベスト20</span>
+        </div>
+        <div id="overall-list"></div>
+      </div>
+
+      <!-- カテゴリ別 -->
+      <div id="category-section" style="display:none;">
+        <div id="initial">
+          <div class="big-icon">📂</div>
+          <p>上のジャンルとカテゴリを選んで<br>「表示する」を押してください</p>
+          <div class="hint">👆 ジャンルを選んでスタート！</div>
+        </div>
+        <div id="ranking-list"></div>
+      </div>
+
+      <div class="ad-area" id="ad-bottom" style="display:none;margin-top:12px;">広告エリア（Google AdSense）</div>
+    </div>
+
+    <!-- サイドバー -->
+    <aside id="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-title">🔥 今日のTOP5</div>
+        <div id="sidebar-today"></div>
+      </div>
+      <div class="ad-area">広告エリア</div>
+      <div class="sidebar-box">
+        <div class="sidebar-title">📅 今月のTOP5</div>
+        <div id="sidebar-monthly"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- フッター -->
+<footer>
+  © 2025 何でもランキング｜Powered by AI
+  <div class="footer-links">
+    <a onclick="showPrivacyPolicy();return false;">プライバシーポリシー</a>
+    <a onclick="showContact();return false;">お問い合わせ</a>
+  </div>
+</footer>
+
+<!-- モーダル -->
+<div class="modal-overlay" id="privacy-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('privacy-modal').style.display='none'">✕</button>
+    <h2>プライバシーポリシー</h2>
+    <p>当サイト「何でもランキング」は、利用者のプライバシーを尊重し、個人情報の保護に努めています。</p>
+    <h3>■ 広告について</h3>
+    <p>当サイトではGoogle AdSenseおよびAmazonアソシエイト・プログラムを利用しています。これらのサービスはCookieを使用して広告を表示します。</p>
+    <h3>■ アフィリエイトについて</h3>
+    <p>当サイトはAmazonアソシエイト・プログラムの参加者です。リンクを経由して購入した場合、紹介料が支払われることがあります。</p>
+    <h3>■ 免責事項</h3>
+    <p>当サイトの情報は正確性を期していますが、完全性・正確性を保証するものではありません。</p>
+    <p style="margin-top:14px;font-size:11px;color:#bbb;">制定日：2025年1月1日</p>
+  </div>
+</div>
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('contact-modal').style.display='none'">✕</button>
+    <h2>お問い合わせ</h2>
+    <p style="margin-bottom:14px;font-size:13px;color:#555;">以下のフォームよりご連絡ください。</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div><label style="font-size:12px;color:#666;display:block;margin-bottom:3px;">お名前</label><input type="text" placeholder="山田 太郎" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;"></div>
+      <div><label style="font-size:12px;color:#666;display:block;margin-bottom:3px;">メールアドレス</label><input type="email" placeholder="example@email.com" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;"></div>
+      <div><label style="font-size:12px;color:#666;display:block;margin-bottom:3px;">内容</label><textarea rows="4" style="width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;resize:vertical;"></textarea></div>
+      <button onclick="alert('お問い合わせありがとうございます！')" style="padding:10px;background:#e74c3c;color:white;border:none;border-radius:6px;font-size:14px;cursor:pointer;font-weight:700;">送信する</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const GENRES = [
+  { id:"book",    label:"📚 本",        color:"#c9a84c" },
+  { id:"gadget",  label:"📱 ガジェット", color:"#3498db" },
+  { id:"anime",   label:"🎌 アニメ",     color:"#e74c3c" },
+  { id:"cosme",   label:"💄 コスメ",     color:"#e91e8c" },
+  { id:"gourmet", label:"🍜 グルメ",     color:"#e67e22" },
+  { id:"travel",  label:"✈️ 旅行",       color:"#1abc9c" },
+  { id:"movie",   label:"🎬 映画",       color:"#9b59b6" },
+  { id:"sports",  label:"⚽ スポーツ",   color:"#27ae60" },
+  { id:"music",   label:"🎵 音楽",       color:"#f39c12" },
+  { id:"game",    label:"🎮 ゲーム",     color:"#2980b9" },
+  { id:"dog",     label:"🐶 犬",         color:"#8B6914" },
+  { id:"cat",     label:"🐱 猫",         color:"#7B5EA7" },
+  { id:"guinness",label:"🏆 ギネス",      color:"#c0392b" },
+  { id:"usedcar", label:"🚗 中古車",      color:"#2c3e50" },
+  { id:"youtube", label:"▶ YouTube",     color:"#FF0000" },
+  { id:"keyword", label:"🔍 検索キーワード", color:"#1a73e8" },
+  { id:"ishi",    label:"💎 石・鉱物",      color:"#8e44ad" },
+  { id:"shokugyo",label:"👔 職業",          color:"#16a085" },
+  { id:"geino",   label:"🎭 芸能人",       color:"#e91e63" },
+  { id:"seijika_jp",label:"🏛 国内政治家",  color:"#1565c0" },
+  { id:"seijika_world",label:"🌍 海外政治家",color:"#2e7d32" },
+];
+
+const COVER_COLORS = [
+  ["#2c3e50","#3498db"],["#8e44ad","#e74c3c"],["#27ae60","#f39c12"],
+  ["#c0392b","#e67e22"],["#1a252f","#2ecc71"],["#6c3483","#f1c40f"],
+  ["#154360","#85c1e9"],["#784212","#f0b27a"],["#1b4f72","#aed6f1"],
+  ["#2e4057","#e8c547"]
+];
+
+const COVER_ICONS = {
+  book:   ["📗","📘","📕","📙","📒","📔","📃","📜","📄","🗒️"],
+  gadget: ["📱","🎧","⌚","📷","💻","🖥️","🎮","📡","🔋","🎙️"],
+  anime:  ["⚔️","🔮","🌸","🐉","🎭","✨","🌙","🔥","🌊","🏆"],
+  cosme:  ["💄","💋","🌹","✨","🌸","💅","🪞","💐","🌺","💎"],
+  gourmet:["🍜","🍣","🍰","🍕","🌮","🍱","🥩","🍛","🥗","🍷"],
+  travel: ["🗼","⛩️","🏖️","🏔️","🌏","✈️","🗺️","🏯","🌅","🎡"],
+  movie:  ["🎬","🎥","🏆","🎭","🌟","🎞️","🎦","🎪","🎠","🎗️"],
+  sports: ["⚽","⚾","🎾","🥊","🏀","🎿","🏊","🏋️","🚴","🏇"],
+  music:  ["🎵","🎸","🎹","🎺","🎻","🥁","🎤","🎧","🎼","🎶"],
+  game:   ["🎮","🕹️","👾","🏆","⚔️","🐉","🚗","🌟","🔮","💎"],
+  dog:    ["🐶","🦮","🐕","🦴","🐾","🏅","🛁","🧸","🎾","❤️"],
+  cat:    ["🐱","😺","🐈","🐟","🧶","🪄","😸","🌙","🐾","💜"],
+  guinness:["🏆","🥇","🌟","🎖️","👑","🔥","⚡","💪","🎯","🌍"],
+  usedcar: ["🚗","🚙","🏎️","🚐","🛻","🚕","🏁","⭐","🔑","💨"],
+  youtube: ["▶️","🎬","📱","🎵","👑","🔔","🌟","🎯","💫","🎤"],
+  keyword: ["🔍","📈","🔥","💡","⭐","📱","🛒","🎯","💬","🌐"],
+  ishi:    ["💎","💍","🔮","💜","💙","💚","❤️","🌟","✨","🪨"],
+  shokugyo:["👔","👨‍⚕️","👩‍🏫","👨‍💻","👮","🚒","🎨","🔬","✈","⚖"],
+  geino:   ["🎭","🎤","🎬","😄","🌟","🎵","🏆","💃","🎪","✨"],
+  seijika_jp:["🏛","🗳","📜","🇯🇵","👨‍💼","🏢","📊","🤝","⚖","🌐"],
+  seijika_world:["🌍","🇺🇸","🇬🇧","🇩🇪","🇫🇷","🇨🇳","🇮🇳","🌏","🕊","🏛"],
+};
+
+function getLinks(genre, item) {
+  const q = encodeURIComponent(item.title + " " + item.sub);
+  const qt = encodeURIComponent(item.title);
+  if (genre === "travel") return [
+    { label:"楽天トラベル", color:"#bf0000", url:`https://travel.rakuten.co.jp/keyword/?f_free=${qt}` },
+    { label:"じゃらん",     color:"#e60012", url:`https://www.jalan.net/kw/?keyword=${qt}` },
+  ];
+  if (genre === "music") return [
+    { label:"🎵 Apple Music", color:"#fc3c44", url:`https://music.apple.com/jp/search?term=${q}` },
+    { label:"🎧 Spotify",     color:"#1db954", url:`https://open.spotify.com/search/${q}` },
+  ];
+  if (genre === "movie") return [
+    { label:"▶ Prime Video", color:"#00a8e1", url:`https://www.amazon.co.jp/s?k=${q}&i=instant-video` },
+    { label:"▶ Netflix",     color:"#e50914", url:`https://www.netflix.com/search?q=${qt}` },
+  ];
+  if (genre === "game" || genre === "sports") return [
+    { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
+    { label:"楽天",       color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${q}/` },
+  ];
+  if (genre === "youtube") return [
+    { label:"▶ YouTube検索", color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
+    { label:"🔍 詳細",       color:"#555555", url:`https://www.google.com/search?q=${q}+YouTube` },
+  ];
+  if (genre === "guinness") return [
+    { label:"🌍 Wikipedia", color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
+    { label:"🔍 詳細",      color:"#555555", url:`https://www.google.com/search?q=${q}+ギネス記録` },
+  ];
+  if (genre === "ishi") return [
+    { label:"💎 楽天", color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/` },
+    { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
+  ];
+  if (genre === "shokugyo") return [
+    { label:"🔍 詳細検索", color:"#1a73e8", url:`https://www.google.com/search?q=${qt}+年収+仕事内容` },
+    { label:"💼 求人検索", color:"#2ecc71", url:`https://www.indeed.com/jobs?q=${qt}` },
+  ];
+  if (genre === "geino") return [
+    { label:"🔍 Google", color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
+    { label:"📺 YouTube", color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
+  ];
+  if (genre === "seijika_jp" || genre === "seijika_world") return [
+    { label:"🔍 Wikipedia", color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
+    { label:"📰 ニュース", color:"#555", url:`https://www.google.com/search?q=${qt}&tbm=nws` },
+  ];
+  if (genre === "keyword") return [
+    { label:"🔍 Google検索", color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
+    { label:"📊 トレンド",   color:"#ea4335", url:`https://trends.google.co.jp/trends/explore?q=${qt}&geo=JP` },
+  ];
+  if (genre === "usedcar") return [
+    { label:"🚗 カーセンサー", color:"#e60012", url:`https://www.carsensor.net/usedcar/search.php?STID=CS210610&KEYWORD=${qt}` },
+    { label:"🚙 グーネット",   color:"#0066cc", url:`https://www.goo-net.com/usedcar/brand/?keyword=${qt}` },
+  ];
+  return [
+    { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
+  ];
+}
+
+// ============================================================
+// ランキングデータ
+// ============================================================
+const ALL_DATA = {
+  book: {
+    categories:["ビジネス書","自己啓発","小説","投資・お金"],
+    items:{
+      "ビジネス書":[
+        {title:"ゼロ・トゥ・ワン",sub:"ピーター・ティール",reason:"スタートアップ必読の思考法",tags:["起業","戦略"],price:"¥1,870"},
+        {title:"エッセンシャル思考",sub:"グレッグ・マキューン",reason:"本質だけに集中する技術",tags:["生産性","思考"],price:"¥1,760"},
+        {title:"HARD THINGS",sub:"ベン・ホロウィッツ",reason:"困難を乗り越えるリーダー論",tags:["起業","リーダー"],price:"¥2,090"},
+        {title:"世界標準の経営理論",sub:"入山章栄",reason:"経営学の全体像を体系化",tags:["経営","MBA"],price:"¥3,080"},
+        {title:"影響力の武器",sub:"ロバート・チャルディーニ",reason:"人を動かす6つの心理原則",tags:["心理","マーケ"],price:"¥2,420"},
+        {title:"ビジョナリー・カンパニー",sub:"ジム・コリンズ",reason:"偉大な企業の共通要因を分析",tags:["経営","戦略"],price:"¥2,200"},
+        {title:"HIGH OUTPUT MANAGEMENT",sub:"アンドリュー・グローブ",reason:"管理職の教科書的名著",tags:["マネジメント","生産性"],price:"¥1,980"},
+        {title:"ティール組織",sub:"フレデリック・ラルー",reason:"次世代の組織論",tags:["組織","未来"],price:"¥2,860"},
+        {title:"起業家",sub:"藤田晋",reason:"サイバーエージェント創業の実録",tags:["起業","日本"],price:"¥1,650"},
+        {title:"サピエンス全史",sub:"ユヴァル・ノア・ハラリ",reason:"人類史からビジネスを学ぶ",tags:["教養","歴史"],price:"¥3,300"},
+      ],
+      "自己啓発":[
+        {title:"7つの習慣",sub:"スティーブン・コヴィー",reason:"人格主義に基づく成功の原則",tags:["習慣","人生"],price:"¥2,420"},
+        {title:"嫌われる勇気",sub:"岸見一郎・古賀史健",reason:"アドラー心理学を平易に解説",tags:["心理","哲学"],price:"¥1,650"},
+        {title:"やり抜く力 GRIT",sub:"アンジェラ・ダックワース",reason:"才能より努力が成功を決める",tags:["メンタル","科学"],price:"¥1,870"},
+        {title:"限りある時間の使い方",sub:"オリバー・バークマン",reason:"人生4000週間の時間哲学",tags:["時間","哲学"],price:"¥1,760"},
+        {title:"アウトプット大全",sub:"樺沢紫苑",reason:"学びを成果に変える技術",tags:["学習","習慣"],price:"¥1,518"},
+        {title:"夢をかなえるゾウ",sub:"水野敬也",reason:"ガネーシャと学ぶ自己変革",tags:["小説風","習慣"],price:"¥660"},
+        {title:"マインドセット",sub:"キャロル・S・ドゥエック",reason:"成長思考が人生を変える",tags:["心理","成長"],price:"¥1,760"},
+        {title:"メモの魔力",sub:"前田裕二",reason:"メモで思考と人生を変える",tags:["思考","習慣"],price:"¥1,540"},
+        {title:"原則",sub:"レイ・ダリオ",reason:"世界最大ヘッジファンド創業者の哲学",tags:["原則","人生"],price:"¥2,750"},
+        {title:"思考は現実化する",sub:"ナポレオン・ヒル",reason:"潜在意識で目標達成する方法",tags:["成功","マインド"],price:"¥2,090"},
+      ],
+      "小説":[
+        {title:"ノルウェイの森",sub:"村上春樹",reason:"喪失と成長を描く青春文学",tags:["恋愛","純文学"],price:"¥704"},
+        {title:"容疑者Xの献身",sub:"東野圭吾",reason:"究極の愛を描くミステリー",tags:["ミステリー","感動"],price:"¥814"},
+        {title:"コンビニ人間",sub:"村田沙耶香",reason:"現代社会の同調圧力を鋭く描く",tags:["現代","芥川賞"],price:"¥704"},
+        {title:"流浪の月",sub:"凪良ゆう",reason:"社会の常識に問いを投げかける",tags:["社会派","感動"],price:"¥748"},
+        {title:"蜜蜂と遠雷",sub:"恩田陸",reason:"ピアノコンクールの熱狂と感動",tags:["音楽","直木賞"],price:"¥990"},
+        {title:"１Q84",sub:"村上春樹",reason:"並行世界を舞台にした壮大な物語",tags:["幻想","長編"],price:"¥2,376"},
+        {title:"羊と鋼の森",sub:"宮下奈都",reason:"調律師の成長を美しく描く",tags:["感動","本屋大賞"],price:"¥704"},
+        {title:"火花",sub:"又吉直樹",reason:"お笑い芸人の芸術と葛藤",tags:["青春","芥川賞"],price:"¥660"},
+        {title:"砂の女",sub:"安部公房",reason:"実存主義文学の日本的傑作",tags:["純文学","古典"],price:"¥638"},
+        {title:"変身",sub:"フランツ・カフカ",reason:"不条理文学の最高傑作",tags:["海外","古典"],price:"¥440"},
+      ],
+      "投資・お金":[
+        {title:"敗者のゲーム",sub:"チャールズ・エリス",reason:"市場に勝てない理由を解説",tags:["投資","インデックス"],price:"¥1,980"},
+        {title:"お金は寝かせて増やしなさい",sub:"水瀬ケンイチ",reason:"日本版インデックス投資の実践書",tags:["投資","NISA"],price:"¥1,650"},
+        {title:"ウォール街のランダム・ウォーカー",sub:"バートン・マルキール",reason:"投資の古典的名著",tags:["投資","理論"],price:"¥3,080"},
+        {title:"金持ち父さん貧乏父さん",sub:"ロバート・キヨサキ",reason:"資産と負債の考え方",tags:["お金","教育"],price:"¥1,760"},
+        {title:"バビロンの大富豪",sub:"ジョージ・クレイソン",reason:"古代に学ぶ富の法則",tags:["お金","古典"],price:"¥836"},
+        {title:"ジェイソン流お金の増やし方",sub:"厚切りジェイソン",reason:"シンプルで実践的なNISA活用法",tags:["投資","入門"],price:"¥1,430"},
+        {title:"となりの億万長者",sub:"トーマス・スタンリー",reason:"本物の富裕層の生活習慣を研究",tags:["お金","習慣"],price:"¥2,090"},
+        {title:"株式投資",sub:"ジェレミー・シーゲル",reason:"長期投資で株が最強資産の根拠",tags:["投資","データ"],price:"¥3,520"},
+        {title:"証券分析",sub:"ベンジャミン・グレアム",reason:"バリュー投資の聖典",tags:["投資","株式"],price:"¥6,600"},
+        {title:"思考する投資家",sub:"ベンジャミン・グレアム",reason:"長期投資哲学の原点",tags:["投資","哲学"],price:"¥2,420"},
+      ],
+    }
+  },
+  gadget:{
+    categories:["スマホ","イヤホン","スマートウォッチ","カメラ"],
+    items:{
+      "スマホ":[
+        {title:"iPhone 16 Pro",sub:"Apple",reason:"最高峰カメラと処理速度",tags:["Apple","フラグシップ"],price:"¥159,800〜"},
+        {title:"Galaxy S25 Ultra",sub:"Samsung",reason:"AIカメラとSペンが進化",tags:["Android","高性能"],price:"¥189,800〜"},
+        {title:"Pixel 9 Pro",sub:"Google",reason:"AI機能と純粋なAndroid体験",tags:["Google","AI"],price:"¥159,900〜"},
+        {title:"iPhone 16",sub:"Apple",reason:"バランス最高のスタンダード機",tags:["Apple","コスパ"],price:"¥124,800〜"},
+        {title:"Xperia 1 VI",sub:"Sony",reason:"音楽・カメラ特化の高性能機",tags:["Sony","カメラ"],price:"¥189,000〜"},
+        {title:"AQUOS R9 Pro",sub:"Sharp",reason:"ライカ監修カメラ搭載",tags:["Sharp","カメラ"],price:"¥198,000〜"},
+        {title:"Galaxy S25",sub:"Samsung",reason:"コンパクトで高性能Android",tags:["Android","バランス"],price:"¥124,800〜"},
+        {title:"Pixel 9",sub:"Google",reason:"手頃な価格でAI機能フル搭載",tags:["Google","コスパ"],price:"¥128,900〜"},
+        {title:"iPhone 16 Plus",sub:"Apple",reason:"大画面と長時間バッテリー",tags:["Apple","大画面"],price:"¥139,800〜"},
+        {title:"OnePlus 13",sub:"OnePlus",reason:"ハイスペックで価格が抑えめ",tags:["コスパ","高性能"],price:"¥99,800〜"},
+      ],
+      "イヤホン":[
+        {title:"AirPods Pro 2",sub:"Apple",reason:"ANC性能と装着感が業界最高峰",tags:["Apple","ANC"],price:"¥39,800"},
+        {title:"Sony WF-1000XM5",sub:"Sony",reason:"ノイキャン×音質のバランス最高",tags:["Sony","ANC"],price:"¥36,300"},
+        {title:"Bose QuietComfort Ultra",sub:"Bose",reason:"圧倒的なノイズキャンセリング",tags:["Bose","ANC"],price:"¥39,600"},
+        {title:"Galaxy Buds3 Pro",sub:"Samsung",reason:"Android連携と音質が優秀",tags:["Samsung","ANC"],price:"¥29,800"},
+        {title:"Nothing Ear",sub:"Nothing",reason:"デザイン×音質のコスパ最高",tags:["デザイン","コスパ"],price:"¥22,800"},
+        {title:"Jabra Elite 10",sub:"Jabra",reason:"通話品質とフィット感が抜群",tags:["通話","フィット"],price:"¥35,200"},
+        {title:"Anker Soundcore Liberty 4",sub:"Anker",reason:"高機能で1万円台の驚きコスパ",tags:["コスパ","Anker"],price:"¥14,990"},
+        {title:"Technics EAH-AZ80",sub:"Technics",reason:"オーディオブランドの本格音質",tags:["音質","マルチ接続"],price:"¥39,600"},
+        {title:"Pixel Buds Pro 2",sub:"Google",reason:"Google AIと連携した次世代機",tags:["Google","AI"],price:"¥26,800"},
+        {title:"AVIOT TE-Z1PNK",sub:"AVIOT",reason:"日本メーカーの高音質ANC",tags:["国産","ANC"],price:"¥19,800"},
+      ],
+      "スマートウォッチ":[
+        {title:"Apple Watch Series 10",sub:"Apple",reason:"健康管理×使いやすさNo.1",tags:["Apple","健康"],price:"¥59,800〜"},
+        {title:"Galaxy Watch 7",sub:"Samsung",reason:"Android最高峰の健康トラッキング",tags:["Samsung","Android"],price:"¥49,800〜"},
+        {title:"Garmin Fenix 8",sub:"Garmin",reason:"アウトドア・スポーツの最強機",tags:["Garmin","スポーツ"],price:"¥159,280〜"},
+        {title:"Pixel Watch 3",sub:"Google",reason:"Google AIと深い連携",tags:["Google","AI"],price:"¥49,800〜"},
+        {title:"HUAWEI WATCH GT 5 Pro",sub:"HUAWEI",reason:"2週間バッテリーと健康管理",tags:["長寿命","健康"],price:"¥49,800〜"},
+        {title:"Fitbit Charge 6",sub:"Fitbit",reason:"健康トラッキング特化のコスパ機",tags:["健康","コスパ"],price:"¥23,990"},
+        {title:"Garmin Venu 3",sub:"Garmin",reason:"日常使いに最適な健康管理機",tags:["Garmin","日常"],price:"¥74,800"},
+        {title:"Apple Watch SE 2",sub:"Apple",reason:"手頃な価格でApple Watch入門",tags:["Apple","コスパ"],price:"¥35,800〜"},
+        {title:"Withings ScanWatch 2",sub:"Withings",reason:"アナログ時計の見た目で健康管理",tags:["デザイン","健康"],price:"¥49,980"},
+        {title:"CASIO G-SHOCK Smart",sub:"CASIO",reason:"タフネス×スマート機能",tags:["CASIO","アウトドア"],price:"¥49,500〜"},
+      ],
+      "カメラ":[
+        {title:"Sony α7C II",sub:"Sony",reason:"小型フルサイズで最高の動画性能",tags:["Sony","フルサイズ"],price:"¥328,900〜"},
+        {title:"Canon EOS R8",sub:"Canon",reason:"軽量フルサイズの入門機",tags:["Canon","入門"],price:"¥218,900〜"},
+        {title:"Nikon Z50 II",sub:"Nikon",reason:"APS-Cで動画もスチルも高品質",tags:["Nikon","APS-C"],price:"¥138,500〜"},
+        {title:"FUJIFILM X100VI",sub:"FUJIFILM",reason:"フィルムシミュレーションが秀逸",tags:["富士フイルム","コンデジ"],price:"¥230,000〜"},
+        {title:"OM SYSTEM OM-5",sub:"OM SYSTEM",reason:"防塵防滴のアウトドア最強機",tags:["防塵防滴","小型"],price:"¥178,000〜"},
+        {title:"Sony ZV-E10 II",sub:"Sony",reason:"Vlogに最適な動画特化機",tags:["Sony","Vlog"],price:"¥99,000〜"},
+        {title:"Canon EOS R50",sub:"Canon",reason:"初心者に優しいミラーレス入門機",tags:["Canon","初心者"],price:"¥89,000〜"},
+        {title:"GoPro HERO13 Black",sub:"GoPro",reason:"アクション動画の定番",tags:["アクション","防水"],price:"¥63,800"},
+        {title:"DJI Osmo Pocket 3",sub:"DJI",reason:"手ぶれ補正最強のVlogカメラ",tags:["DJI","Vlog"],price:"¥74,800〜"},
+        {title:"Ricoh GR IIIx",sub:"Ricoh",reason:"スナップ撮影のための究極機",tags:["Ricoh","スナップ"],price:"¥132,000〜"},
+      ],
+    }
+  },
+  anime:{
+    categories:["少年マンガ","少女・恋愛","ファンタジー","名作・レジェンド"],
+    items:{
+      "少年マンガ":[
+        {title:"鬼滅の刃",sub:"吾峠呼世晴",reason:"家族愛と成長の感動ストーリー",tags:["アクション","感動"],price:"¥484/巻"},
+        {title:"呪術廻戦",sub:"芥見下々",reason:"独特の世界観と圧倒的バトル",tags:["バトル","ダーク"],price:"¥528/巻"},
+        {title:"進撃の巨人",sub:"諫山創",reason:"衝撃の伏線回収と深いテーマ",tags:["ダーク","完結"],price:"¥528/巻"},
+        {title:"ワンピース",sub:"尾田栄一郎",reason:"30年続く冒険と仲間の絆",tags:["冒険","長期連載"],price:"¥528/巻"},
+        {title:"NARUTO",sub:"岸本斉史",reason:"忍者と友情の王道バトル漫画",tags:["バトル","完結"],price:"¥484/巻"},
+        {title:"僕のヒーローアカデミア",sub:"堀越耕平",reason:"個性あふれるヒーローたちの成長",tags:["バトル","完結"],price:"¥528/巻"},
+        {title:"チェンソーマン",sub:"藤本タツキ",reason:"予測不能な展開が病みつきになる",tags:["ダーク","個性的"],price:"¥528/巻"},
+        {title:"ブルーロック",sub:"金城宗幸",reason:"サッカー×サバイバルの革新的設定",tags:["スポーツ","熱い"],price:"¥528/巻"},
+        {title:"SPY×FAMILY",sub:"遠藤達哉",reason:"笑いと感動の家族コメディ",tags:["コメディ","家族"],price:"¥528/巻"},
+        {title:"ドラゴンボール",sub:"鳥山明",reason:"永遠のバトル漫画の金字塔",tags:["バトル","レジェンド"],price:"¥484/巻"},
+      ],
+      "少女・恋愛":[
+        {title:"ちはやふる",sub:"末次由紀",reason:"競技かるたと青春の傑作",tags:["スポーツ","恋愛"],price:"¥528/巻"},
+        {title:"君に届け",sub:"椎名軽穂",reason:"純粋で胸キュンの青春恋愛",tags:["恋愛","青春"],price:"¥528/巻"},
+        {title:"フルーツバスケット",sub:"高屋奈月",reason:"感動の家族と愛のストーリー",tags:["恋愛","感動"],price:"¥528/巻"},
+        {title:"カードキャプターさくら",sub:"CLAMP",reason:"魔法少女の元祖的名作",tags:["魔法少女","レジェンド"],price:"¥638/巻"},
+        {title:"花より男子",sub:"神尾葉子",reason:"シンデレラストーリーの金字塔",tags:["恋愛","完結"],price:"¥528/巻"},
+        {title:"のだめカンタービレ",sub:"二ノ宮知子",reason:"音楽と恋愛の笑えて泣ける話",tags:["音楽","恋愛"],price:"¥528/巻"},
+        {title:"アオハライド",sub:"咲坂芸術",reason:"すれ違いと再会の青春恋愛",tags:["恋愛","青春"],price:"¥528/巻"},
+        {title:"orange",sub:"高野苺",reason:"タイムリープ×切ない青春恋愛",tags:["感動","完結"],price:"¥748/巻"},
+        {title:"NANA",sub:"矢沢あい",reason:"音楽と友情と恋の大人の物語",tags:["音楽","恋愛"],price:"¥528/巻"},
+        {title:"ハチミツとクローバー",sub:"羽海野チカ",reason:"美大生の恋と青春の傑作",tags:["青春","感動"],price:"¥528/巻"},
+      ],
+      "ファンタジー":[
+        {title:"鋼の錬金術師",sub:"荒川弘",reason:"兄弟愛と錬金術の完璧な構成",tags:["完結","感動"],price:"¥528/巻"},
+        {title:"BERSERK",sub:"三浦建太郎",reason:"ダークファンタジーの最高峰",tags:["ダーク","完結"],price:"¥528/巻"},
+        {title:"葬送のフリーレン",sub:"山田鐘人",reason:"旅と記憶の深い哲学的ファンタジー",tags:["感動","哲学"],price:"¥748/巻"},
+        {title:"ダンジョン飯",sub:"九井諒子",reason:"食×ダンジョンの独創的世界観",tags:["グルメ","冒険"],price:"¥748/巻"},
+        {title:"転生したらスライムだった件",sub:"川上泰樹",reason:"異世界転生の楽しさ全開",tags:["異世界","転生"],price:"¥748/巻"},
+        {title:"薬屋のひとりごと",sub:"日向夏",reason:"謎解き×宮廷の知的ファンタジー",tags:["ミステリ","宮廷"],price:"¥748/巻"},
+        {title:"無職転生",sub:"理不尽な孫の手",reason:"異世界転生ジャンルの原点的作品",tags:["異世界","転生"],price:"¥748/巻"},
+        {title:"この素晴らしい世界に祝福を！",sub:"暁なつめ",reason:"笑えるテンポの良い異世界コメディ",tags:["コメディ","異世界"],price:"¥748/巻"},
+        {title:"Re:ゼロから始める異世界生活",sub:"長月達平",reason:"死に戻りの緊張感が癖になる",tags:["異世界","ダーク"],price:"¥748/巻"},
+        {title:"進撃の巨人",sub:"諫山創",reason:"衝撃の伏線回収と深いテーマ",tags:["ダーク","完結"],price:"¥528/巻"},
+      ],
+      "名作・レジェンド":[
+        {title:"AKIRA",sub:"大友克洋",reason:"日本漫画・アニメ文化を変えた革命作",tags:["SF","完結"],price:"¥1,540/巻"},
+        {title:"風の谷のナウシカ",sub:"宮崎駿",reason:"環境と生命を問う宮崎駿の原点",tags:["ジブリ","SF"],price:"¥814/巻"},
+        {title:"ドラゴンボール",sub:"鳥山明",reason:"世界中に影響を与えたバトル漫画",tags:["バトル","世界的"],price:"¥484/巻"},
+        {title:"ONE PIECE",sub:"尾田栄一郎",reason:"30年続く最高の冒険ロマン",tags:["冒険","長期"],price:"¥528/巻"},
+        {title:"エヴァンゲリオン",sub:"庵野秀明",reason:"アニメ表現の革命・社会現象に",tags:["SF","哲学"],price:"¥638/巻"},
+        {title:"SLAM DUNK",sub:"井上雄彦",reason:"バスケ×青春の永遠の名作",tags:["スポーツ","感動"],price:"¥484/巻"},
+        {title:"ブラック・ジャック",sub:"手塚治虫",reason:"医療と命を問う手塚治虫の傑作",tags:["手塚","医療"],price:"¥528/巻"},
+        {title:"ベルサイユのばら",sub:"池田理代子",reason:"フランス革命×少女漫画の金字塔",tags:["歴史","少女"],price:"¥748/巻"},
+        {title:"火の鳥",sub:"手塚治虫",reason:"生と死を問う手塚漫画の最高傑作",tags:["手塚","哲学"],price:"¥748/巻"},
+        {title:"ガラスの仮面",sub:"美内すずえ",reason:"演劇と情熱の少女漫画最高峰",tags:["少女","演劇"],price:"¥528/巻"},
+      ],
+    }
+  },
+  cosme:{
+    categories:["スキンケア","口紅・リップ","ファンデーション","香水"],
+    items:{
+      "スキンケア":[
+        {title:"SK-II フェイシャル トリートメント エッセンス",sub:"SK-II",reason:"ピテラ配合の美容液で肌質改善",tags:["エイジングケア","化粧水"],price:"¥16,500〜"},
+        {title:"クラランス ダブル セーラム",sub:"Clarins",reason:"21種の植物エキスでエイジングケア",tags:["フランス","美容液"],price:"¥14,300〜"},
+        {title:"DECORTÉ リポソームアドバンストリペアセラム",sub:"DECORTÉ",reason:"超微細リポソームで深層まで浸透",tags:["美容液","日本"],price:"¥17,600〜"},
+        {title:"無印良品 敏感肌用しっとり化粧水",sub:"無印良品",reason:"敏感肌にも使えるシンプル処方",tags:["プチプラ","敏感肌"],price:"¥890〜"},
+        {title:"HAKU 薬用美白美容液",sub:"資生堂",reason:"日本最高峰の美白ケア美容液",tags:["美白","資生堂"],price:"¥10,450"},
+        {title:"ランコム ジェニフィック アドバンスト N",sub:"Lancôme",reason:"マイクロバイオームに着目した美容液",tags:["フランス","美容液"],price:"¥15,400〜"},
+        {title:"オルビスユー モイスチャー",sub:"ORBIS",reason:"ノンシリコンで肌本来の力を引き出す",tags:["日本","無添加"],price:"¥3,960"},
+        {title:"ドクターシーラボ アクアコラーゲンゲル",sub:"Dr.Ci:Labo",reason:"1つで完結する多機能オールインワン",tags:["時短","コスパ"],price:"¥4,070〜"},
+        {title:"ニベア クリーム",sub:"ニベア",reason:"100年愛される万能保湿クリーム",tags:["プチプラ","保湿"],price:"¥374〜"},
+        {title:"ポーラ B.A ウォッシュ",sub:"POLA",reason:"洗顔から始める本格エイジングケア",tags:["高級","エイジングケア"],price:"¥6,600"},
+      ],
+      "口紅・リップ":[
+        {title:"NARS アフターグロー リップバーム",sub:"NARS",reason:"発色×保湿を両立した大人リップ",tags:["発色","保湿"],price:"¥3,960"},
+        {title:"YSL ルージュ ヴォリュプテ シャイン",sub:"YSL",reason:"濡れツヤ感と発色が最高峰",tags:["高級","ツヤ"],price:"¥5,390"},
+        {title:"MAC ルビーウー",sub:"MAC",reason:"世界中で愛される定番赤リップ",tags:["赤リップ","定番"],price:"¥3,630"},
+        {title:"シャネル ルージュ アリュール",sub:"CHANEL",reason:"上品な発色と香りで特別な気分に",tags:["CHANEL","高級"],price:"¥6,490"},
+        {title:"ロムアンド ジューシーラスティングティント",sub:"rom&nd",reason:"落ちにくくてコスパ抜群の韓国コスメ",tags:["韓国","コスパ"],price:"¥1,320"},
+        {title:"opera リップティント N",sub:"OPERA",reason:"シアー発色で日本人肌になじむ色",tags:["プチプラ","日本"],price:"¥1,540"},
+        {title:"ディオール アディクト リップ グロウ",sub:"Dior",reason:"唇本来の色を引き出すリップバーム",tags:["Dior","保湿"],price:"¥5,170"},
+        {title:"セザンヌ ウォータリーティントリップ",sub:"セザンヌ",reason:"プチプラの神コスメ",tags:["プチプラ","コスパ"],price:"¥660"},
+        {title:"THREE リップカラーバーム",sub:"THREE",reason:"自然由来成分でケアしながら発色",tags:["オーガニック","保湿"],price:"¥2,970"},
+        {title:"エレガンス ルージュ レシャン",sub:"Elegance",reason:"濃密な発色と崩れにくさ",tags:["高級","崩れにくい"],price:"¥4,400"},
+      ],
+      "ファンデーション":[
+        {title:"NARS シアーグロー ファンデーション",sub:"NARS",reason:"素肌感と美しいツヤを両立",tags:["ツヤ","自然"],price:"¥7,150"},
+        {title:"ランコム タンイドル ウルトラ ウェア",sub:"Lancôme",reason:"24時間崩れない最強フィット感",tags:["フィット","崩れにくい"],price:"¥7,700"},
+        {title:"アルマーニ ルミナス シルク",sub:"Giorgio Armani",reason:"芸能人も愛用するツヤ肌ファンデ",tags:["高級","ツヤ"],price:"¥8,800〜"},
+        {title:"スック スキン カラーリング モイスト",sub:"SUQQU",reason:"日本人肌を知り尽くした上質な仕上がり",tags:["日本","高級"],price:"¥8,800"},
+        {title:"エスティローダー ダブルウェア",sub:"ESTÉE LAUDER",reason:"崩れないことで有名な定番ファンデ",tags:["崩れにくい","定番"],price:"¥7,590〜"},
+        {title:"CLIO キルカバー メッシュグロウ",sub:"CLIO",reason:"カバー力×ツヤ感の韓国コスメ",tags:["韓国","カバー"],price:"¥2,420"},
+        {title:"MISSHA クッションファンデ",sub:"MISSHA",reason:"韓国発・コスパ最強クッションファンデ",tags:["韓国","クッション"],price:"¥1,870"},
+        {title:"マキアージュ ドラマティックスキンセンサーベース",sub:"マキアージュ",reason:"皮脂コントロールの下地として人気",tags:["下地","日本"],price:"¥3,080"},
+        {title:"コフレドール ヌーディカバーモイストパクト",sub:"コフレドール",reason:"プチプラで肌をきれいに見せる",tags:["プチプラ","保湿"],price:"¥1,980"},
+        {title:"INTEGRATE プレストパウダーケーキ",sub:"INTEGRATE",reason:"プチプラで毛穴カバーの名品",tags:["プチプラ","カバー"],price:"¥1,210"},
+      ],
+      "香水":[
+        {title:"CHANEL N°5",sub:"CHANEL",reason:"世界で最も有名なフローラル香水",tags:["定番","フローラル"],price:"¥17,600〜"},
+        {title:"ディオール サヴァージュ",sub:"Dior",reason:"男女問わず人気の清潔感ある香り",tags:["ユニセックス","爽やか"],price:"¥17,600〜"},
+        {title:"YSL モン パリ",sub:"YSL",reason:"甘くロマンティックなパリの香り",tags:["甘い","女性向け"],price:"¥14,300〜"},
+        {title:"ジョーマローン ピオニー＆ブラッシュスエード",sub:"Jo Malone",reason:"上品なピオニーの香りが人気",tags:["フローラル","上品"],price:"¥19,800〜"},
+        {title:"アクア ディ パルマ コロニア",sub:"Acqua di Parma",reason:"イタリアの爽やかなシトラス香水",tags:["シトラス","爽やか"],price:"¥19,800〜"},
+        {title:"資生堂 禅 ZEN",sub:"資生堂",reason:"和の美意識を表現した日本発香水",tags:["和風","日本"],price:"¥12,100〜"},
+        {title:"ゲラン モン ゲラン",sub:"Guerlain",reason:"ラベンダーと蜂蜜の優しい甘さ",tags:["甘い","フランス"],price:"¥16,500〜"},
+        {title:"ル ラボ サンタル 33",sub:"Le Labo",reason:"ウッディでセクシーな大人の香り",tags:["ウッディ","人気"],price:"¥38,500〜"},
+        {title:"マルジェラ レプリカ コーヒーブレイク",sub:"Maison Margiela",reason:"コーヒーショップの温もりの香り",tags:["ユニーク","カフェ"],price:"¥19,800〜"},
+        {title:"ISSEY MIYAKE ロードゥイッセイ",sub:"ISSEY MIYAKE",reason:"水のような清潔感あふれる香り",tags:["清潔感","日本"],price:"¥11,000〜"},
+      ],
+    }
+  },
+  gourmet:{
+    categories:["ラーメン","寿司・和食","スイーツ","世界のグルメ"],
+    items:{
+      "ラーメン":[
+        {title:"一蘭",sub:"福岡発・天然とんこつ",reason:"秘伝のたれと濃厚スープが絶品",tags:["とんこつ","全国"],price:"¥890〜"},
+        {title:"蔦",sub:"東京・巣鴨",reason:"ミシュラン獲得の醤油ラーメン",tags:["醤油","ミシュラン"],price:"¥1,200〜"},
+        {title:"山形 龍上海",sub:"山形発",reason:"辛味噌ラーメンの元祖的名店",tags:["味噌","辛い"],price:"¥900〜"},
+        {title:"札幌 すみれ",sub:"北海道・札幌",reason:"コクと旨みの本場札幌味噌",tags:["味噌","北海道"],price:"¥1,000〜"},
+        {title:"博多 一幸舎",sub:"福岡・博多",reason:"泡系とんこつの革命的な一杯",tags:["とんこつ","博多"],price:"¥800〜"},
+        {title:"天下一品",sub:"京都発・全国展開",reason:"こってりスープが唯一無二の存在",tags:["こってり","全国"],price:"¥880〜"},
+        {title:"らあ麺 飯田商店",sub:"神奈川・湯河原",reason:"最高峰の塩・醤油ラーメン",tags:["醤油","塩"],price:"¥1,300〜"},
+        {title:"中華蕎麦 とみ田",sub:"千葉・松戸",reason:"濃厚つけ麺の聖地",tags:["つけ麺","濃厚"],price:"¥1,200〜"},
+        {title:"FUUNJI",sub:"東京・新宿",reason:"行列必至の鶏白湯つけ麺",tags:["つけ麺","鶏"],price:"¥1,050〜"},
+        {title:"麺屋武蔵",sub:"東京・新宿発",reason:"創作ラーメンのパイオニア",tags:["創作","老舗"],price:"¥1,100〜"},
+      ],
+      "寿司・和食":[
+        {title:"すきやばし次郎",sub:"東京・銀座",reason:"オバマ大統領も訪れた寿司の頂点",tags:["江戸前","三ツ星"],price:"¥40,000〜"},
+        {title:"鮨 さいとう",sub:"東京・六本木",reason:"予約困難な江戸前鮨の最高峰",tags:["江戸前","予約困難"],price:"¥60,000〜"},
+        {title:"なだ万",sub:"東京・新宿発",reason:"250年の歴史を誇る日本料理の老舗",tags:["日本料理","老舗"],price:"¥15,000〜"},
+        {title:"京都 菊乃井",sub:"京都・東山",reason:"三ツ星の本格京懐石",tags:["京懐石","三ツ星"],price:"¥30,000〜"},
+        {title:"回転寿司 スシロー",sub:"全国展開",reason:"コスパ最強の回転寿司チェーン",tags:["回転寿司","コスパ"],price:"¥110〜/皿"},
+        {title:"かに道楽",sub:"大阪発・全国",reason:"カニ専門の老舗で贅沢な一食",tags:["カニ","老舗"],price:"¥8,000〜"},
+        {title:"天ぷら近藤",sub:"東京・銀座",reason:"野菜天ぷらの芸術的な一皿",tags:["天ぷら","銀座"],price:"¥25,000〜"},
+        {title:"吉野家",sub:"全国展開",reason:"牛丼の元祖・シンプルな美味しさ",tags:["牛丼","老舗"],price:"¥430〜"},
+        {title:"くら寿司",sub:"全国展開",reason:"100円均一×食の安心安全",tags:["回転寿司","コスパ"],price:"¥115〜/皿"},
+        {title:"鳥貴族",sub:"全国展開",reason:"均一価格で楽しめる焼き鳥居酒屋",tags:["焼き鳥","コスパ"],price:"¥360均一"},
+      ],
+      "スイーツ":[
+        {title:"ピエール・エルメ",sub:"フランス発・全国",reason:"マカロンの王様と呼ばれる職人芸",tags:["マカロン","フランス"],price:"¥300〜"},
+        {title:"ゴディバ",sub:"ベルギー発・全国",reason:"高級チョコレートの代名詞",tags:["チョコ","ベルギー"],price:"¥500〜"},
+        {title:"資生堂パーラー",sub:"東京・銀座",reason:"100年以上続く銀座の洋菓子名店",tags:["老舗","銀座"],price:"¥600〜"},
+        {title:"六花亭",sub:"北海道・帯広",reason:"マルセイバターサンドが大人気",tags:["北海道","バターサンド"],price:"¥200〜"},
+        {title:"鎌倉 豊島屋 鳩サブレー",sub:"神奈川・鎌倉",reason:"100年続く鎌倉みやげの定番",tags:["鎌倉","老舗"],price:"¥800〜"},
+        {title:"虎屋",sub:"京都発・全国",reason:"500年続く羊羹の最高峰",tags:["和菓子","老舗"],price:"¥600〜"},
+        {title:"白い恋人",sub:"北海道・石屋製菓",reason:"北海道みやげの永遠の定番",tags:["北海道","クッキー"],price:"¥850〜"},
+        {title:"モロゾフ",sub:"神戸発・全国",reason:"バレンタインで有名な洋菓子",tags:["神戸","チョコ"],price:"¥500〜"},
+        {title:"銀座ウエスト",sub:"東京・銀座",reason:"ドライケーキが絶品の老舗喫茶",tags:["銀座","老舗"],price:"¥400〜"},
+        {title:"シュクレ・ドゥール",sub:"東京・表参道",reason:"絶品パフェが話題のスイーツ店",tags:["パフェ","東京"],price:"¥2,000〜"},
+      ],
+      "世界のグルメ":[
+        {title:"ナポリピッツァ",sub:"イタリア・ナポリ",reason:"世界遺産にも登録された本場の味",tags:["イタリア","ピザ"],price:"¥1,500〜"},
+        {title:"フォアグラ",sub:"フランス・ボルドー",reason:"三大珍味の一つ・濃厚な旨み",tags:["フランス","高級"],price:"¥5,000〜"},
+        {title:"北京ダック",sub:"中国・北京",reason:"宮廷料理の伝統を受け継ぐ絶品",tags:["中国","高級"],price:"¥3,000〜"},
+        {title:"パエリア",sub:"スペイン・バレンシア",reason:"サフランの香りが広がる海鮮料理",tags:["スペイン","海鮮"],price:"¥2,000〜"},
+        {title:"トムヤムクン",sub:"タイ・バンコク",reason:"酸味×辛みの刺激的なスープ",tags:["タイ","辛い"],price:"¥1,000〜"},
+        {title:"ビリヤニ",sub:"インド・ハイデラバード",reason:"スパイス香るインドの炊き込みご飯",tags:["インド","スパイス"],price:"¥1,200〜"},
+        {title:"韓国チキン",sub:"韓国・ソウル",reason:"ヤンニョムとフライドの二刀流",tags:["韓国","チキン"],price:"¥2,000〜"},
+        {title:"ベトナムフォー",sub:"ベトナム・ハノイ",reason:"あっさりスープが体に染みる朝食",tags:["ベトナム","麺"],price:"¥800〜"},
+        {title:"シュニッツェル",sub:"ドイツ・ウィーン",reason:"カリカリの衣が美しいカツレツ",tags:["ドイツ","肉"],price:"¥2,500〜"},
+        {title:"クラムチャウダー",sub:"アメリカ・ボストン",reason:"濃厚クリームスープの王道",tags:["アメリカ","スープ"],price:"¥1,500〜"},
+      ],
+    }
+  },
+  travel:{
+    categories:["国内・都市","国内・自然","海外・アジア","海外・ヨーロッパ"],
+    items:{
+      "国内・都市":[
+        {title:"東京",sub:"関東",reason:"世界最大の都市で食・文化・最先端を体験",tags:["大都市","グルメ"],price:"¥20,000〜/泊"},
+        {title:"京都",sub:"関西",reason:"千年の歴史と伝統文化が生きる古都",tags:["歴史","寺社仏閣"],price:"¥15,000〜/泊"},
+        {title:"大阪",sub:"関西",reason:"食い倒れの街・笑いと活気あふれる都市",tags:["グルメ","活気"],price:"¥12,000〜/泊"},
+        {title:"福岡",sub:"九州",reason:"ラーメン・もつ鍋・屋台文化の宝庫",tags:["グルメ","九州"],price:"¥10,000〜/泊"},
+        {title:"札幌",sub:"北海道",reason:"新鮮な海鮮と雪まつりが有名",tags:["北海道","グルメ"],price:"¥12,000〜/泊"},
+        {title:"神戸",sub:"関西",reason:"港町の異国情緒と洗練されたグルメ",tags:["港町","洋食"],price:"¥13,000〜/泊"},
+        {title:"金沢",sub:"北陸",reason:"加賀百万石の文化と絶品海の幸",tags:["文化","海鮮"],price:"¥14,000〜/泊"},
+        {title:"那覇",sub:"沖縄",reason:"沖縄文化と南国グルメの玄関口",tags:["沖縄","南国"],price:"¥10,000〜/泊"},
+        {title:"仙台",sub:"東北",reason:"牛タンと伊達文化の東北の中心地",tags:["東北","牛タン"],price:"¥10,000〜/泊"},
+        {title:"長崎",sub:"九州",reason:"出島から続く異国情緒あふれる港町",tags:["歴史","異国"],price:"¥10,000〜/泊"},
+      ],
+      "国内・自然":[
+        {title:"富士山",sub:"静岡・山梨",reason:"日本の象徴・登山と絶景を楽しむ",tags:["世界遺産","絶景"],price:"¥5,000〜"},
+        {title:"屋久島",sub:"鹿児島",reason:"縄文杉と原生林・世界遺産の自然",tags:["世界遺産","森林"],price:"¥20,000〜"},
+        {title:"知床",sub:"北海道",reason:"手つかずの大自然と野生動物の楽園",tags:["世界遺産","北海道"],price:"¥20,000〜"},
+        {title:"慶良間諸島",sub:"沖縄",reason:"日本最高峰のダイビングスポット",tags:["海","ダイビング"],price:"¥15,000〜"},
+        {title:"白川郷",sub:"岐阜",reason:"合掌造りの集落と四季の絶景",tags:["世界遺産","雪景色"],price:"¥12,000〜"},
+        {title:"上高地",sub:"長野",reason:"北アルプスの絶景と澄んだ大自然",tags:["絶景","登山"],price:"¥10,000〜"},
+        {title:"立山黒部アルペンルート",sub:"富山・長野",reason:"雪の大谷が圧巻の山岳観光地",tags:["絶景","雪"],price:"¥15,000〜"},
+        {title:"奄美大島",sub:"鹿児島",reason:"亜熱帯の自然と美しい海",tags:["自然","世界遺産"],price:"¥18,000〜"},
+        {title:"阿蘇山",sub:"熊本",reason:"世界最大級のカルデラと草原の絶景",tags:["火山","絶景"],price:"¥8,000〜"},
+        {title:"尾瀬",sub:"群馬・福島",reason:"水芭蕉と湿原の別世界的な景観",tags:["湿原","ハイキング"],price:"¥10,000〜"},
+      ],
+      "海外・アジア":[
+        {title:"バリ島",sub:"インドネシア",reason:"神々の島・ビーチとヒンドゥー文化",tags:["リゾート","文化"],price:"¥150,000〜"},
+        {title:"バンコク",sub:"タイ",reason:"寺院・グルメ・ナイトライフが充実",tags:["タイ","グルメ"],price:"¥100,000〜"},
+        {title:"台北",sub:"台湾",reason:"近くて安くて美食の楽園",tags:["グルメ","近い"],price:"¥80,000〜"},
+        {title:"ソウル",sub:"韓国",reason:"K-POP・グルメ・コスメの聖地",tags:["韓国","流行"],price:"¥70,000〜"},
+        {title:"シンガポール",sub:"シンガポール",reason:"多民族文化とグルメの洗練都市",tags:["先進国","グルメ"],price:"¥150,000〜"},
+        {title:"ハノイ",sub:"ベトナム",reason:"フォーと旧市街の素朴な魅力",tags:["ベトナム","グルメ"],price:"¥100,000〜"},
+        {title:"上海",sub:"中国",reason:"近未来的都市と江南文化の融合",tags:["中国","都市"],price:"¥120,000〜"},
+        {title:"プーケット",sub:"タイ",reason:"アンダマン海の美しいビーチリゾート",tags:["リゾート","海"],price:"¥130,000〜"},
+        {title:"香港",sub:"中国",reason:"世界屈指のグルメと夜景の都市",tags:["グルメ","夜景"],price:"¥100,000〜"},
+        {title:"クアラルンプール",sub:"マレーシア",reason:"多民族文化と物価の安さが魅力",tags:["コスパ","多文化"],price:"¥90,000〜"},
+      ],
+      "海外・ヨーロッパ":[
+        {title:"パリ",sub:"フランス",reason:"芸術・グルメ・ファッションの都",tags:["フランス","芸術"],price:"¥200,000〜"},
+        {title:"ローマ",sub:"イタリア",reason:"永遠の都・歴史遺産が街中に溢れる",tags:["歴史","世界遺産"],price:"¥200,000〜"},
+        {title:"バルセロナ",sub:"スペイン",reason:"ガウディ建築とビーチと食の宝庫",tags:["スペイン","建築"],price:"¥190,000〜"},
+        {title:"プラハ",sub:"チェコ",reason:"中世の街並みがそのまま残る宝石箱",tags:["中欧","歴史"],price:"¥170,000〜"},
+        {title:"ウィーン",sub:"オーストリア",reason:"音楽の都・クラシックと宮廷文化",tags:["音楽","文化"],price:"¥180,000〜"},
+        {title:"サントリーニ島",sub:"ギリシャ",reason:"白と青のコントラストが絶景の島",tags:["絶景","リゾート"],price:"¥250,000〜"},
+        {title:"ロンドン",sub:"イギリス",reason:"歴史と現代が融合する世界都市",tags:["歴史","都市"],price:"¥210,000〜"},
+        {title:"アムステルダム",sub:"オランダ",reason:"運河と自転車の自由な雰囲気",tags:["運河","自由"],price:"¥190,000〜"},
+        {title:"フィレンツェ",sub:"イタリア",reason:"ルネサンス芸術の宝庫",tags:["芸術","歴史"],price:"¥200,000〜"},
+        {title:"アイスランド",sub:"アイスランド",reason:"オーロラとフィヨルドの大自然",tags:["絶景","自然"],price:"¥280,000〜"},
+      ],
+    }
+  },
+  movie:{
+    categories:["邦画","洋画・アクション","洋画・感動","アニメ映画"],
+    items:{
+      "邦画":[
+        {title:"千と千尋の神隠し",sub:"宮崎駿 / 2001",reason:"日本アニメ最高傑作・世界が認める名作",tags:["ジブリ","ファンタジー"],price:"配信中"},
+        {title:"もののけ姫",sub:"宮崎駿 / 1997",reason:"自然と人間の壮大な物語",tags:["ジブリ","壮大"],price:"配信中"},
+        {title:"おくりびと",sub:"滝田洋二郎 / 2008",reason:"アカデミー賞受賞の感動作",tags:["アカデミー","感動"],price:"配信中"},
+        {title:"万引き家族",sub:"是枝裕和 / 2018",reason:"カンヌ最高賞・家族の絆を描く",tags:["カンヌ","社会派"],price:"配信中"},
+        {title:"ドライブ・マイ・カー",sub:"濱口竜介 / 2021",reason:"アカデミー賞受賞の村上春樹原作",tags:["アカデミー","文芸"],price:"配信中"},
+        {title:"君の名は。",sub:"新海誠 / 2016",reason:"世界的大ヒットの青春SF映画",tags:["アニメ","青春"],price:"配信中"},
+        {title:"ゴジラ-1.0",sub:"山崎貴 / 2023",reason:"アカデミー賞受賞の日本特撮映画",tags:["アカデミー","怪獣"],price:"配信中"},
+        {title:"怒り",sub:"李相日 / 2016",reason:"人間の信頼と疑いを問う社会派傑作",tags:["社会派","サスペンス"],price:"配信中"},
+        {title:"湯を沸かすほどの熱い愛",sub:"中野量太 / 2016",reason:"余命宣告の母と娘の感動ストーリー",tags:["感動","家族"],price:"配信中"},
+        {title:"ALWAYS 三丁目の夕日",sub:"山崎貴 / 2005",reason:"昭和30年代の温かい人情ドラマ",tags:["昭和","感動"],price:"配信中"},
+      ],
+      "洋画・アクション":[
+        {title:"マッドマックス 怒りのデス・ロード",sub:"ジョージ・ミラー / 2015",reason:"アクション映画史上最高峰の疾走感",tags:["アクション","SF"],price:"配信中"},
+        {title:"ダークナイト",sub:"クリストファー・ノーラン / 2008",reason:"ジョーカーの怪演が伝説的な傑作",tags:["ヒーロー","サスペンス"],price:"配信中"},
+        {title:"ジョン・ウィック",sub:"チャド・スタエルスキ / 2014",reason:"革命的なアクション演出が衝撃的",tags:["アクション","スタイリッシュ"],price:"配信中"},
+        {title:"アベンジャーズ/エンドゲーム",sub:"ルッソ兄弟 / 2019",reason:"MCU集大成の壮大なクライマックス",tags:["Marvel","SF"],price:"配信中"},
+        {title:"トップガン マーヴェリック",sub:"コシンスキー / 2022",reason:"続編を超えた完璧なエンタメ映画",tags:["爽快","感動"],price:"配信中"},
+        {title:"ミッション：インポッシブル",sub:"マクァリー / 2023",reason:"トム・クルーズ渾身のアクション",tags:["スパイ","アクション"],price:"配信中"},
+        {title:"ダイ・ハード",sub:"ジョン・マクティアナン / 1988",reason:"アクション映画の永遠の教科書",tags:["古典","アクション"],price:"配信中"},
+        {title:"マトリックス",sub:"ウォシャウスキー / 1999",reason:"映像革命を起こしたSFアクション",tags:["SF","革命"],price:"配信中"},
+        {title:"バットマン ビギンズ",sub:"ノーラン / 2005",reason:"ヒーロー映画を芸術に昇華した傑作",tags:["ヒーロー","ノーラン"],price:"配信中"},
+        {title:"ノーカントリー",sub:"コーエン兄弟 / 2007",reason:"アカデミー作品賞の緊張感ある傑作",tags:["スリラー","アカデミー"],price:"配信中"},
+      ],
+      "洋画・感動":[
+        {title:"ショーシャンクの空に",sub:"フランク・ダラボン / 1994",reason:"映画史上最高評価の不朽の名作",tags:["感動","希望"],price:"配信中"},
+        {title:"フォレスト・ガンプ",sub:"ロバート・ゼメキス / 1994",reason:"アメリカ現代史を生きた男の感動巨編",tags:["感動","人生"],price:"配信中"},
+        {title:"シンドラーのリスト",sub:"スピルバーグ / 1993",reason:"ホロコーストを描いた映画界の至宝",tags:["歴史","感動"],price:"配信中"},
+        {title:"グリーンブック",sub:"ピーター・ファレリー / 2018",reason:"異なる文化の友情が心に沁みる名作",tags:["感動","友情"],price:"配信中"},
+        {title:"ライフ・イズ・ビューティフル",sub:"ロベルト・ベニーニ / 1997",reason:"戦争の中で輝く父の愛の物語",tags:["感動","戦争"],price:"配信中"},
+        {title:"コーダ あいのうた",sub:"シアン・ヘダー / 2021",reason:"アカデミー作品賞・家族と夢の感動作",tags:["感動","アカデミー"],price:"配信中"},
+        {title:"最強のふたり",sub:"トルダン＆ナカシュ / 2011",reason:"フランス発・友情と再生の感動コメディ",tags:["フランス","友情"],price:"配信中"},
+        {title:"セッション",sub:"デイミアン・チャゼル / 2014",reason:"音楽と狂気が融合した圧倒的な傑作",tags:["音楽","緊張感"],price:"配信中"},
+        {title:"レ・ミゼラブル",sub:"トム・フーパー / 2012",reason:"ミュージカル映画史上最高の感動巨編",tags:["ミュージカル","感動"],price:"配信中"},
+        {title:"アルマゲドン",sub:"マイケル・ベイ / 1998",reason:"父と娘の愛が泣ける王道エンタメ",tags:["感動","SF"],price:"配信中"},
+      ],
+      "アニメ映画":[
+        {title:"千と千尋の神隠し",sub:"宮崎駿 / 2001",reason:"世界が認める日本アニメ映画の最高峰",tags:["ジブリ","ファンタジー"],price:"配信中"},
+        {title:"君の名は。",sub:"新海誠 / 2016",reason:"世界的大ヒットの美麗な青春SF",tags:["新海誠","青春"],price:"配信中"},
+        {title:"スパイダーマン：スパイダーバース",sub:"ソニー / 2018",reason:"アニメ映画の革命・圧倒的映像美",tags:["アメコミ","映像美"],price:"配信中"},
+        {title:"もののけ姫",sub:"宮崎駿 / 1997",reason:"自然と文明の壮大な物語",tags:["ジブリ","壮大"],price:"配信中"},
+        {title:"竜とそばかすの姫",sub:"細田守 / 2021",reason:"仮想世界と現実を描く音楽映画",tags:["細田守","音楽"],price:"配信中"},
+        {title:"アキラ",sub:"大友克洋 / 1988",reason:"世界のアニメ映画史を変えた伝説作",tags:["SF","レジェンド"],price:"配信中"},
+        {title:"火垂るの墓",sub:"高畑勲 / 1988",reason:"戦争の悲劇と兄妹の愛の傑作",tags:["反戦","感動"],price:"配信中"},
+        {title:"ヴァイオレット・エヴァーガーデン 劇場版",sub:"石立太一 / 2020",reason:"美麗作画と感動のストーリーが涙腺崩壊",tags:["感動","泣ける"],price:"配信中"},
+        {title:"すずめの戸締まり",sub:"新海誠 / 2022",reason:"日本の原風景と少女の成長を描く",tags:["新海誠","冒険"],price:"配信中"},
+        {title:"ファインディング・ニモ",sub:"ピクサー / 2003",reason:"父と子の絆を描くピクサーの傑作",tags:["ピクサー","家族"],price:"配信中"},
+      ],
+    }
+  },
+  sports:{
+    categories:["サッカー","野球","テニス","格闘技・その他"],
+    items:{
+      "サッカー":[
+        {title:"アディダス プレデター",sub:"adidas",reason:"精度抜群のシューズ・世界中で愛用",tags:["シューズ","定番"],price:"¥15,000〜"},
+        {title:"ナイキ マーキュリアル ヴェイパー",sub:"Nike",reason:"最速系シューズの最高峰",tags:["シューズ","スピード"],price:"¥20,000〜"},
+        {title:"モルテン サッカーボール 5号",sub:"モルテン",reason:"試合球の定番・高品質な日本ブランド",tags:["ボール","定番"],price:"¥5,000〜"},
+        {title:"アディダス レアルマドリードユニフォーム",sub:"adidas",reason:"世界最高のクラブの公式ユニフォーム",tags:["ユニフォーム","レアル"],price:"¥15,000〜"},
+        {title:"スポーツサングラス",sub:"Oakley",reason:"紫外線カットと視界の鮮明さが両立",tags:["サングラス","UV"],price:"¥15,000〜"},
+        {title:"ゴールキーパーグローブ",sub:"Reusch",reason:"プロも愛用するGKグローブの名品",tags:["GK","プロ仕様"],price:"¥8,000〜"},
+        {title:"サッカースパイク アグリティ",sub:"PUMA",reason:"軽量で機動性抜群のPUMAシューズ",tags:["シューズ","軽量"],price:"¥12,000〜"},
+        {title:"栄養補助食品 ウィダーinゼリー",sub:"森永",reason:"試合前後のエネルギー補給に定番",tags:["栄養","補給"],price:"¥200〜"},
+        {title:"FIFA公式サッカーボール",sub:"アディダス",reason:"ワールドカップ公式球モデル",tags:["公式","試合球"],price:"¥8,000〜"},
+        {title:"ユニクロ スポーツウェア",sub:"UNIQLO",reason:"動きやすくコスパ最強のウェア",tags:["ウェア","コスパ"],price:"¥2,000〜"},
+      ],
+      "野球":[
+        {title:"ローリングス グローブ",sub:"Rawlings",reason:"メジャーリーグ選手も使う最高峰グローブ",tags:["グローブ","プロ"],price:"¥30,000〜"},
+        {title:"ミズノ バット",sub:"Mizuno",reason:"日本製の精巧なバット・甲子園でも人気",tags:["バット","日本"],price:"¥10,000〜"},
+        {title:"ナイキ スパイク",sub:"Nike",reason:"走塁から守備まで対応するスパイク",tags:["スパイク","定番"],price:"¥12,000〜"},
+        {title:"ゼット キャッチャーミット",sub:"ZETT",reason:"国産品質のキャッチャー用ミット",tags:["キャッチャー","国産"],price:"¥25,000〜"},
+        {title:"SSK バッティンググローブ",sub:"SSK",reason:"グリップ力と耐久性の日本ブランド",tags:["バッティング","手袋"],price:"¥3,000〜"},
+        {title:"プロテイン ザバス",sub:"明治",reason:"野球選手の体作りに定番のプロテイン",tags:["栄養","プロテイン"],price:"¥3,000〜"},
+        {title:"軟式ボール ナガセケンコー",sub:"ナガセケンコー",reason:"軟式野球の公認球・草野球の定番",tags:["ボール","軟式"],price:"¥500〜"},
+        {title:"アシックス 野球スパイク",sub:"ASICS",reason:"日本ブランドの高機能スパイク",tags:["スパイク","日本"],price:"¥10,000〜"},
+        {title:"野球用ヘルメット",sub:"Mizuno",reason:"安全性と軽量性を両立したヘルメット",tags:["ヘルメット","安全"],price:"¥5,000〜"},
+        {title:"スコアブック",sub:"ミズノ",reason:"試合記録に必須の定番スコアブック",tags:["記録","定番"],price:"¥800〜"},
+      ],
+      "テニス":[
+        {title:"ウィルソン プロ スタッフ",sub:"Wilson",reason:"フェデラーも使用した名品ラケット",tags:["ラケット","中上級"],price:"¥35,000〜"},
+        {title:"バボラ ピュアドライブ",sub:"Babolat",reason:"ナダルも愛用・パワー系の定番",tags:["ラケット","パワー"],price:"¥35,000〜"},
+        {title:"ヘッド スピード",sub:"HEAD",reason:"ジョコビッチ使用の万能ラケット",tags:["ラケット","万能"],price:"¥38,000〜"},
+        {title:"ヨネックス Eゾーン",sub:"YONEX",reason:"日本ブランドの振り抜きやすい一本",tags:["ラケット","日本"],price:"¥32,000〜"},
+        {title:"ナイキ テニスシューズ",sub:"Nike",reason:"コートをしっかりグリップする定番",tags:["シューズ","定番"],price:"¥12,000〜"},
+        {title:"ダンロップ フォートテニスボール",sub:"Dunlop",reason:"試合球の定番・日本国内で最多使用",tags:["ボール","定番"],price:"¥500〜/缶"},
+        {title:"アシックス テニスシューズ",sub:"ASICS",reason:"足に優しい日本製テニスシューズ",tags:["シューズ","日本"],price:"¥12,000〜"},
+        {title:"グリップテープ",sub:"バボラ",reason:"ラケットの握り心地を改善する必需品",tags:["グリップ","消耗品"],price:"¥500〜"},
+        {title:"テニスバッグ",sub:"Wilson",reason:"ラケット複数本を収納できる大容量",tags:["バッグ","大容量"],price:"¥8,000〜"},
+        {title:"サングラス",sub:"Oakley",reason:"紫外線対策と視界確保の両立",tags:["サングラス","UV"],price:"¥20,000〜"},
+      ],
+      "格闘技・その他":[
+        {title:"ナイキ ズームフライ",sub:"Nike",reason:"厚底カーボンで記録を狙うシューズ",tags:["ランニング","記録"],price:"¥25,000〜"},
+        {title:"アディダス ランニングシューズ",sub:"adidas",reason:"クッション性と走りやすさのバランス",tags:["ランニング","クッション"],price:"¥12,000〜"},
+        {title:"ガーミン ランニングウォッチ",sub:"Garmin",reason:"GPS×心拍数で科学的なトレーニング",tags:["ウォッチ","GPS"],price:"¥40,000〜"},
+        {title:"Reebokボクシンググローブ",sub:"Reebok",reason:"コスパ高い入門〜中級者向けグローブ",tags:["ボクシング","コスパ"],price:"¥5,000〜"},
+        {title:"ヨガマット",sub:"Manduka",reason:"プロも使う耐久性抜群のヨガマット",tags:["ヨガ","耐久性"],price:"¥20,000〜"},
+        {title:"プロテインシェイカー",sub:"BlenderBottle",reason:"混ざりやすく洗いやすい定番シェイカー",tags:["栄養","定番"],price:"¥1,500〜"},
+        {title:"縄跳び",sub:"Crossrope",reason:"重りつきロープで効率的な有酸素運動",tags:["有酸素","トレーニング"],price:"¥8,000〜"},
+        {title:"柔道着",sub:"ミズノ",reason:"全日本柔道連盟公認の高品質道衣",tags:["柔道","公式"],price:"¥15,000〜"},
+        {title:"水泳ゴーグル",sub:"SPEEDO",reason:"競泳選手も使う視界の広いゴーグル",tags:["水泳","競技"],price:"¥3,000〜"},
+        {title:"バスケットボール",sub:"Spalding",reason:"NBAの公式球メーカーの定番ボール",tags:["バスケ","NBA"],price:"¥5,000〜"},
+      ],
+    }
+  },
+  music:{
+    categories:["J-POP","洋楽・ポップス","ロック・バンド","クラシック・ジャズ"],
+    items:{
+      "J-POP":[
+        {title:"夜に駆ける",sub:"YOASOBI",reason:"小説発の楽曲が社会現象に・世界的人気",tags:["YOASOBI","バズ"],price:"配信中"},
+        {title:"Lemon",sub:"米津玄師",reason:"日本史上最多再生数を誇る圧倒的名曲",tags:["米津","国民的"],price:"配信中"},
+        {title:"うっせぇわ",sub:"Ado",reason:"中学生が書いた歌詞が刺さりまくった",tags:["Ado","社会現象"],price:"配信中"},
+        {title:"紅蓮華",sub:"LiSA",reason:"鬼滅の刃OPで知名度爆発のアニソン",tags:["アニソン","鬼滅"],price:"配信中"},
+        {title:"HANABI",sub:"Mr.Children",reason:"ミスチルの代表曲・世代を超えた名曲",tags:["ミスチル","名曲"],price:"配信中"},
+        {title:"栄光の架け橋",sub:"ゆず",reason:"アテネ五輪のNHKテーマ曲・感動の名曲",tags:["ゆず","感動"],price:"配信中"},
+        {title:"少女A",sub:"中森明菜",reason:"80年代アイドルの伝説的な一曲",tags:["昭和","レジェンド"],price:"配信中"},
+        {title:"残酷な天使のテーゼ",sub:"高橋洋子",reason:"エヴァOPで世代を超えて歌われる名曲",tags:["アニソン","エヴァ"],price:"配信中"},
+        {title:"Story",sub:"AI",reason:"人間ドラマとの相性抜群の感動ソウル",tags:["AI","感動"],price:"配信中"},
+        {title:"Dynamite",sub:"BTS",reason:"世界チャートを席巻した韓国×全英詞曲",tags:["BTS","K-POP"],price:"配信中"},
+      ],
+      "洋楽・ポップス":[
+        {title:"Blinding Lights",sub:"The Weeknd",reason:"2020年代最大のヒット曲・レトロポップ",tags:["Weeknd","大ヒット"],price:"配信中"},
+        {title:"Shape of You",sub:"Ed Sheeran",reason:"Spotifyで最多再生された超大ヒット",tags:["Ed Sheeran","ポップ"],price:"配信中"},
+        {title:"Bad Guy",sub:"Billie Eilish",reason:"10代が生み出したダークポップの革命",tags:["Billie","ダーク"],price:"配信中"},
+        {title:"As It Was",sub:"Harry Styles",reason:"全世界で爆発的ヒットの切ない名曲",tags:["Harry","大ヒット"],price:"配信中"},
+        {title:"Anti-Hero",sub:"Taylor Swift",reason:"テイラーの最大ヒット・世界を席巻",tags:["Taylor","社会現象"],price:"配信中"},
+        {title:"Uptown Funk",sub:"Mark Ronson ft. Bruno Mars",reason:"思わず踊りだすファンク×ポップの傑作",tags:["Bruno","ファンク"],price:"配信中"},
+        {title:"Someone Like You",sub:"Adele",reason:"全世界が泣いたアデルの感動バラード",tags:["Adele","感動"],price:"配信中"},
+        {title:"Happy",sub:"Pharrell Williams",reason:"聴くだけで幸せになれる名曲",tags:["Pharrell","明るい"],price:"配信中"},
+        {title:"Thriller",sub:"Michael Jackson",reason:"ポップスの王の最高傑作・MVも伝説",tags:["MJ","レジェンド"],price:"配信中"},
+        {title:"Bohemian Rhapsody",sub:"Queen",reason:"ロック史上最高の名曲・映画も大ヒット",tags:["Queen","名曲"],price:"配信中"},
+      ],
+      "ロック・バンド":[
+        {title:"Bohemian Rhapsody",sub:"Queen",reason:"ロック史上最高傑作・6分間の叙事詩",tags:["Queen","名曲"],price:"配信中"},
+        {title:"Stairway to Heaven",sub:"Led Zeppelin",reason:"ロックの聖典・永遠に語り継がれる名曲",tags:["LedZep","聖典"],price:"配信中"},
+        {title:"Smells Like Teen Spirit",sub:"Nirvana",reason:"グランジ革命・90年代ロックの象徴",tags:["Nirvana","グランジ"],price:"配信中"},
+        {title:"Comfortably Numb",sub:"Pink Floyd",reason:"ギターソロが神がかりのプログレ名曲",tags:["PinkFloyd","名曲"],price:"配信中"},
+        {title:"Hotel California",sub:"Eagles",reason:"西海岸ロックの最高傑作",tags:["Eagles","アメリカン"],price:"配信中"},
+        {title:"November Rain",sub:"Guns N' Roses",reason:"壮大なバラードとギターソロが圧巻",tags:["GNR","バラード"],price:"配信中"},
+        {title:"Back in Black",sub:"AC/DC",reason:"ハードロック史上最強のリフ",tags:["ACDC","ハード"],price:"配信中"},
+        {title:"Under the Bridge",sub:"Red Hot Chili Peppers",reason:"感情的な歌詞とメロディが美しい名曲",tags:["RHCP","感動"],price:"配信中"},
+        {title:"Nothing Else Matters",sub:"Metallica",reason:"メタルバンドが作った究極のバラード",tags:["Metallica","バラード"],price:"配信中"},
+        {title:"Sweet Child O' Mine",sub:"Guns N' Roses",reason:"あのギターイントロは誰もが知っている",tags:["GNR","ロック"],price:"配信中"},
+      ],
+      "クラシック・ジャズ":[
+        {title:"G線上のアリア",sub:"J.S.バッハ",reason:"バッハの最高傑作・心が安らぐ名曲",tags:["バッハ","癒し"],price:"配信中"},
+        {title:"運命",sub:"ベートーヴェン",reason:"ジャジャジャジャーン！最も有名な交響曲",tags:["ベートーヴェン","交響曲"],price:"配信中"},
+        {title:"四季〜春",sub:"ヴィヴァルディ",reason:"誰もが知るバロック音楽の名作",tags:["ヴィヴァルディ","バロック"],price:"配信中"},
+        {title:"ピアノ協奏曲第2番",sub:"ラフマニノフ",reason:"映画でも多用される壮大なピアノ協奏曲",tags:["ラフマニノフ","ピアノ"],price:"配信中"},
+        {title:"月光",sub:"ベートーヴェン",reason:"ピアノソナタの最高傑作・誰もが知る名曲",tags:["ベートーヴェン","ピアノ"],price:"配信中"},
+        {title:"Take Five",sub:"Dave Brubeck",reason:"ジャズ史上最も有名な変拍子の名曲",tags:["ジャズ","定番"],price:"配信中"},
+        {title:"So What",sub:"Miles Davis",reason:"クールジャズの金字塔・モードジャズの原点",tags:["マイルス","クール"],price:"配信中"},
+        {title:"My Favorite Things",sub:"John Coltrane",reason:"コルトレーンの名演・ジャズの入門に最適",tags:["コルトレーン","名演"],price:"配信中"},
+        {title:"ノクターン第2番",sub:"ショパン",reason:"ショパンの代名詞・ピアノの詩人の真髄",tags:["ショパン","ピアノ"],price:"配信中"},
+        {title:"春の祭典",sub:"ストラヴィンスキー",reason:"初演で暴動が起きた衝撃の現代音楽",tags:["ストラヴィンスキー","現代"],price:"配信中"},
+      ],
+    }
+  },
+  game:{
+    categories:["RPG・アドベンチャー","アクション","スポーツ・レース","Switch・家族向け"],
+    items:{
+      "RPG・アドベンチャー":[
+        {title:"ゼルダの伝説 ティアーズ オブ ザ キングダム",sub:"Nintendo / Switch",reason:"オープンワールドの革命・自由度が無限大",tags:["Nintendo","オープンワールド"],price:"¥7,678"},
+        {title:"エルデンリング",sub:"フロム・ソフトウェア / PS5",reason:"高難度×広大な世界が最高のRPG",tags:["フロム","高難度"],price:"¥9,240"},
+        {title:"ファイナルファンタジー XVI",sub:"スクウェア・エニックス / PS5",reason:"シリーズ最高峰のアクションRPG",tags:["FF","アクション"],price:"¥8,980"},
+        {title:"ペルソナ5 ロイヤル",sub:"アトラス / PS4",reason:"ストーリーとキャラクターが神がかり的",tags:["アトラス","JRPG"],price:"¥4,378"},
+        {title:"原神",sub:"miHoYo / 基本無料",reason:"無料で遊べる超高品質オープンワールド",tags:["無料","オープンワールド"],price:"基本無料"},
+        {title:"ドラゴンクエスト XI",sub:"スクウェア・エニックス",reason:"王道RPGの頂点・DQ史上最高傑作",tags:["DQ","王道RPG"],price:"¥4,180"},
+        {title:"ポケットモンスター スカーレット",sub:"ゲームフリーク / Switch",reason:"オープンワールドになったポケモン新世代",tags:["ポケモン","Switch"],price:"¥6,578"},
+        {title:"バイオハザード RE:4",sub:"カプコン / PS5",reason:"RE4のリメイクが完璧な完成度で復活",tags:["カプコン","ホラー"],price:"¥5,980"},
+        {title:"ホグワーツ・レガシー",sub:"WB Games / PS5",reason:"ハリポタ世界を完全再現した夢のゲーム",tags:["ハリポタ","オープンワールド"],price:"¥8,580"},
+        {title:"サイバーパンク2077",sub:"CD Projekt Red / PS5",reason:"修正を重ねて最高傑作に変貌したRPG",tags:["SF","オープンワールド"],price:"¥4,378"},
+      ],
+      "アクション":[
+        {title:"Ghost of Tsushima",sub:"Sucker Punch / PS4",reason:"日本の美と侍の物語・最高のアクション",tags:["侍","オープンワールド"],price:"¥5,280"},
+        {title:"SEKIRO",sub:"フロム・ソフトウェア / PS4",reason:"剣戟の醍醐味が最高に凝縮された傑作",tags:["フロム","剣戟"],price:"¥4,378"},
+        {title:"デビル メイ クライ 5",sub:"カプコン / PS4",reason:"スタイリッシュアクションの最高峰",tags:["カプコン","スタイリッシュ"],price:"¥3,278"},
+        {title:"スパイダーマン2",sub:"Insomniac / PS5",reason:"PS5最高峰のオープンワールドアクション",tags:["Marvel","PS5"],price:"¥9,878"},
+        {title:"ゴッド・オブ・ウォー ラグナロク",sub:"Santa Monica / PS5",reason:"父と息子の物語がさらに深化した傑作",tags:["GoW","感動"],price:"¥8,778"},
+        {title:"モンスターハンターワールド",sub:"カプコン / PS4",reason:"ハンティングACTの到達点・世界的大ヒット",tags:["モンハン","ハンティング"],price:"¥3,278"},
+        {title:"鬼滅の刃 ヒノカミ血風譚",sub:"アンカーゲームス / PS4",reason:"アニメの世界観を完全再現したアクション",tags:["鬼滅","アニメ"],price:"¥4,180"},
+        {title:"仁王2",sub:"Team NINJA / PS4",reason:"戦国×ダークファンタジーの高難度ACT",tags:["Team NINJA","高難度"],price:"¥3,278"},
+        {title:"DOOM Eternal",sub:"id Software / PS4",reason:"超高速FPSの快感が頂点に達した傑作",tags:["FPS","爽快"],price:"¥2,728"},
+        {title:"ARK: Survival Evolved",sub:"Studio Wildcard",reason:"恐竜と共存する最高のサバイバル体験",tags:["サバイバル","恐竜"],price:"¥3,278"},
+      ],
+      "スポーツ・レース":[
+        {title:"Forza Horizon 5",sub:"Playground Games / Xbox",reason:"メキシコを舞台にしたレースゲーム最高峰",tags:["レース","オープンワールド"],price:"¥7,678"},
+        {title:"グランツーリスモ 7",sub:"Polyphony Digital / PS5",reason:"リアルなドライビング体験の頂点",tags:["GT","リアル"],price:"¥7,678"},
+        {title:"FIFA 24",sub:"EA Sports / PS5",reason:"世界最大のサッカーゲームシリーズ最新作",tags:["サッカー","EA"],price:"¥8,778"},
+        {title:"NBA 2K24",sub:"2K Sports / PS5",reason:"バスケの迫力とキャリアモードが充実",tags:["バスケ","NBA"],price:"¥8,778"},
+        {title:"パワフルプロ野球2024",sub:"コナミ / Switch",reason:"日本野球ゲームの定番・サクセスが熱い",tags:["野球","コナミ"],price:"¥7,678"},
+        {title:"マリオカート8 デラックス",sub:"Nintendo / Switch",reason:"家族みんなで楽しめる最高のレースゲーム",tags:["マリオ","家族"],price:"¥6,578"},
+        {title:"eFootball 2024",sub:"コナミ / PS5",reason:"無料で遊べる高品質サッカーゲーム",tags:["サッカー","無料"],price:"基本無料"},
+        {title:"F1 24",sub:"EA Sports / PS5",reason:"F1の迫力とシーズンモードがリアル",tags:["F1","レース"],price:"¥8,778"},
+        {title:"プロ野球スピリッツ2024",sub:"コナミ / PS5",reason:"リアルな選手再現度と白熱の試合展開",tags:["野球","リアル"],price:"¥7,678"},
+        {title:"Rocket League",sub:"Psyonix / 基本無料",reason:"車×サッカーの中毒性抜群の対戦ゲーム",tags:["無料","対戦"],price:"基本無料"},
+      ],
+      "Switch・家族向け":[
+        {title:"マリオカート8 デラックス",sub:"Nintendo",reason:"家族みんなで笑える最高のパーティゲーム",tags:["家族","パーティ"],price:"¥6,578"},
+        {title:"あつまれ どうぶつの森",sub:"Nintendo",reason:"島暮らしで癒される世界的大ヒット",tags:["癒し","ほのぼの"],price:"¥6,578"},
+        {title:"スプラトゥーン3",sub:"Nintendo",reason:"子供〜大人まで楽しめるオリジナルTPS",tags:["対戦","ファミリー"],price:"¥6,578"},
+        {title:"ポケットモンスター スカーレット",sub:"ゲームフリーク",reason:"子供の頃からの夢・オープンワールドポケモン",tags:["ポケモン","子供"],price:"¥6,578"},
+        {title:"星のカービィ ディスカバリー",sub:"HAL研究所",reason:"3Dカービィ初挑戦・可愛くて楽しい",tags:["カービィ","可愛い"],price:"¥6,578"},
+        {title:"ゼルダの伝説 ブレスオブザワイルド",sub:"Nintendo",reason:"Switch最初の革命・今でも輝く名作",tags:["ゼルダ","名作"],price:"¥6,578"},
+        {title:"Minecraft",sub:"Mojang / Switch",reason:"世界で最も売れたゲーム・創造性が無限",tags:["サンドボックス","世界的"],price:"¥3,960"},
+        {title:"桃太郎電鉄",sub:"コナミ / Switch",reason:"家族・友達と盛り上がるボードゲーム",tags:["ボードゲーム","友達"],price:"¥6,578"},
+        {title:"フォートナイト",sub:"Epic Games / Switch",reason:"無料で世界中の人と対戦できる人気作",tags:["無料","対戦"],price:"基本無料"},
+        {title:"太鼓の達人",sub:"バンダイナムコ / Switch",reason:"老若男女楽しめる国民的音楽ゲーム",tags:["音ゲー","家族"],price:"¥6,578"},
+      ],
+    }
+  },
+  dog:{
+    categories:["人気犬種","ドッグフード","犬用グッズ","しつけ・ケア"],
+    items:{
+      "人気犬種":[
+        {title:"トイ・プードル",sub:"フランス原産",reason:"賢くて抜け毛が少ない・日本No.1人気犬種",tags:["小型犬","賢い"],price:"¥150,000〜"},
+        {title:"チワワ",sub:"メキシコ原産",reason:"世界最小犬種・甘えん坊で飼いやすい",tags:["超小型犬","甘えん坊"],price:"¥100,000〜"},
+        {title:"柴犬",sub:"日本原産",reason:"日本を代表する忠義の犬・海外でも大人気",tags:["日本犬","忠実"],price:"¥150,000〜"},
+        {title:"ミニチュア・ダックスフンド",sub:"ドイツ原産",reason:"胴長短足のコミカルな見た目が人気",tags:["小型犬","愛嬌"],price:"¥120,000〜"},
+        {title:"ポメラニアン",sub:"ドイツ原産",reason:"ふわふわの毛とリスのような顔が可愛い",tags:["小型犬","ふわふわ"],price:"¥200,000〜"},
+        {title:"フレンチ・ブルドッグ",sub:"フランス原産",reason:"鼻ぺちゃ顔が愛らしい都市型の人気犬",tags:["中型犬","個性的"],price:"¥300,000〜"},
+        {title:"ゴールデン・レトリーバー",sub:"イギリス原産",reason:"温厚で賢い・家族犬として最適な大型犬",tags:["大型犬","温厚"],price:"¥150,000〜"},
+        {title:"豆柴",sub:"日本原産",reason:"柴犬の小型版・コンパクトで人気急上昇",tags:["日本犬","小型"],price:"¥200,000〜"},
+        {title:"マルチーズ",sub:"地中海原産",reason:"純白の被毛が美しい穏やかな小型犬",tags:["小型犬","穏やか"],price:"¥100,000〜"},
+        {title:"ウェルシュ・コーギー",sub:"イギリス原産",reason:"短い足と大きな耳・SNSで爆発的人気",tags:["中型犬","SNS人気"],price:"¥200,000〜"},
+      ],
+      "ドッグフード":[
+        {title:"ロイヤルカナン",sub:"フランス発・犬種別ケア",reason:"獣医師も推奨する科学的根拠に基づく設計",tags:["総合栄養食","獣医推奨"],price:"¥3,000〜"},
+        {title:"ヒルズ サイエンスダイエット",sub:"アメリカ発",reason:"年齢・サイズ別に最適な栄養設計",tags:["総合栄養食","年齢別"],price:"¥2,500〜"},
+        {title:"モグワン",sub:"国産プレミアム",reason:"チキン・サーモン使用の高タンパク国産フード",tags:["国産","プレミアム"],price:"¥3,500〜"},
+        {title:"アカナ",sub:"カナダ発",reason:"穀物不使用・高タンパクのグレインフリー",tags:["グレインフリー","高タンパク"],price:"¥5,000〜"},
+        {title:"オリジン",sub:"カナダ発",reason:"肉類70%超の圧倒的高タンパク設計",tags:["高タンパク","プレミアム"],price:"¥6,000〜"},
+        {title:"ニュートロ ナチュラルチョイス",sub:"アメリカ発",reason:"厳選素材で消化に優しいナチュラルフード",tags:["ナチュラル","消化"],price:"¥3,000〜"},
+        {title:"カナガン",sub:"イギリス発",reason:"チキン55%・グレインフリーの英国産",tags:["グレインフリー","イギリス"],price:"¥4,000〜"},
+        {title:"ピュリナ プロプラン",sub:"スイス発",reason:"スポーツ犬から老犬まで幅広くカバー",tags:["長寿命","全年齢"],price:"¥2,500〜"},
+        {title:"日清 ドッグフード",sub:"国産",reason:"コスパ◎の国産フード・毎日使いに最適",tags:["国産","コスパ"],price:"¥1,500〜"},
+        {title:"ウェルネス コア",sub:"アメリカ発",reason:"穀物不使用×低脂肪でダイエットにも",tags:["グレインフリー","ダイエット"],price:"¥4,500〜"},
+      ],
+      "犬用グッズ":[
+        {title:"RUFFWEAR ハーネス",sub:"アメリカ発",reason:"アウトドア犬用ハーネスの最高峰ブランド",tags:["ハーネス","アウトドア"],price:"¥8,000〜"},
+        {title:"Kong クラシック",sub:"アメリカ発",reason:"知育玩具の定番・破壊不可能な耐久性",tags:["おもちゃ","知育"],price:"¥1,500〜"},
+        {title:"アイリスオーヤマ ペットケージ",sub:"国産",reason:"折りたたみ可能で収納も簡単な定番ケージ",tags:["ケージ","国産"],price:"¥5,000〜"},
+        {title:"ペット用ドライヤー",sub:"Panasonic",reason:"静音設計で犬が怖がりにくい国産ドライヤー",tags:["グルーミング","国産"],price:"¥10,000〜"},
+        {title:"犬用レインコート",sub:"Ferplast",reason:"散歩に必須・全身カバーのおしゃれ防水コート",tags:["雨具","おしゃれ"],price:"¥3,000〜"},
+        {title:"自動給水器",sub:"PetSafe",reason:"流れる水で犬の飲水量を増やす人気グッズ",tags:["給水器","健康"],price:"¥3,000〜"},
+        {title:"犬用抱っこひも",sub:"ROOBY",reason:"小型犬を安全に抱っこできるスリング",tags:["小型犬","お散歩"],price:"¥4,000〜"},
+        {title:"ペット用消臭スプレー",sub:"ファブリーズ",reason:"ペットの臭いを素早く中和・安心成分",tags:["消臭","安心"],price:"¥500〜"},
+        {title:"犬用ベッド ドーム型",sub:"NECOICHI",reason:"保温性が高く犬が安心できる巣穴型ベッド",tags:["ベッド","保温"],price:"¥3,000〜"},
+        {title:"犬用おやつ ジャーキー",sub:"ドギーマン",reason:"国産素材の安心おやつ・トレーニングにも最適",tags:["おやつ","国産"],price:"¥500〜"},
+      ],
+      "しつけ・ケア":[
+        {title:"クリッカートレーニング",sub:"しつけ方法",reason:"音で褒める科学的なポジティブしつけ法",tags:["しつけ","科学的"],price:"¥500〜"},
+        {title:"デンタルケアガム グリニーズ",sub:"グリニーズ",reason:"歯磨き嫌いな犬でも歯石除去できるガム",tags:["デンタル","ケア"],price:"¥1,500〜"},
+        {title:"ペット用シャンプー",sub:"アース・ペット",reason:"低刺激で皮膚に優しい国産ペットシャンプー",tags:["シャンプー","低刺激"],price:"¥800〜"},
+        {title:"ノミ・ダニ予防薬",sub:"フロントライン",reason:"獣医師処方のノミ・ダニ撃退の定番薬",tags:["予防","獣医"],price:"¥2,000〜/月"},
+        {title:"犬用サプリ 関節ケア",sub:"Zymox",reason:"シニア犬の関節をサポートするサプリ",tags:["シニア","関節"],price:"¥3,000〜"},
+        {title:"ペット保険",sub:"アニコム",reason:"通院・手術・入院をカバーする国内No.1",tags:["保険","安心"],price:"¥2,000〜/月"},
+        {title:"犬用歯ブラシ",sub:"ライオン商事",reason:"獣医師監修の使いやすい国産歯ブラシ",tags:["デンタル","獣医監修"],price:"¥400〜"},
+        {title:"ファーミネーター 犬用",sub:"ファーミネーター",reason:"抜け毛を根こそぎ取るブラシの王様",tags:["ブラシ","抜け毛"],price:"¥4,000〜"},
+        {title:"犬用爪切り",sub:"ドギーマン",reason:"猫の爪に合わせた刃の国産爪切り",tags:["爪切り","国産"],price:"¥600〜"},
+        {title:"ペット用消臭・抗菌スプレー",sub:"ポレール",reason:"犬の体臭・トイレ臭を素早く消臭",tags:["消臭","安全"],price:"¥600〜"},
+      ],
+    }
+  },
+  cat:{
+    categories:["人気猫種","キャットフード","猫用グッズ","健康・ケア"],
+    items:{
+      "人気猫種":[
+        {title:"スコティッシュフォールド",sub:"スコットランド原産",reason:"折れ耳と丸顔が愛らしい・日本No.1人気猫種",tags:["折れ耳","丸顔"],price:"¥150,000〜"},
+        {title:"マンチカン",sub:"アメリカ原産",reason:"短い足がチャーミングな小型猫",tags:["短足","可愛い"],price:"¥150,000〜"},
+        {title:"ノルウェージャンフォレストキャット",sub:"ノルウェー原産",reason:"ふさふさの被毛が美しい大型猫",tags:["長毛","大型"],price:"¥100,000〜"},
+        {title:"アメリカンショートヘア",sub:"アメリカ原産",reason:"縞模様が美しい飼いやすい定番猫",tags:["飼いやすい","縞模様"],price:"¥80,000〜"},
+        {title:"ラグドール",sub:"アメリカ原産",reason:"抱っこに大人しい穏やかな超大型猫",tags:["大型","穏やか"],price:"¥150,000〜"},
+        {title:"ペルシャ",sub:"イラン原産",reason:"フラット顔と長毛が高貴な純血種",tags:["長毛","高貴"],price:"¥100,000〜"},
+        {title:"ロシアンブルー",sub:"ロシア原産",reason:"青みがかったグレーの毛と緑の瞳が美しい",tags:["グレー","緑目"],price:"¥120,000〜"},
+        {title:"メインクーン",sub:"アメリカ原産",reason:"犬のような社交的な性格の最大級猫",tags:["大型","社交的"],price:"¥100,000〜"},
+        {title:"サイベリアン",sub:"ロシア原産",reason:"アレルゲンが少なくアレルギーの人にも",tags:["低アレルゲン","長毛"],price:"¥150,000〜"},
+        {title:"ベンガル",sub:"アメリカ原産",reason:"ヒョウのような野生的な模様が迫力満点",tags:["豹柄","ワイルド"],price:"¥200,000〜"},
+      ],
+      "キャットフード":[
+        {title:"ロイヤルカナン キャット",sub:"フランス発・猫種別",reason:"猫種・年齢別に最適化された科学的設計",tags:["総合栄養食","獣医推奨"],price:"¥2,500〜"},
+        {title:"いなば CIAO ちゅーる",sub:"国産",reason:"猫が大好きちゅーる・水分補給にも最適",tags:["おやつ","大人気"],price:"¥50〜/本"},
+        {title:"ピュリナ ワン キャット",sub:"スイス発",reason:"尿路ケア成分入りで猫の悩みに対応",tags:["尿路ケア","健康"],price:"¥2,000〜"},
+        {title:"アカナ キャット",sub:"カナダ発",reason:"新鮮な魚・肉が主原料のグレインフリー",tags:["グレインフリー","高タンパク"],price:"¥5,500〜"},
+        {title:"ヒルズ サイエンスダイエット キャット",sub:"アメリカ発",reason:"獣医師推奨・年齢別の総合栄養設計",tags:["獣医推奨","年齢別"],price:"¥2,500〜"},
+        {title:"モンプチ",sub:"ネスレ",reason:"バリエーション豊富で好き嫌いの多い猫に",tags:["ウエット","バリエーション"],price:"¥150〜/缶"},
+        {title:"オリジン キャット",sub:"カナダ発",reason:"肉・魚が85%超の究極高タンパクフード",tags:["高タンパク","プレミアム"],price:"¥6,000〜"},
+        {title:"カルカン",sub:"マースジャパン",reason:"手頃な価格で栄養バランスが取れた定番",tags:["コスパ","定番"],price:"¥100〜/袋"},
+        {title:"フォルツァ10",sub:"イタリア発",reason:"療法食ベースで健康維持に特化した設計",tags:["療法食","健康"],price:"¥4,000〜"},
+        {title:"ファーストチョイス",sub:"ロイヤルカナン",reason:"子猫から老猫まで全年齢に対応",tags:["全年齢","コスパ"],price:"¥1,800〜"},
+      ],
+      "猫用グッズ":[
+        {title:"キャットタワー",sub:"アイリスオーヤマ",reason:"国産品質で安定感抜群の定番キャットタワー",tags:["キャットタワー","国産"],price:"¥5,000〜"},
+        {title:"自動給水器",sub:"Catit",reason:"流れる水で猫の飲水量を増やす人気グッズ",tags:["給水器","健康"],price:"¥3,000〜"},
+        {title:"猫用自動トイレ",sub:"PetSafe",reason:"自動清掃でニオイと手間を大幅削減",tags:["自動トイレ","時短"],price:"¥20,000〜"},
+        {title:"猫じゃらし 電動",sub:"ダスキン",reason:"羽根が自動で動く電動タイプで猫が夢中",tags:["おもちゃ","電動"],price:"¥1,500〜"},
+        {title:"猫用爪とぎ",sub:"ファーストステップ",reason:"段ボール素材で気持ちよく爪が研げる定番",tags:["爪とぎ","定番"],price:"¥500〜"},
+        {title:"猫用ベッド ドーム型",sub:"NECOICHI",reason:"猫が好むドーム型・保温性が高い冬の定番",tags:["ベッド","保温"],price:"¥3,000〜"},
+        {title:"猫用キャリーバッグ",sub:"GONTA CLUB",reason:"通院・移動に安心の頑丈キャリー",tags:["キャリー","通院"],price:"¥3,000〜"},
+        {title:"猫用リュック 透明",sub:"PortablePet",reason:"猫を見せながら散歩できる透明リュック",tags:["お出かけ","おしゃれ"],price:"¥5,000〜"},
+        {title:"猫用トンネル",sub:"Catit",reason:"中で遊べるトンネルで運動不足解消",tags:["おもちゃ","運動"],price:"¥2,000〜"},
+        {title:"窓際ハンモック",sub:"K&H",reason:"窓辺で日光浴できる猫用吸盤ハンモック",tags:["ハンモック","日光浴"],price:"¥3,000〜"},
+      ],
+      "健康・ケア":[
+        {title:"ノミ・ダニ予防薬",sub:"フロントライン",reason:"室内猫でも必須・定番の予防駆除薬",tags:["予防","獣医"],price:"¥2,000〜/月"},
+        {title:"猫用デンタルケア",sub:"ライオン商事",reason:"歯磨きガムと歯ブラシで口腔ケア",tags:["デンタル","ケア"],price:"¥500〜"},
+        {title:"猫用サプリ 泌尿器",sub:"VitoVet",reason:"猫に多い尿路疾患を予防するサプリ",tags:["泌尿器","予防"],price:"¥2,500〜"},
+        {title:"ペット保険",sub:"アニコム",reason:"猫の通院・手術をカバーする国内No.1",tags:["保険","安心"],price:"¥1,500〜/月"},
+        {title:"猫用シャンプー",sub:"アース・ペット",reason:"低刺激で猫の皮膚に優しい国産シャンプー",tags:["シャンプー","低刺激"],price:"¥800〜"},
+        {title:"猫用毛玉ケアサプリ",sub:"Nutri-Vet",reason:"毛球症を防ぐ腸ケアサポートサプリ",tags:["毛玉","腸内"],price:"¥2,000〜"},
+        {title:"ファーミネーター 猫用",sub:"ファーミネーター",reason:"抜け毛を根こそぎ取るブラシの王様",tags:["ブラシ","抜け毛"],price:"¥4,000〜"},
+        {title:"爪切り",sub:"ドギーマン",reason:"猫の爪に合わせた刃の国産爪切り",tags:["爪切り","国産"],price:"¥600〜"},
+        {title:"消臭・抗菌スプレー",sub:"ポレール",reason:"猫のトイレ臭を素早く消臭・安心成分",tags:["消臭","安全"],price:"¥600〜"},
+        {title:"猫用ストレスケア",sub:"フェリウェイ",reason:"フェロモン成分で猫の不安・ストレスを軽減",tags:["ストレス","フェロモン"],price:"¥3,500〜"},
+      ],
+    }
+  },
+  guinness: {
+    categories:["自然・生物","人間の能力","食べ物・飲み物","乗り物・建造物"],
+    items:{
+      "自然・生物":[
+        {title:"ブルーウェール（シロナガスクジラ）",sub:"地球最大の動物",reason:"体長33m・体重190トン、史上最大の動物",tags:["海洋","巨大"],price:"ギネス認定"},
+        {title:"チーター",sub:"最速の陸上動物",reason:"時速112kmで走る地球最速の哺乳類",tags:["速度","アフリカ"],price:"ギネス認定"},
+        {title:"ミツバチ",sub:"最も働く昆虫",reason:"一生で小さじ1杯分の蜂蜜しか作れない勤勉な昆虫",tags:["昆虫","蜂蜜"],price:"ギネス認定"},
+        {title:"ゾウガメ（アルダブラ）",sub:"最長寿の陸上動物",reason:"190年以上生きる記録を持つ長寿の亀",tags:["長寿","島"],price:"ギネス認定"},
+        {title:"バオバブの木",sub:"最大の多肉植物",reason:"幹の直径10m以上・樹齢6000年を超える",tags:["植物","アフリカ"],price:"ギネス認定"},
+        {title:"マッコウクジラ",sub:"最深潜水の哺乳類",reason:"水深3000m以上まで潜水できる哺乳類",tags:["海洋","深海"],price:"ギネス認定"},
+        {title:"ハチドリ",sub:"最小の鳥",reason:"体長5.7cm・体重2g、世界最小の鳥類",tags:["鳥","小型"],price:"ギネス認定"},
+        {title:"ピラニア",sub:"最強の顎を持つ淡水魚",reason:"体重比で最も強力な咬合力を持つ魚",tags:["魚","アマゾン"],price:"ギネス認定"},
+        {title:"カマキリエビ",sub:"最強パンチの動物",reason:"銃弾並みの速度で獲物を打撃する海洋生物",tags:["甲殻類","海洋"],price:"ギネス認定"},
+        {title:"北極グマ",sub:"最大の肉食性陸上動物",reason:"体重800kg以上・嗅覚は32km先まで届く",tags:["北極","哺乳類"],price:"ギネス認定"},
+      ],
+      "人間の能力":[
+        {title:"ウサイン・ボルト",sub:"100m世界最速記録",reason:"9秒58の100m世界記録・人類最速の男",tags:["陸上","ジャマイカ"],price:"9秒58"},
+        {title:"エベレスト最速登頂",sub:"ニルマル・プルジャ",reason:"14座すべての8000m峰を189日で完登",tags:["登山","ネパール"],price:"ギネス認定"},
+        {title:"世界最高齢現役医師",sub:"霍納德・タッカー",reason:"米国の医師・100歳を超えて現役で診療",tags:["長寿","医師"],price:"ギネス認定"},
+        {title:"最多言語話者",sub:"ズィアド・ファゼ",reason:"58言語を流暢に話すポリグロット",tags:["言語","能力"],price:"ギネス認定"},
+        {title:"最長断食記録",sub:"アンガス・バービエリ",reason:"382日間の医師監督下断食・74kgの減量",tags:["断食","記録"],price:"ギネス認定"},
+        {title:"最深素潜り",sub:"ハーバート・ニッチ",reason:"水深253.2mの素潜り世界記録",tags:["潜水","記録"],price:"ギネス認定"},
+        {title:"最長連続不眠",sub:"ランディ・ガードナー",reason:"264時間（11日間）の連続覚醒記録",tags:["不眠","記録"],price:"ギネス認定"},
+        {title:"最多回転ジャグリング",sub:"アレックス・バレット",reason:"9個のボールを同時にジャグリング",tags:["ジャグリング","技"],price:"ギネス認定"},
+        {title:"最速タイピング",sub:"バーバラ・ブラックバーン",reason:"1分間に212ワードの英文タイピング記録",tags:["タイピング","速度"],price:"ギネス認定"},
+        {title:"最多同時バック転",sub:"チェーン・バック転",reason:"108人が同時にバック転した集団記録",tags:["体操","集団"],price:"ギネス認定"},
+      ],
+      "食べ物・飲み物":[
+        {title:"世界最高額トリュフ",sub:"白トリュフ（アルバ産）",reason:"1kgあたり数百万円、世界最高級食材",tags:["高級","イタリア"],price:"数百万円/kg"},
+        {title:"コピ・ルアク",sub:"世界最高級コーヒー",reason:"ジャコウネコの消化を経た希少コーヒー",tags:["コーヒー","高級"],price:"¥10,000〜/杯"},
+        {title:"世界最辛唐辛子",sub:"ペッパーX",reason:"スコヴィル値284万の世界最辛唐辛子",tags:["辛い","唐辛子"],price:"ギネス認定"},
+        {title:"世界最大ピザ",sub:"ローマで作られた記録",reason:"13,580㎡の巨大ピザ・世界記録",tags:["ピザ","巨大"],price:"ギネス認定"},
+        {title:"世界最高齢ワイン",sub:"シュペートブルグンダー1727年",reason:"1727年のワインが現存する世界最古のワイン",tags:["ワイン","歴史"],price:"数千万円"},
+        {title:"世界最大チョコレート",sub:"アルメニア産",reason:"4,410kgの巨大チョコレートバー",tags:["チョコ","巨大"],price:"ギネス認定"},
+        {title:"世界最多種類のパン",sub:"ドイツのパン文化",reason:"3000種類以上のパンが存在するドイツ",tags:["パン","ドイツ"],price:"ギネス認定"},
+        {title:"世界最高価格スパイス",sub:"サフラン",reason:"1gあたり数千円の世界最高価格スパイス",tags:["スパイス","高級"],price:"¥3,000〜/g"},
+        {title:"世界最大ラーメン",sub:"中国の記録",reason:"4,566Lの巨大ラーメンの世界記録",tags:["ラーメン","巨大"],price:"ギネス認定"},
+        {title:"世界最多食べ放題記録",sub:"競争食いチャンピオン",reason:"10分間でホットドッグ76本を食べた記録",tags:["大食い","記録"],price:"ギネス認定"},
+      ],
+      "乗り物・建造物":[
+        {title:"バージュ・ハリファ",sub:"ドバイ・828m",reason:"世界一高い建物・163階建て828m",tags:["高層ビル","ドバイ"],price:"ギネス認定"},
+        {title:"TGV（フランス高速鉄道）",sub:"時速574.8km",reason:"鉄道の世界最速記録574.8km/hを達成",tags:["鉄道","速度"],price:"ギネス認定"},
+        {title:"スラスト SSC",sub:"陸上最速乗り物",reason:"時速1228km・音速を超えた陸上車両",tags:["速度","車"],price:"ギネス認定"},
+        {title:"マリアナ海溝",sub:"世界最深地点",reason:"水深11,034mの世界最深の場所",tags:["海洋","深海"],price:"ギネス認定"},
+        {title:"アントノフ An-225",sub:"世界最大の飛行機",reason:"全長84m・最大離陸重量640トンの超大型機",tags:["航空","巨大"],price:"ギネス認定"},
+        {title:"チャンネルトンネル",sub:"英仏海峡トンネル",reason:"海底部分50.5km・世界最長の海底鉄道トンネル",tags:["トンネル","鉄道"],price:"ギネス認定"},
+        {title:"パナマ運河",sub:"世界最重要水路",reason:"太平洋と大西洋を結ぶ80km・世界の海運を変えた",tags:["運河","世界遺産"],price:"ギネス認定"},
+        {title:"グレートウォール（万里の長城）",sub:"中国・21,196km",reason:"全長21,196kmの世界最長の建造物",tags:["建造物","中国"],price:"ギネス認定"},
+        {title:"国際宇宙ステーション",sub:"ISS・高度400km",reason:"20年以上軌道上で稼働する世界最大の宇宙構造物",tags:["宇宙","ISS"],price:"ギネス認定"},
+        {title:"ハッブル宇宙望遠鏡",sub:"NASA・1990年打上",reason:"34年以上稼働・宇宙の果てを観測し続ける望遠鏡",tags:["宇宙","科学"],price:"ギネス認定"},
+      ],
+    }
+  },
+  usedcar: {
+    categories:["国産コンパクト","国産SUV・ミニバン","スポーツカー","輸入車"],
+    items:{
+      "国産コンパクト":[
+        {title:"トヨタ プリウス",sub:"3代目・2009〜2015年",reason:"燃費最高・維持費安い・中古市場最人気",tags:["HV","低燃費"],price:"¥50〜150万"},
+        {title:"ホンダ フィット",sub:"GE6・2007〜2013年",reason:"コンパクトで使いやすく故障が少ない定番",tags:["コンパクト","信頼性"],price:"¥20〜80万"},
+        {title:"トヨタ アクア",sub:"初代・2011〜2021年",reason:"燃費35km/L超・コンパクトで扱いやすい",tags:["HV","低燃費"],price:"¥50〜120万"},
+        {title:"スズキ アルト",sub:"HA36S・2014〜",reason:"軽自動車で燃費最良クラス・維持費最安",tags:["軽自動車","低燃費"],price:"¥20〜70万"},
+        {title:"ダイハツ ミラ イース",sub:"2011〜2017年",reason:"30km/L超の燃費・軽自動車の燃費王",tags:["軽自動車","低燃費"],price:"¥20〜60万"},
+        {title:"トヨタ ヴィッツ",sub:"3代目・2010〜2019年",reason:"コンパクトで丈夫・故障率の低さが魅力",tags:["コンパクト","信頼性"],price:"¥20〜80万"},
+        {title:"日産 ノート e-POWER",sub:"E12・2016〜2020年",reason:"e-POWER独自の走りと燃費が人気",tags:["e-POWER","燃費"],price:"¥60〜130万"},
+        {title:"ホンダ N-BOX",sub:"JF1・2011〜2017年",reason:"軽自動車で室内最広・使い勝手No.1",tags:["軽自動車","広い"],price:"¥30〜100万"},
+        {title:"スズキ ワゴンR",sub:"MH35S・2017〜",reason:"軽自動車の定番・バランスの良い一台",tags:["軽自動車","定番"],price:"¥40〜100万"},
+        {title:"ダイハツ タント",sub:"LA600S・2013〜2019年",reason:"両側スライドドアで子育て世代に最適",tags:["軽自動車","スライドドア"],price:"¥30〜100万"},
+      ],
+      "国産SUV・ミニバン":[
+        {title:"トヨタ ハリアー",sub:"60系・2013〜2020年",reason:"高級感と走行性能・SUVの王道",tags:["SUV","高級"],price:"¥100〜250万"},
+        {title:"トヨタ アルファード",sub:"20系・2008〜2015年",reason:"3列シートの王者・乗り心地最高峰",tags:["ミニバン","高級"],price:"¥100〜300万"},
+        {title:"ホンダ ヴェゼル",sub:"RU1・2013〜2021年",reason:"コンパクトSUVの定番・内装が広い",tags:["SUV","コンパクト"],price:"¥80〜200万"},
+        {title:"日産 エクストレイル",sub:"T32・2013〜2022年",reason:"アウトドア派に最適・悪路走破性が高い",tags:["SUV","アウトドア"],price:"¥80〜200万"},
+        {title:"トヨタ ヴォクシー",sub:"80系・2014〜2022年",reason:"ファミリー向けミニバンの定番",tags:["ミニバン","家族"],price:"¥80〜200万"},
+        {title:"スズキ ジムニー",sub:"JB23・1998〜2018年",reason:"本格四駆の軽自動車・趣味車として人気",tags:["SUV","四駆"],price:"¥50〜200万"},
+        {title:"ホンダ ステップワゴン",sub:"RP3・2015〜2022年",reason:"わくわくゲートが便利なファミリーカー",tags:["ミニバン","家族"],price:"¥80〜180万"},
+        {title:"マツダ CX-5",sub:"KF系・2017〜",reason:"デザインと走行性能のバランスが絶妙",tags:["SUV","デザイン"],price:"¥100〜250万"},
+        {title:"トヨタ RAV4",sub:"50系・2019〜",reason:"オフロードも街乗りも対応する万能SUV",tags:["SUV","万能"],price:"¥150〜300万"},
+        {title:"三菱 デリカ D:5",sub:"CV5W・2007〜",reason:"ミニバン最高の悪路走破性・唯一無二",tags:["ミニバン","四駆"],price:"¥80〜200万"},
+      ],
+      "スポーツカー":[
+        {title:"日産 GT-R",sub:"R35・2007〜",reason:"日本が誇るスーパーカー・世界最速クラス",tags:["スポーツ","GT-R"],price:"¥400〜1500万"},
+        {title:"トヨタ GR86",sub:"ZN6・2012〜2021年",reason:"FRスポーツの傑作・ドライビング最高",tags:["スポーツ","FR"],price:"¥100〜200万"},
+        {title:"マツダ ロードスター",sub:"ND5RC・2015〜",reason:"世界一売れたオープンスポーツカー",tags:["オープン","スポーツ"],price:"¥100〜250万"},
+        {title:"ホンダ シビック タイプR",sub:"FK8・2017〜2021年",reason:"FF最速クラス・サーキット最強のホンダ",tags:["タイプR","FF"],price:"¥200〜400万"},
+        {title:"スバル WRX STI",sub:"VAB・2014〜2021年",reason:"ラリー仕込みのAWDスポーツの最高峰",tags:["AWD","スポーツ"],price:"¥150〜350万"},
+        {title:"ミツビシ ランサーエボリューション",sub:"X・2007〜2016年",reason:"WRC由来の4WDターボ・伝説の名車",tags:["4WD","ターボ"],price:"¥150〜400万"},
+        {title:"日産 フェアレディZ",sub:"Z34・2008〜2020年",reason:"Zの伝統を受け継ぐ6気筒スポーツ",tags:["スポーツ","6気筒"],price:"¥100〜250万"},
+        {title:"トヨタ スープラ",sub:"DB42・2019〜",reason:"BMWと共同開発の復活スープラ",tags:["スポーツ","BMW"],price:"¥300〜600万"},
+        {title:"ホンダ S2000",sub:"AP1・1999〜2009年",reason:"高回転型エンジンが官能的な名車",tags:["オープン","高回転"],price:"¥100〜400万"},
+        {title:"スバル BRZ",sub:"ZD8・2021〜",reason:"GR86の兄弟車・FRスポーツの教科書",tags:["スポーツ","FR"],price:"¥150〜250万"},
+      ],
+      "輸入車":[
+        {title:"BMW 3シリーズ",sub:"F30・2012〜2018年",reason:"駆け抜ける歓び・輸入車セダンの定番",tags:["BMW","セダン"],price:"¥100〜250万"},
+        {title:"メルセデス・ベンツ Cクラス",sub:"W205・2014〜2021年",reason:"高級感と信頼性のドイツ高級車",tags:["ベンツ","高級"],price:"¥100〜300万"},
+        {title:"フォルクスワーゲン ゴルフ",sub:"7代目・2013〜2020年",reason:"欧州ベストセラー・コンパクトの完成形",tags:["VW","コンパクト"],price:"¥80〜180万"},
+        {title:"アウディ A3",sub:"8V・2013〜2020年",reason:"コンパクトながら高級感あふれる一台",tags:["アウディ","コンパクト"],price:"¥80〜200万"},
+        {title:"ポルシェ 911",sub:"991・2011〜2019年",reason:"スポーツカーの聖典・永遠の定番",tags:["ポルシェ","スポーツ"],price:"¥500〜2000万"},
+        {title:"ミニ クーパー",sub:"F56・2014〜",reason:"おしゃれでコンパクト・街乗り最高",tags:["MINI","おしゃれ"],price:"¥80〜200万"},
+        {title:"ジープ ラングラー",sub:"JK・2007〜2018年",reason:"本格オフローダーの王者・趣味車最強",tags:["ジープ","オフロード"],price:"¥150〜350万"},
+        {title:"テスラ モデル3",sub:"2017〜",reason:"EV革命の象徴・過給ゼロのランニングコスト",tags:["EV","テスラ"],price:"¥200〜400万"},
+        {title:"プジョー 208",sub:"2019〜",reason:"フランス車らしいおしゃれなコンパクト",tags:["フランス","おしゃれ"],price:"¥80〜180万"},
+        {title:"ボルボ XC40",sub:"2018〜",reason:"安全性世界最高クラスのコンパクトSUV",tags:["ボルボ","安全"],price:"¥150〜300万"},
+      ],
+    }
+  },
+  ishi: {
+    categories:["誕生石・宝石","パワーストーン","鉱物・原石","レア・希少石"],
+    items:{
+      "誕生石・宝石":[
+        {title:"ダイヤモンド",sub:"4月の誕生石",reason:"世界最高硬度・永遠の愛の象徴として不動の人気No.1",tags:["宝石","4月"],price:"¥100,000〜"},
+        {title:"ルビー",sub:"7月の誕生石",reason:"情熱の赤・幸運と愛のパワーを持つ三大宝石",tags:["宝石","7月"],price:"¥50,000〜"},
+        {title:"サファイア",sub:"9月の誕生石",reason:"知恵と誠実さの象徴・王室でも愛される青の宝石",tags:["宝石","9月"],price:"¥30,000〜"},
+        {title:"エメラルド",sub:"5月の誕生石",reason:"緑の宝石の王者・クレオパトラも愛した幸福の石",tags:["宝石","5月"],price:"¥50,000〜"},
+        {title:"アメジスト",sub:"2月の誕生石",reason:"紫水晶・心の平和と直感力を高めるとされる",tags:["2月","紫"],price:"¥3,000〜"},
+        {title:"アクアマリン",sub:"3月の誕生石",reason:"海の宝石・誠実さと勇気のパワーストーン",tags:["3月","青"],price:"¥5,000〜"},
+        {title:"ペリドット",sub:"8月の誕生石",reason:"太陽の石・ストレス解消と夫婦円満のお守り",tags:["8月","緑"],price:"¥3,000〜"},
+        {title:"トパーズ",sub:"11月の誕生石",reason:"友情と知性の象徴・透明感が美しい黄色の宝石",tags:["11月","黄"],price:"¥5,000〜"},
+        {title:"ターコイズ",sub:"12月の誕生石",reason:"幸運を呼ぶ青緑の石・世界最古の宝石のひとつ",tags:["12月","青緑"],price:"¥3,000〜"},
+        {title:"ガーネット",sub:"1月の誕生石",reason:"深紅の情熱の石・愛と友情を育む力があるとされる",tags:["1月","赤"],price:"¥3,000〜"},
+      ],
+      "パワーストーン":[
+        {title:"ローズクォーツ",sub:"愛と美の石",reason:"恋愛運・美容運アップに人気No.1のパワーストーン",tags:["恋愛","美容"],price:"¥1,000〜"},
+        {title:"ブラックトルマリン",sub:"魔除け・浄化の石",reason:"悪いエネルギーをブロックする最強の魔除け石",tags:["魔除け","浄化"],price:"¥2,000〜"},
+        {title:"シトリン",sub:"金運・商売繁盛の石",reason:"黄色い水晶・お金を呼び込む財運アップの石",tags:["金運","仕事"],price:"¥2,000〜"},
+        {title:"ラピスラズリ",sub:"天空の石",reason:"古代から王が愛した深い青の石・直感力と洞察力を高める",tags:["直感","知恵"],price:"¥3,000〜"},
+        {title:"ムーンストーン",sub:"月の石",reason:"女性的な魅力を高める月のエネルギーを持つ神秘の石",tags:["女性","月"],price:"¥2,000〜"},
+        {title:"タイガーアイ",sub:"勝負運の石",reason:"虎の目のような光沢・仕事運と決断力を高める",tags:["仕事","勝負"],price:"¥1,000〜"},
+        {title:"アベンチュリン",sub:"幸運の石",reason:"緑のキラキラが美しい・全般的な幸運を呼ぶ石",tags:["幸運","全般"],price:"¥500〜"},
+        {title:"オブシディアン",sub:"火山岩の石",reason:"ネガティブなエネルギーを跳ね返す強力な保護の石",tags:["保護","浄化"],price:"¥1,000〜"},
+        {title:"カーネリアン",sub:"活力の石",reason:"オレンジ色が活力を与える・行動力と自信をアップ",tags:["活力","行動力"],price:"¥1,000〜"},
+        {title:"ラブラドライト",sub:"変容の石",reason:"光によって変化する神秘的な光沢・直感力を高める",tags:["直感","神秘"],price:"¥2,000〜"},
+      ],
+      "鉱物・原石":[
+        {title:"水晶（クォーツ）",sub:"万能の浄化石",reason:"すべてのパワーストーンの中で最も汎用性が高い万能石",tags:["万能","浄化"],price:"¥500〜"},
+        {title:"パイライト",sub:"愚者の金",reason:"黄金色に輝く鉱物・金運アップのお守りとして人気",tags:["金運","輝き"],price:"¥1,000〜"},
+        {title:"マラカイト",sub:"孔雀石",reason:"緑と黒の縞模様が美しい・変容と成長を促す石",tags:["緑","模様"],price:"¥2,000〜"},
+        {title:"フローライト",sub:"蛍石",reason:"多彩な色変化が美しい・学習能力と集中力を高める",tags:["学習","集中"],price:"¥1,000〜"},
+        {title:"カルサイト",sub:"方解石",reason:"白や黄色の透明感ある石・ポジティブエネルギーを増幅",tags:["透明","ポジティブ"],price:"¥500〜"},
+        {title:"セレナイト",sub:"透石膏",reason:"白く輝く柱状の石・浄化と癒しの最強パワーを持つ",tags:["浄化","癒し"],price:"¥1,000〜"},
+        {title:"アズライト",sub:"藍銅鉱",reason:"深い青が美しい希少鉱物・第三の目を開くとされる",tags:["直感","希少"],price:"¥3,000〜"},
+        {title:"ロードナイト",sub:"バラ輝石",reason:"ピンクと黒の模様・傷ついた心を癒す愛の石",tags:["癒し","愛"],price:"¥2,000〜"},
+        {title:"スモーキークォーツ",sub:"煙水晶",reason:"茶色がかった水晶・グラウンディングと保護の石",tags:["保護","地に足"],price:"¥1,000〜"},
+        {title:"アンモナイト",sub:"化石宝石",reason:"太古の生命が宿る化石・繁栄と変容の強力なシンボル",tags:["化石","繁栄"],price:"¥3,000〜"},
+      ],
+      "レア・希少石":[
+        {title:"パライバトルマリン",sub:"ブラジル産希少宝石",reason:"ネオンブルーの輝き・1gあたりダイヤを超える価値",tags:["希少","高価"],price:"¥500,000〜"},
+        {title:"アレキサンドライト",sub:"変色効果の宝石",reason:"光によって緑から赤に変色する魔法のような希少石",tags:["変色","希少"],price:"¥100,000〜"},
+        {title:"ブラックオパール",sub:"オーストラリア産",reason:"虹色の遊色が美しい・世界で最も美しい宝石のひとつ",tags:["オパール","虹色"],price:"¥50,000〜"},
+        {title:"デマントイドガーネット",sub:"ロシア産希少石",reason:"ガーネット中最高級・グリーンの輝きが圧倒的に美しい",tags:["高級","緑"],price:"¥100,000〜"},
+        {title:"ベニトアイト",sub:"カリフォルニア州石",reason:"青いダイヤと称される世界最希少クラスの宝石",tags:["超希少","青"],price:"¥200,000〜"},
+        {title:"タンザナイト",sub:"タンザニア産",reason:"青紫の美しい宝石・採掘量が激減し価値急上昇中",tags:["青紫","希少"],price:"¥30,000〜"},
+        {title:"パドパラチャサファイア",sub:"ロータスサファイア",reason:"桜色のサファイア・世界最も希少なサファイア",tags:["ピンク","希少"],price:"¥200,000〜"},
+        {title:"ムゾーエメラルド",sub:"コロンビア産最高級",reason:"世界最高品質のエメラルド産地・深緑の極上品",tags:["高級","コロンビア"],price:"¥200,000〜"},
+        {title:"スフェーン",sub:"チタナイト",reason:"ダイヤを超える分散度・七色に輝く知る人ぞ知る宝石",tags:["輝き","希少"],price:"¥20,000〜"},
+        {title:"グランディディエライト",sub:"マダガスカル産",reason:"青緑色の超希少石・世界でも数少ない産出量",tags:["超希少","青緑"],price:"¥300,000〜"},
+      ],
+    }
+  },
+  shokugyo: {
+    categories:["年収が高い職業","人気・なりたい職業","社会貢献度","将来性・安定性"],
+    items:{
+      "年収が高い職業":[
+        {title:"医師",sub:"病院・クリニック",reason:"平均年収1,200万円超・専門医ではさらに高収入",tags:["医療","高収入"],price:"平均1,200万円"},
+        {title:"弁護士",sub:"法律事務所",reason:"渉外弁護士は平均2,000万円超・専門性が高い",tags:["法律","高収入"],price:"平均700〜2,000万円"},
+        {title:"パイロット",sub:"航空会社",reason:"大手航空会社の機長は年収2,000万円以上も",tags:["航空","高収入"],price:"平均1,500万円"},
+        {title:"経営コンサルタント",sub:"コンサルティングファーム",reason:"マッキンゼー等外資系は年収1,000万円〜5,000万円",tags:["コンサル","高収入"],price:"平均1,000万円〜"},
+        {title:"投資銀行家",sub:"外資系証券会社",reason:"ボーナス込みで年収数千万円になるケースも",tags:["金融","高収入"],price:"平均1,500万円〜"},
+        {title:"IT起業家・CTO",sub:"テック系スタートアップ",reason:"成功すれば億単位も・ITスキル×経営の最強職種",tags:["IT","起業"],price:"数百万〜数億"},
+        {title:"歯科医師",sub:"歯科医院",reason:"開業医では年収1,500万円超も珍しくない",tags:["医療","開業"],price:"平均800万円〜"},
+        {title:"製薬会社MR",sub:"製薬メーカー営業",reason:"大手製薬会社は平均年収800万円超・インセンティブ大",tags:["営業","製薬"],price:"平均800万円"},
+        {title:"不動産デベロッパー",sub:"大手不動産会社",reason:"三井・三菱・住友不動産は平均年収1,000万円超",tags:["不動産","大手"],price:"平均900万円〜"},
+        {title:"アクチュアリー",sub:"保険・年金数理士",reason:"保険数理の専門家・希少性が高く年収1,000万円超",tags:["保険","数学"],price:"平均1,000万円〜"},
+      ],
+      "人気・なりたい職業":[
+        {title:"YouTuber・クリエイター",sub:"動画投稿者",reason:"子供のなりたい職業No.1・好きなことで稼げる夢の職業",tags:["クリエイター","人気"],price:"0〜数億"},
+        {title:"プロスポーツ選手",sub:"野球・サッカー・テニス等",reason:"スポーツが仕事になる夢の職業・憧れの的",tags:["スポーツ","夢"],price:"数百万〜数十億"},
+        {title:"医師",sub:"医療・救命",reason:"人の命を救う尊い仕事・安定と高収入を兼備",tags:["医療","安定"],price:"平均1,200万円"},
+        {title:"保育士",sub:"保育園・幼稚園",reason:"子育て支援の重要職種・子供と触れ合える仕事",tags:["子供","社会貢献"],price:"平均350万円"},
+        {title:"料理人・シェフ",sub:"レストラン・ホテル",reason:"食で人を幸せにする職人の技・三ツ星シェフが憧れ",tags:["料理","職人"],price:"200〜1,000万円"},
+        {title:"AIエンジニア",sub:"IT・テクノロジー",reason:"AI時代の最前線・需要爆発で最も注目される職種",tags:["AI","IT"],price:"平均700〜1,500万円"},
+        {title:"宇宙飛行士",sub:"JAXA・NASA",reason:"最難関の狭き門・宇宙で仕事をする究極の夢",tags:["宇宙","夢"],price:"平均1,000万円"},
+        {title:"弁護士",sub:"法律事務所",reason:"人の権利を守る正義の職業・資格の最高峰のひとつ",tags:["法律","正義"],price:"平均700万円〜"},
+        {title:"ゲームクリエイター",sub:"ゲーム会社",reason:"ゲームを作る仕事・趣味が職業になる憧れの職種",tags:["ゲーム","クリエイター"],price:"平均500万円"},
+        {title:"起業家・社長",sub:"自分の会社を持つ",reason:"自分のビジョンを実現する・成功すれば無限の可能性",tags:["起業","夢"],price:"0〜無限"},
+      ],
+      "社会貢献度":[
+        {title:"医師・看護師",sub:"医療従事者",reason:"命を救う最前線・コロナで再認識された社会の柱",tags:["医療","命"],price:"平均500〜1,200万円"},
+        {title:"消防士",sub:"消防署",reason:"火災・災害から命と財産を守る命がけの仕事",tags:["防災","命"],price:"平均600万円"},
+        {title:"警察官",sub:"警察署",reason:"社会の安全と秩序を守る・市民を犯罪から守る職業",tags:["安全","正義"],price:"平均700万円"},
+        {title:"教師・教員",sub:"学校",reason:"次世代を育てる社会の根幹・子供の未来を作る職業",tags:["教育","次世代"],price:"平均550万円"},
+        {title:"ソーシャルワーカー",sub:"福祉・社会福祉士",reason:"社会的弱者を支援する・誰もが安心して暮らせる社会へ",tags:["福祉","支援"],price:"平均350万円"},
+        {title:"自衛官",sub:"防衛省",reason:"国防・災害派遣・PKOで日本と世界を守る職業",tags:["国防","災害"],price:"平均680万円"},
+        {title:"農家",sub:"農業従事者",reason:"食料を生産する社会の根幹・持続可能な農業が注目",tags:["食料","農業"],price:"平均400万円"},
+        {title:"介護士",sub:"介護施設",reason:"高齢化社会で最重要・お年寄りの生活を支える仕事",tags:["介護","高齢化"],price:"平均350万円"},
+        {title:"研究者・科学者",sub:"大学・研究機関",reason:"人類の知識を広げる・ノーベル賞につながる発見も",tags:["研究","科学"],price:"平均600万円"},
+        {title:"国際NGO職員",sub:"国際機関",reason:"世界の貧困・紛争・環境問題に取り組む国際的な仕事",tags:["国際","支援"],price:"平均400〜800万円"},
+      ],
+      "将来性・安定性":[
+        {title:"AIエンジニア",sub:"機械学習・深層学習",reason:"AI革命の中心・今後10年で最も需要が伸びる職種",tags:["AI","将来性"],price:"平均700〜1,500万円"},
+        {title:"データサイエンティスト",sub:"データ分析・統計",reason:"データが価値の時代・企業が最も欲しがる人材",tags:["データ","分析"],price:"平均700万円〜"},
+        {title:"サイバーセキュリティ専門家",sub:"情報セキュリティ",reason:"ハッカー対策の最前線・圧倒的人材不足で需要爆発",tags:["セキュリティ","IT"],price:"平均700〜1,200万円"},
+        {title:"公務員",sub:"国家・地方公務員",reason:"雇用の安定性No.1・倒産なし・充実した福利厚生",tags:["安定","公務員"],price:"平均600〜700万円"},
+        {title:"看護師",sub:"病院・クリニック",reason:"高齢化で需要が増し続ける・転職も有利な安定職種",tags:["医療","需要"],price:"平均500万円"},
+        {title:"薬剤師",sub:"薬局・病院",reason:"資格職で安定・調剤から在宅医療まで活躍の場が広い",tags:["医療","資格"],price:"平均560万円"},
+        {title:"クラウドエンジニア",sub:"AWS・Azure・GCP",reason:"DX推進で需要急増・クラウド人材は全業界で不足",tags:["IT","クラウド"],price:"平均700〜1,000万円"},
+        {title:"バイオテクノロジー研究者",sub:"製薬・バイオ",reason:"医療の未来を作る・ゲノム編集・再生医療が成長分野",tags:["バイオ","医療"],price:"平均600〜900万円"},
+        {title:"税理士",sub:"税務・会計",reason:"税制は必ず必要・AIでも代替しにくい専門的判断力",tags:["税務","安定"],price:"平均600万円〜"},
+        {title:"YouTuber・インフルエンサー",sub:"SNSクリエイター",reason:"デジタル経済の主役・個人が世界に発信できる時代",tags:["クリエイター","将来性"],price:"0〜数億"},
+      ],
+    }
+  },
+
+  geino: {
+    categories:["国内芸能・影響力","国内音楽アーティスト","国内俳優・女優","国内お笑い・MC"],
+    items:{
+      "国内芸能・影響力":[
+        {title:"米津玄師",sub:"シンガーソングライター",reason:"日本音楽史上最多ストリーミング再生・社会現象を生み出す影響力",tags:["音楽","影響力"],price:""},
+        {title:"星野源",sub:"マルチアーティスト",reason:"音楽・俳優・文筆と多才・社会現象ドラマ主題歌を連発",tags:["音楽","俳優"],price:""},
+        {title:"羽生結弦",sub:"フィギュアスケーター",reason:"オリンピック2連覇・競技を超えた文化的アイコン",tags:["スポーツ","アイコン"],price:""},
+        {title:"浜崎あゆみ",sub:"歌手・アーティスト",reason:"90〜00年代の女性ソロ歌手として日本記録を塗り替えた",tags:["音楽","レジェンド"],price:""},
+        {title:"HIKAKIN",sub:"YouTuber",reason:"日本YouTubeの開拓者・子供から大人まで幅広い影響力",tags:["YouTube","クリエイター"],price:""},
+        {title:"BTS（防弾少年団）",sub:"韓国K-POPグループ",reason:"世界的な影響力・日本でも最大級のファンベース",tags:["K-POP","世界的"],price:""},
+        {title:"BLACKPINK",sub:"韓国K-POPグループ",reason:"世界最大フォロワー数・ファッション×音楽で圧倒的影響力",tags:["K-POP","ファッション"],price:""},
+        {title:"渡辺直美",sub:"タレント・コメディアン",reason:"体型を武器にした自己肯定の姿勢が世界で評価される",tags:["コメディ","多様性"],price:""},
+        {title:"新垣結衣",sub:"女優",reason:"ガッキーの愛称で絶大な人気・ドラマ視聴率女王",tags:["女優","人気"],price:""},
+        {title:"松本人志",sub:"お笑い芸人・審査員",reason:"日本お笑い界の最高峰・文化的影響力は計り知れない",tags:["お笑い","影響力"],price:""},
+      ],
+      "国内音楽アーティスト":[
+        {title:"米津玄師",sub:"シンガーソングライター",reason:"Lemon・馬と鹿・Pale Blue・Kick Back等数々の歴史的ヒット",tags:["J-POP","作詞作曲"],price:""},
+        {title:"YOASOBI",sub:"Ayase & ikura",reason:"夜に駆ける・アイドル等で世界的な人気を獲得",tags:["J-POP","小説原作"],price:""},
+        {title:"Official髭男dism",sub:"ヒゲダン",reason:"Pretender・ミックスナッツ等連続ミリオンヒット",tags:["J-POP","バンド"],price:""},
+        {title:"あいみょん",sub:"シンガーソングライター",reason:"マリーゴールド・裸の心・生きていたんだよな等名曲多数",tags:["J-POP","女性"],price:""},
+        {title:"BTS",sub:"防弾少年団",reason:"Dynamite・Butter等で日本でも絶大な人気",tags:["K-POP","グループ"],price:""},
+        {title:"Mr.Children",sub:"ミスチル",reason:"デビュー30年超・日本最大級のロックバンド",tags:["ロック","レジェンド"],price:""},
+        {title:"Ado",sub:"シンガー",reason:"うっせぇわ・踊等で中学生から社会現象を起こした",tags:["J-POP","ボカロ系"],price:""},
+        {title:"スピッツ",sub:"ロックバンド",reason:"チェリー・空も飛べるはず等30年愛される名曲を量産",tags:["ロック","レジェンド"],price:""},
+        {title:"Aimer",sub:"シンガー",reason:"残響散歌・花の塔等アニメ×音楽で世界的人気",tags:["アニソン","女性"],price:""},
+        {title:"King Gnu",sub:"バンド",reason:"白日・三文小説・硝子窓等で芸術的な音楽性が評価",tags:["バンド","アート"],price:""},
+      ],
+      "国内俳優・女優":[
+        {title:"役所広司",sub:"俳優",reason:"カンヌ男優賞受賞・世界が認める日本最高峰の俳優",tags:["俳優","カンヌ"],price:""},
+        {title:"新垣結衣",sub:"女優",reason:"逃げ恥等ドラマ視聴率女王・国民的女優",tags:["女優","国民的"],price:""},
+        {title:"山田裕貴",sub:"俳優",reason:"NHK朝ドラから大作まで幅広い演技力",tags:["俳優","実力派"],price:""},
+        {title:"綾瀬はるか",sub:"女優",reason:"時をかける少女等で不動の人気・爽やかさが魅力",tags:["女優","人気"],price:""},
+        {title:"松坂桃李",sub:"俳優",reason:"孤狼の血等社会派映画で実力を証明",tags:["俳優","実力"],price:""},
+        {title:"有村架純",sub:"女優",reason:"べっぴんさん・いつかこの恋を等朝ドラで国民的人気",tags:["女優","朝ドラ"],price:""},
+        {title:"阿部寛",sub:"俳優",reason:"テルマエ・ロマエ等コメディから重厚な演技まで幅広い",tags:["俳優","コメディ"],price:""},
+        {title:"石原さとみ",sub:"女優",reason:"高視聴率ドラマを連発・美貌と演技力を兼備",tags:["女優","美貌"],price:""},
+        {title:"吉高由里子",sub:"女優",reason:"光る君へNHK大河で圧倒的な演技・出世街道",tags:["女優","大河"],price:""},
+        {title:"坂口健太郎",sub:"俳優",reason:"誠実なキャラクターと演技力で女性人気No.1クラス",tags:["俳優","人気"],price:""},
+      ],
+      "国内お笑い・MC":[
+        {title:"明石家さんま",sub:"お笑い芸人・MC",reason:"日本一のトーク力・50年以上トップで走り続ける伝説",tags:["お笑い","MC"],price:""},
+        {title:"ダウンタウン（浜田・松本）",sub:"お笑いコンビ",reason:"日本のお笑い文化を変えた最強コンビ",tags:["お笑い","コンビ"],price:""},
+        {title:"ビートたけし",sub:"お笑い芸人・映画監督",reason:"ベネチア金獅子賞受賞・エンタメ界の巨人",tags:["お笑い","映画"],price:""},
+        {title:"有吉弘行",sub:"お笑い芸人・MC",reason:"人気絶頂からどん底・復活を果たした現代最強MC",tags:["MC","毒舌"],price:""},
+        {title:"内村光良（ウッチャン）",sub:"お笑い芸人",reason:"欽ちゃんの後継者・NHK紅白司会も務める",tags:["お笑い","MC"],price:""},
+        {title:"爆笑問題",sub:"お笑いコンビ",reason:"太田光の政治風刺漫才・30年以上トップを走る",tags:["漫才","政治"],price:""},
+        {title:"くりぃむしちゅー",sub:"お笑いコンビ",reason:"上田晋也のMC力・クイズ番組の帝王",tags:["MC","クイズ"],price:""},
+        {title:"サンドウィッチマン",sub:"お笑いコンビ",reason:"M-1敗者復活優勝・東北支援等人間力も高い",tags:["漫才","人間力"],price:""},
+        {title:"千鳥",sub:"お笑いコンビ",reason:"ノブとのコンビ漫才・独特の世界観が人気",tags:["漫才","個性"],price:""},
+        {title:"マツコ・デラックス",sub:"タレント・コラムニスト",reason:"歯に衣着せぬ発言と深い教養で唯一無二の存在感",tags:["MC","独自"],price:""},
+      ],
+    }
+  },
+  seijika_jp: {
+    categories:["歴代首相・影響力","政策・実績評価","若手・注目政治家","都道府県知事"],
+    items:{
+      "歴代首相・影響力":[
+        {title:"安倍晋三",sub:"第90・96〜98代内閣総理大臣",reason:"憲政史上最長政権・アベノミクス・外交で歴史的影響力",tags:["自民党","最長政権"],price:"在任2006-07,2012-20"},
+        {title:"小泉純一郎",sub:"第87〜89代内閣総理大臣",reason:"郵政民営化・劇場型政治で圧倒的な国民人気を誇った",tags:["自民党","改革"],price:"在任2001-06"},
+        {title:"田中角栄",sub:"第64・65代内閣総理大臣",reason:"日中国交正常化・列島改造論・今太閤と呼ばれた",tags:["自民党","日中"],price:"在任1972-74"},
+        {title:"吉田茂",sub:"第45・48〜51代内閣総理大臣",reason:"戦後復興の立役者・日米安保条約締結・歴史的な宰相",tags:["自民党","戦後"],price:"在任1946-47,1948-54"},
+        {title:"岸田文雄",sub:"第100・101代内閣総理大臣",reason:"新しい資本主義・防衛費倍増・G7広島サミット開催",tags:["自民党","外交"],price:"在任2021-24"},
+        {title:"菅義偉",sub:"第99代内閣総理大臣",reason:"令和おじさん・ふるさと納税・コロナ禍対応",tags:["自民党","行政"],price:"在任2020-21"},
+        {title:"橋本龍太郎",sub:"第82・83代内閣総理大臣",reason:"行政改革・省庁再編・財政再建に挑んだ",tags:["自民党","行政改革"],price:"在任1996-98"},
+        {title:"中曽根康弘",sub:"第71〜73代内閣総理大臣",reason:"NTT・JR民営化・ロン・ヤス外交で戦後政治を変えた",tags:["自民党","民営化"],price:"在任1982-87"},
+        {title:"鳩山由紀夫",sub:"第93代内閣総理大臣",reason:"政権交代を実現した民主党政権の初代首相",tags:["民主党","政権交代"],price:"在任2009-10"},
+        {title:"石破茂",sub:"第102代内閣総理大臣",reason:"安全保障のスペシャリスト・防衛政策で長年存在感",tags:["自民党","防衛"],price:"在任2024〜"},
+      ],
+      "政策・実績評価":[
+        {title:"小池百合子",sub:"東京都知事",reason:"東京五輪開催・東京大改革・女性初の都知事として注目",tags:["都知事","女性"],price:""},
+        {title:"河野太郎",sub:"衆議院議員・デジタル大臣",reason:"ワクチン接種担当・マイナカード推進・SNSで発信力",tags:["自民党","デジタル"],price:""},
+        {title:"山本太郎",sub:"参議院議員・れいわ代表",reason:"消費税廃止・反緊縮を訴え若者に支持される",tags:["れいわ","野党"],price:""},
+        {title:"玉木雄一郎",sub:"国民民主党代表",reason:"103万の壁・手取りを増やす政策で注目を集めた",tags:["国民民主","経済"],price:""},
+        {title:"立憲民主党（枝野幸男）",sub:"元立憲民主党代表",reason:"安倍1強に対抗・野党第一党を作り上げた",tags:["立憲","野党"],price:""},
+        {title:"高市早苗",sub:"衆議院議員",reason:"経済安全保障・サイバーセキュリティで国際的な発信",tags:["自民党","安保"],price:""},
+        {title:"泉健太",sub:"立憲民主党代表",reason:"野党第一党を率いる・現実路線の野党政治",tags:["立憲","野党"],price:""},
+        {title:"吉村洋文",sub:"大阪府知事",reason:"大阪維新の会・コロナ対策・大阪万博で発信力",tags:["維新","大阪"],price:""},
+        {title:"松井一郎",sub:"元大阪市長",reason:"大阪都構想を推進・維新の会を全国政党に育てた",tags:["維新","大阪"],price:""},
+        {title:"蓮舫",sub:"参議院議員",reason:"事業仕分け・2位じゃダメなのか発言で注目された",tags:["立憲","仕分け"],price:""},
+      ],
+      "若手・注目政治家":[
+        {title:"小泉進次郎",sub:"衆議院議員",reason:"環境大臣・セクシー政治・将来の総理候補として注目",tags:["自民党","若手"],price:""},
+        {title:"音喜多駿",sub:"日本維新の会幹事長",reason:"ブロガー出身の若手政治家・SNSで発信力",tags:["維新","若手"],price:""},
+        {title:"西村康稔",sub:"衆議院議員",reason:"経済産業大臣として半導体・GX政策を推進",tags:["自民党","経済"],price:""},
+        {title:"牧島かれん",sub:"衆議院議員",reason:"デジタル大臣として行政DXを推進した若手",tags:["自民党","デジタル"],price:""},
+        {title:"辻元清美",sub:"参議院議員",reason:"長年の政治活動・女性政策で存在感を示す",tags:["立憲","女性"],price:""},
+        {title:"原口一博",sub:"衆議院議員",reason:"総務大臣経験者・地方分権・メディア改革を訴える",tags:["立憲","メディア"],price:""},
+        {title:"加藤鮎子",sub:"衆議院議員",reason:"こども政策担当大臣・少子化対策を推進",tags:["自民党","こども"],price:""},
+        {title:"斎藤元彦",sub:"兵庫県知事",reason:"百条委員会問題・SNSで注目された異色の知事",tags:["兵庫","知事"],price:""},
+        {title:"安野貴博",sub:"東京都知事選候補",reason:"AIエンジニア出身・政策立案にAIを活用した候補",tags:["AI","若手"],price:""},
+        {title:"前澤友作",sub:"起業家・元ZOZO",reason:"政界進出を示唆・庶民派アプローチで注目される",tags:["起業家","注目"],price:""},
+      ],
+      "都道府県知事":[
+        {title:"小池百合子",sub:"東京都知事",reason:"3期目・東京大改革・五輪・感染症対策で国際発信",tags:["東京","女性"],price:""},
+        {title:"吉村洋文",sub:"大阪府知事",reason:"維新の会・大阪万博・コロナ対策で高い支持率",tags:["大阪","維新"],price:""},
+        {title:"黒岩祐治",sub:"神奈川県知事",reason:"4期目・首都圏での健康・医療政策をリード",tags:["神奈川","健康"],price:""},
+        {title:"大村秀章",sub:"愛知県知事",reason:"リニア・トヨタ産業政策・あいちトリエンナーレで注目",tags:["愛知","産業"],price:""},
+        {title:"河村たかし",sub:"名古屋市長",reason:"市民税10%減税を実現した異色の市長",tags:["名古屋","減税"],price:""},
+        {title:"知事（北海道）",sub:"鈴木直道知事",reason:"夕張市長から北海道知事へ・財政再建の実績",tags:["北海道","財政"],price:""},
+        {title:"玉城デニー",sub:"沖縄県知事",reason:"米軍基地問題・辺野古反対で沖縄の声を代表",tags:["沖縄","基地問題"],price:""},
+        {title:"上田清司",sub:"埼玉県知事（元）",reason:"4期16年の長期政権・埼玉の存在感を高めた",tags:["埼玉","長期"],price:""},
+        {title:"熊谷俊人",sub:"千葉県知事",reason:"千葉市長から知事へ・SNSを活用した情報発信",tags:["千葉","SNS"],price:""},
+        {title:"達増拓也",sub:"岩手県知事",reason:"東日本大震災の復興を牽引・長期にわたる復興支援",tags:["岩手","復興"],price:""},
+      ],
+    }
+  },
+  seijika_world: {
+    categories:["世界の指導者・影響力","米国大統領","欧州・先進国リーダー","アジア・新興国リーダー"],
+    items:{
+      "世界の指導者・影響力":[
+        {title:"バラク・オバマ",sub:"第44代米国大統領",reason:"史上初の黒人大統領・核なき世界演説・ノーベル平和賞",tags:["米国","ノーベル賞"],price:"在任2009-17"},
+        {title:"ウラジーミル・プーチン",sub:"ロシア大統領",reason:"20年以上の長期政権・ウクライナ侵攻で世界に衝撃",tags:["ロシア","強権"],price:"在任2000〜"},
+        {title:"習近平",sub:"中国国家主席",reason:"終身権力を目指す中国共産党総書記・世界2位の経済を統治",tags:["中国","長期"],price:"就任2012〜"},
+        {title:"ドナルド・トランプ",sub:"第45・47代米国大統領",reason:"アメリカ・ファースト・SNS政治で世界の政治を変えた",tags:["米国","SNS"],price:"在任2017-21,2025〜"},
+        {title:"マンデラ",sub:"南アフリカ初の黒人大統領",reason:"27年の獄中生活後に大統領・アパルトヘイト撤廃の象徴",tags:["アフリカ","人権"],price:"在任1994-99"},
+        {title:"アンゲラ・メルケル",sub:"元ドイツ首相",reason:"16年のEUリーダー・欧州最強の女性政治家",tags:["ドイツ","女性"],price:"在任2005-21"},
+        {title:"ジャシンダ・アーダーン",sub:"元ニュージーランド首相",reason:"テロ後の対応・共感リーダーシップで世界的な注目",tags:["NZ","女性"],price:"在任2017-23"},
+        {title:"エマニュエル・マクロン",sub:"フランス大統領",reason:"最年少大統領・EU改革・ウクライナ支援で存在感",tags:["フランス","欧州"],price:"就任2017〜"},
+        {title:"キシダ・フミオ",sub:"日本国総理大臣",reason:"広島サミット・防衛費増額・G7議長として外交力",tags:["日本","G7"],price:"在任2021-24"},
+        {title:"ボリス・ジョンソン",sub:"元英国首相",reason:"Brexit実現・独特のキャラクターで英国政治を揺るがした",tags:["英国","Brexit"],price:"在任2019-22"},
+      ],
+      "米国大統領":[
+        {title:"ジョン・F・ケネディ",sub:"第35代米国大統領",reason:"アポロ計画・キューバ危機対応・暗殺された伝説の大統領",tags:["民主党","伝説"],price:"在任1961-63"},
+        {title:"フランクリン・ルーズベルト",sub:"第32代米国大統領",reason:"ニューディール政策・4選大統領・二次大戦を勝利に導く",tags:["民主党","戦時"],price:"在任1933-45"},
+        {title:"エイブラハム・リンカーン",sub:"第16代米国大統領",reason:"南北戦争・奴隷解放宣言・米国史上最も偉大な大統領",tags:["共和党","奴隷解放"],price:"在任1861-65"},
+        {title:"ドナルド・トランプ",sub:"第45・47代米国大統領",reason:"関税政策・移民規制・SNSを駆使した異色の政治",tags:["共和党","SNS"],price:"在任2017-21,2025〜"},
+        {title:"バラク・オバマ",sub:"第44代米国大統領",reason:"オバマケア・イラン核合意・史上初の黒人大統領",tags:["民主党","初"],price:"在任2009-17"},
+        {title:"ジョー・バイデン",sub:"第46代米国大統領",reason:"ウクライナ支援・半導体法・インフラ投資法を実現",tags:["民主党","インフラ"],price:"在任2021-25"},
+        {title:"ジミー・カーター",sub:"第39代米国大統領",reason:"中東和平・人権外交・退任後もNGO活動で人道支援",tags:["民主党","人道"],price:"在任1977-81"},
+        {title:"ロナルド・レーガン",sub:"第40代米国大統領",reason:"レーガノミクス・冷戦終結・強いアメリカを取り戻した",tags:["共和党","冷戦"],price:"在任1981-89"},
+        {title:"ビル・クリントン",sub:"第42代米国大統領",reason:"IT革命期の経済黄金期・中東和平プロセスを推進",tags:["民主党","経済"],price:"在任1993-2001"},
+        {title:"ジョージ・W・ブッシュ",sub:"第43代米国大統領",reason:"9.11後のテロとの戦争・イラク戦争を決断",tags:["共和党","テロ"],price:"在任2001-09"},
+      ],
+      "欧州・先進国リーダー":[
+        {title:"アンゲラ・メルケル",sub:"元ドイツ首相",reason:"欧州最長16年・物理学博士の分析力で欧州を安定化",tags:["ドイツ","女性"],price:"在任2005-21"},
+        {title:"エマニュエル・マクロン",sub:"フランス大統領",reason:"最年少39歳で当選・欧州戦略的自立・ウクライナ支援",tags:["フランス","EU"],price:"就任2017〜"},
+        {title:"ウィンストン・チャーチル",sub:"元英国首相",reason:"二次大戦を勝利に導いた・ノーベル文学賞・歴史的指導者",tags:["英国","二次大戦"],price:"在任1940-45,51-55"},
+        {title:"オラフ・ショルツ",sub:"ドイツ首相",reason:"ウクライナ支援・ドイツの防衛政策転換を主導",tags:["ドイツ","EU"],price:"就任2021〜"},
+        {title:"ジャシンダ・アーダーン",sub:"元NZ首相",reason:"共感リーダーシップ・テロ対応・育児休暇取得で注目",tags:["NZ","女性"],price:"在任2017-23"},
+        {title:"マリオ・ドラギ",sub:"元イタリア首相・元ECB総裁",reason:"何でもやる発言・欧州金融危機を救った伝説の銀行家",tags:["EU","金融"],price:"在任2021-22"},
+        {title:"スコット・モリソン",sub:"元オーストラリア首相",reason:"AUKUS創設・太平洋安保で日米豪の連携を強化",tags:["豪州","安保"],price:"在任2018-22"},
+        {title:"ジャスティン・トルドー",sub:"カナダ首相",reason:"多様性・移民政策・環境政策で若者から支持",tags:["カナダ","多様性"],price:"就任2015〜"},
+        {title:"ペドロ・サンチェス",sub:"スペイン首相",reason:"欧州で最も先進的な社会政策・LGBTQ権利拡大",tags:["スペイン","社会民主"],price:"就任2018〜"},
+        {title:"ベアトリクス女王",sub:"元オランダ女王",reason:"民主主義と福祉国家のモデル・北欧型政治の象徴",tags:["オランダ","王室"],price:""},
+      ],
+      "アジア・新興国リーダー":[
+        {title:"習近平",sub:"中国国家主席・党総書記",reason:"世界2位の経済・一帯一路・強権政治で世界に影響",tags:["中国","強権"],price:"就任2012〜"},
+        {title:"ナレンドラ・モディ",sub:"インド首相",reason:"世界最大の民主主義国・経済急成長・デジタルインド",tags:["インド","経済"],price:"就任2014〜"},
+        {title:"リー・クアンユー",sub:"初代シンガポール首相",reason:"小国を世界的な経済・金融センターに変えた奇跡の指導者",tags:["シンガポール","経済"],price:"在任1959-90"},
+        {title:"マハティール・モハマド",sub:"元マレーシア首相",reason:"ルックイースト政策・日本から学べで急成長を実現",tags:["マレーシア","日本"],price:"在任1981-2003"},
+        {title:"朴正煕",sub:"韓国第5〜9代大統領",reason:"漢江の奇跡・韓国の高度経済成長を主導した強権指導者",tags:["韓国","経済成長"],price:"在任1963-79"},
+        {title:"ユン・ソンニョル",sub:"韓国大統領",reason:"日韓関係改善・日米韓連携の強化を推進",tags:["韓国","外交"],price:"就任2022〜"},
+        {title:"アウン・サン・スー・チー",sub:"元ミャンマー国家顧問",reason:"民主化運動の象徴・ノーベル平和賞受賞",tags:["ミャンマー","民主化"],price:""},
+        {title:"マルコス・ジュニア",sub:"フィリピン大統領",reason:"マルコス家の復権・南シナ海問題で対中強硬姿勢",tags:["フィリピン","中国"],price:"就任2022〜"},
+        {title:"ジョコ・ウィドド（ジョコウィ）",sub:"インドネシア大統領",reason:"庶民派大統領・インフラ整備・ASEAN最大国を統治",tags:["インドネシア","庶民派"],price:"在任2014-24"},
+        {title:"ムハンマド・ビン・サルマン",sub:"サウジアラビア皇太子",reason:"ビジョン2030・サウジの近代化を推進する実権者",tags:["サウジ","改革"],price:""},
+      ],
+    }
+  },
+
+  keyword: {
+    categories:["Google急上昇","Yahoo!リアルタイム","ショッピング人気","エンタメ検索"],
+    items:{
+      "Google急上昇":[
+        {title:"ChatGPT",sub:"OpenAI・生成AI",reason:"世界中で爆発的に検索されているAIサービス",tags:["AI","話題"],price:"無料〜"},
+        {title:"ニトリ",sub:"家具・インテリア",reason:"コスパ最強の家具ブランドとして常に上位",tags:["家具","コスパ"],price:""},
+        {title:"ふるさと納税",sub:"税金控除・返礼品",reason:"節税と返礼品目当てに毎年急上昇するキーワード",tags:["節税","お得"],price:""},
+        {title:"NISA",sub:"少額投資非課税制度",reason:"新NISAスタートで検索数が爆発的増加",tags:["投資","節税"],price:""},
+        {title:"メルカリ",sub:"フリマアプリ",reason:"不用品売買で定番のフリマサービス",tags:["フリマ","副業"],price:""},
+        {title:"楽天ポイント",sub:"楽天グループ",reason:"ポイ活ブームで急上昇した定番ワード",tags:["ポイント","節約"],price:""},
+        {title:"マイナンバーカード",sub:"政府・行政",reason:"マイナ保険証・給付金で急増した検索",tags:["行政","マイナ"],price:""},
+        {title:"インボイス",sub:"適格請求書制度",reason:"フリーランス・個人事業主に影響した税制",tags:["税金","制度"],price:""},
+        {title:"Threads",sub:"Meta・SNS",reason:"Twitterの代替として一気に注目集めた",tags:["SNS","Meta"],price:"無料"},
+        {title:"生成AI",sub:"人工知能",reason:"ChatGPT以降、最も検索された技術ワード",tags:["AI","テクノロジー"],price:""},
+      ],
+      "Yahoo!リアルタイム":[
+        {title:"Xトレンド",sub:"X（旧Twitter）",reason:"リアルタイムで話題になるキーワードの震源地",tags:["SNS","トレンド"],price:""},
+        {title:"地震速報",sub:"気象庁・防災",reason:"地震のたびに急上昇する防災関連検索",tags:["防災","速報"],price:""},
+        {title:"プロ野球",sub:"NPB",reason:"試合結果・速報を求める検索が毎日急増",tags:["野球","スポーツ"],price:""},
+        {title:"宝くじ",sub:"当選番号・結果",reason:"抽選日に必ず急上昇するキーワード",tags:["宝くじ","当選"],price:""},
+        {title:"紅白歌合戦",sub:"NHK・年末",reason:"年末に日本一検索される音楽イベント",tags:["NHK","年末"],price:""},
+        {title:"選挙結果",sub:"総選挙・地方選",reason:"選挙のたびに日本全土で検索が急増",tags:["選挙","政治"],price:""},
+        {title:"台風情報",sub:"気象庁・進路",reason:"台風シーズンに必ず急上昇する検索",tags:["天気","防災"],price:""},
+        {title:"箱根駅伝",sub:"関東学生陸上",reason:"正月の風物詩・テレビと同時に検索殺到",tags:["駅伝","正月"],price:""},
+        {title:"コミケ",sub:"コミックマーケット",reason:"開催前後に急増するオタク文化の象徴",tags:["同人","アニメ"],price:""},
+        {title:"レコード大賞",sub:"TBS・音楽賞",reason:"年末の音楽賞発表で毎年急上昇",tags:["音楽","年末"],price:""},
+      ],
+      "ショッピング人気":[
+        {title:"空気清浄機",sub:"家電・生活用品",reason:"花粉・ウイルス対策で年中人気の検索",tags:["家電","健康"],price:"¥10,000〜"},
+        {title:"ロボット掃除機",sub:"スマート家電",reason:"ルンバ人気から広がった時短家電の定番",tags:["家電","時短"],price:"¥20,000〜"},
+        {title:"キャンプ用品",sub:"アウトドア",reason:"キャンプブームで爆発的に増えた検索",tags:["アウトドア","趣味"],price:"¥1,000〜"},
+        {title:"ワイヤレスイヤホン",sub:"音響機器",reason:"AirPods効果でイヤホン検索が激増",tags:["音響","ガジェット"],price:"¥3,000〜"},
+        {title:"電気圧力鍋",sub:"調理家電",reason:"ヘルシー調理で主婦層を中心に急増",tags:["調理","時短"],price:"¥8,000〜"},
+        {title:"プロテイン",sub:"健康・栄養",reason:"筋トレブームで定番化した検索キーワード",tags:["健康","筋トレ"],price:"¥2,000〜"},
+        {title:"折りたたみ傘",sub:"雑貨・日用品",reason:"天気予報と連動して検索が急上昇",tags:["日用品","雨"],price:"¥1,000〜"},
+        {title:"マットレス",sub:"寝具・インテリア",reason:"睡眠への関心が高まりマットレス検索急増",tags:["睡眠","健康"],price:"¥10,000〜"},
+        {title:"ゲーミングチェア",sub:"家具・ゲーム",reason:"在宅勤務・ゲーム需要で大幅増加",tags:["ゲーム","家具"],price:"¥20,000〜"},
+        {title:"防災グッズ",sub:"防災・安全",reason:"大規模災害のたびに急増する防災用品検索",tags:["防災","安全"],price:"¥3,000〜"},
+      ],
+      "エンタメ検索":[
+        {title:"鬼滅の刃",sub:"吾峠呼世晴・アニメ",reason:"社会現象となった日本最大のアニメIPの検索",tags:["アニメ","マンガ"],price:""},
+        {title:"ONE PIECE",sub:"尾田栄一郎・漫画",reason:"新章・映画公開のたびに検索数が跳ね上がる",tags:["マンガ","アニメ"],price:""},
+        {title:"呪術廻戦",sub:"芥見下々・アニメ",reason:"アニメ放映のたびに急上昇するトレンド",tags:["アニメ","マンガ"],price:""},
+        {title:"ジャニーズ",sub:"SMILE-UP.",reason:"グループ活動・解散情報で検索が急増",tags:["芸能","音楽"],price:""},
+        {title:"Netflix新作",sub:"Netflix・配信",reason:"新ドラマ・映画公開で毎月急上昇",tags:["動画","配信"],price:"¥990〜/月"},
+        {title:"星野源",sub:"シンガーソングライター",reason:"ドラマ主題歌・新曲リリースで急上昇",tags:["音楽","俳優"],price:""},
+        {title:"米津玄師",sub:"シンガーソングライター",reason:"新曲・アニメタイアップで常に検索上位",tags:["音楽","アニメ"],price:""},
+        {title:"SnowMan",sub:"ジャニーズ系グループ",reason:"若い女性を中心に急上昇を続けるグループ",tags:["アイドル","音楽"],price:""},
+        {title:"劇場版アニメ",sub:"映画・アニメ",reason:"人気アニメの映画化のたびに急増する検索",tags:["映画","アニメ"],price:"¥1,900〜"},
+        {title:"韓国ドラマ",sub:"Netflix・Disney+",reason:"Netflixで爆発的人気・常に検索上位",tags:["ドラマ","韓国"],price:""},
+      ],
+    }
+  },
+  youtube: {
+    categories:["再生数TOP","チャンネル登録者数","日本人クリエイター","音楽・MV"],
+    items:{
+      "再生数TOP":[
+        {title:"Baby Shark Dance",sub:"Pinkfong・2016年",reason:"96億回超・YouTubeの全時代を通じた歴代1位",tags:["子供","歴代1位"],price:"96億回以上"},
+        {title:"Despacito",sub:"Luis Fonsi・2017年",reason:"80億回超・音楽MVとして長期間1位を維持",tags:["音楽","スペイン語"],price:"80億回以上"},
+        {title:"Shape of You",sub:"Ed Sheeran・2017年",reason:"62億回超・英語圏で最も再生された楽曲",tags:["音楽","Ed Sheeran"],price:"62億回以上"},
+        {title:"See You Again",sub:"Wiz Khalifa ft. Charlie Puth",reason:"60億回超・ワイルドスピード7の主題歌",tags:["音楽","映画"],price:"60億回以上"},
+        {title:"Uptown Funk",sub:"Mark Ronson・2015年",reason:"52億回超・世界中で愛されたファンク曲",tags:["音楽","ファンク"],price:"52億回以上"},
+        {title:"Gangnam Style",sub:"PSY・2012年",reason:"50億回超・K-POPが世界を席巻した象徴",tags:["K-POP","韓国"],price:"50億回以上"},
+        {title:"Wheels on the Bus",sub:"Cocomelon・2018年",reason:"50億回超・子供向けコンテンツ最多再生",tags:["子供","アニメ"],price:"50億回以上"},
+        {title:"Someone You Loved",sub:"Lewis Capaldi・2019年",reason:"40億回超・バラードの傑作",tags:["音楽","バラード"],price:"40億回以上"},
+        {title:"Thinking Out Loud",sub:"Ed Sheeran・2014年",reason:"36億回超・ウェディングソングの定番",tags:["音楽","ウェディング"],price:"36億回以上"},
+        {title:"Dynamite",sub:"BTS・2020年",reason:"19億回超・K-POPグループ歴代最高再生数",tags:["K-POP","BTS"],price:"19億回以上"},
+      ],
+      "チャンネル登録者数":[
+        {title:"MrBeast",sub:"Jimmy Donaldson・米国",reason:"3.4億人超・YouTube史上最多登録者チャンネル",tags:["エンタメ","米国"],price:"3.4億人"},
+        {title:"T-Series",sub:"インド音楽レーベル",reason:"2.7億人超・インド最大の音楽チャンネル",tags:["音楽","インド"],price:"2.7億人"},
+        {title:"YouTube",sub:"公式チャンネル",reason:"公式の注目チャンネルとして驚異的な登録者数",tags:["公式","YouTube"],price:"2.2億人"},
+        {title:"Cocomelon",sub:"子供向けアニメ",reason:"1.8億人超・世界最大の子供向けYouTubeチャンネル",tags:["子供","アニメ"],price:"1.8億人"},
+        {title:"SET India",sub:"インドのTV局",reason:"1.8億人超・インドの人気ドラマチャンネル",tags:["ドラマ","インド"],price:"1.8億人"},
+        {title:"Vlad and Niki",sub:"キッズチャンネル",reason:"1.2億人超・子供の日常を映す大人気チャンネル",tags:["子供","ファミリー"],price:"1.2億人"},
+        {title:"Like Nastya",sub:"キッズチャンネル",reason:"1.2億人超・ロシア系の子供向け超人気チャンネル",tags:["子供","ロシア"],price:"1.2億人"},
+        {title:"PewDiePie",sub:"Felix Kjellberg・スウェーデン",reason:"1.1億人・長年YouTubeを代表してきたクリエイター",tags:["ゲーム","スウェーデン"],price:"1.1億人"},
+        {title:"Kids Diana Show",sub:"キッズチャンネル",reason:"1.2億人超・子供の遊びを映す人気チャンネル",tags:["子供","ファミリー"],price:"1.2億人"},
+        {title:"Justin Bieber",sub:"カナダ出身シンガー",reason:"7400万人超・YouTubeで育ったスターの公式チャンネル",tags:["音楽","カナダ"],price:"7400万人"},
+      ],
+      "日本人クリエイター":[
+        {title:"はじめしゃちょー",sub:"hajime shacho",reason:"日本最多登録者クラス・バラエティ系の先駆者",tags:["バラエティ","日本"],price:"1200万人"},
+        {title:"Fischer's",sub:"フィッシャーズ",reason:"仲良し6人組・バラエティとチャレンジ動画",tags:["バラエティ","グループ"],price:"900万人"},
+        {title:"ヒカキン",sub:"HikakinTV",reason:"日本YouTubeの元祖・ビートボックスから始まった",tags:["バラエティ","元祖"],price:"1000万人"},
+        {title:"セイキン",sub:"Seikin TV",reason:"ヒカキンの実兄・音楽とバラエティのハイブリッド",tags:["音楽","バラエティ"],price:"800万人"},
+        {title:"東海オンエア",sub:"Tokai on Air",reason:"愛知県岡崎市拠点の6人組・企画力が高い",tags:["バラエティ","グループ"],price:"1000万人"},
+        {title:"水溜りボンド",sub:"Mizutamari Bond",reason:"カンタとトミーのコンビ・毎日投稿で人気",tags:["バラエティ","コンビ"],price:"700万人"},
+        {title:"スカイピース",sub:"SkyPeace",reason:"てつや・じんのコンビ・ゲーム×バラエティ",tags:["ゲーム","コンビ"],price:"700万人"},
+        {title:"コムドット",sub:"comdomori",reason:"やまとを中心とした5人組・10〜20代に圧倒的人気",tags:["バラエティ","グループ"],price:"500万人"},
+        {title:"QuizKnock",sub:"クイズノック",reason:"東大生中心の知識系YouTuber・教育エンタメ",tags:["教育","クイズ"],price:"300万人"},
+        {title:"中町兄妹",sub:"Nakamachi Siblings",reason:"兄妹デュオ・ダンスとコメディの組み合わせ",tags:["ダンス","兄妹"],price:"300万人"},
+      ],
+      "音楽・MV":[
+        {title:"Butter",sub:"BTS・2021年",reason:"24時間で1億800万回再生の世界記録MV",tags:["BTS","K-POP"],price:"18億回"},
+        {title:"Permission to Dance",sub:"BTS・2021年",reason:"BTSの明るい楽曲・コロナ禍に世界を元気に",tags:["BTS","明るい"],price:"7億回"},
+        {title:"BLACKPINK - DDU-DU DDU-DU",sub:"BLACKPINK・2018年",reason:"K-POPガールズグループ歴代最高MV再生数",tags:["BLACKPINK","K-POP"],price:"21億回"},
+        {title:"Old Town Road",sub:"Lil Nas X・2019年",reason:"19週連続Billboard1位の歴史的記録",tags:["カントリーラップ","記録"],price:"10億回"},
+        {title:"Blinding Lights",sub:"The Weeknd・2019年",reason:"ビルボード史上最長チャートイン記録の名曲",tags:["ポップ","記録"],price:"10億回"},
+        {title:"봄날 (Spring Day)",sub:"BTS・2017年",reason:"韓国ストリーミング史上最長チャートイン記録",tags:["BTS","バラード"],price:"7億回"},
+        {title:"Señorita",sub:"Shawn Mendes & Camila Cabello",reason:"カップルデュエットがSNSで大爆発",tags:["コラボ","ポップ"],price:"10億回"},
+        {title:"IDOL",sub:"BTS・2018年",reason:"24時間でMV最多視聴の記録を打ち立てた",tags:["BTS","記録"],price:"6億回"},
+        {title:"Love Yourself",sub:"Justin Bieber・2015年",reason:"Spotifyで最も再生されたポップバラード",tags:["ビーバー","バラード"],price:"5億回"},
+        {title:"Koi (恋)",sub:"星野源・2016年",reason:"日本最多再生MV・逃げ恥主題歌で社会現象",tags:["日本","星野源"],price:"3億回"},
+      ],
+    }
+  },
+};
+// ============================================================
+// 画像取得システム v6 - 全ジャンル最大カバー
+// ============================================================
+const imageCache = {};
+
+// Google Books API（本）
+async function fetchBookImage(title) {
+  try {
+    const q = encodeURIComponent(title);
+    const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=1&langRestrict=ja`);
+    const data = await res.json();
+    let img = data?.items?.[0]?.volumeInfo?.imageLinks?.thumbnail;
+    if (img) img = img.replace('http://', 'https://').replace('zoom=1', 'zoom=3');
+    return img || null;
+  } catch(e) { return null; }
+}
+
+// iTunes API
+async function fetchiTunesImage(title, mediaType) {
+  try {
+    const q = encodeURIComponent(title);
+    const res = await fetch(`https://itunes.apple.com/search?term=${q}&media=${mediaType}&limit=1&country=JP`);
+    const data = await res.json();
+    let img = data?.results?.[0]?.artworkUrl100;
+    if (img) img = img.replace('100x100bb', '300x300bb');
+    return img || null;
+  } catch(e) { return null; }
+}
+
+// 日本語Wikipedia
+async function fetchWikiJa(title) {
+  try {
+    const q = encodeURIComponent(title);
+    const res = await fetch(`https://ja.wikipedia.org/w/api.php?action=query&titles=${q}&prop=pageimages&format=json&pithumbsize=300&origin=*`);
+    const data = await res.json();
+    const page = Object.values(data?.query?.pages||{})[0];
+    return page?.thumbnail?.source || null;
+  } catch(e) { return null; }
+}
+
+// 英語Wikipedia
+async function fetchWikiEn(title) {
+  try {
+    const q = encodeURIComponent(title);
+    const res = await fetch(`https://en.wikipedia.org/w/api.php?action=query&titles=${q}&prop=pageimages&format=json&pithumbsize=300&origin=*`);
+    const data = await res.json();
+    const page = Object.values(data?.query?.pages||{})[0];
+    return page?.thumbnail?.source || null;
+  } catch(e) { return null; }
+}
+
+// ジャンル別英語キーワードマッピング
+const EN_MAP = {
+  'ブルーウェール（シロナガスクジラ）':'Blue whale','チーター':'Cheetah',
+  'ミツバチ':'Honey bee','ゾウガメ（アルダブラ）':'Aldabra giant tortoise',
+  'バオバブの木':'Baobab tree','マッコウクジラ':'Sperm whale',
+  'ハチドリ':'Hummingbird','ピラニア':'Piranha','カマキリエビ':'Mantis shrimp',
+  '北極グマ':'Polar bear','ウサイン・ボルト':'Usain Bolt',
+  'バージュ・ハリファ':'Burj Khalifa','TGV（フランス高速鉄道）':'TGV',
+  'スラスト SSC':'Thrust SSC','アントノフ An-225':'Antonov An-225',
+  'グレートウォール（万里の長城）':'Great Wall of China',
+  '国際宇宙ステーション':'International Space Station',
+  'ハッブル宇宙望遠鏡':'Hubble Space Telescope',
+  'トヨタ プリウス':'Toyota Prius','ホンダ フィット':'Honda Fit',
+  'トヨタ アクア':'Toyota Aqua','スズキ アルト':'Suzuki Alto',
+  'ダイハツ ミラ イース':'Daihatsu Mira e:S',
+  'トヨタ ヴィッツ':'Toyota Vitz','日産 ノート e-POWER':'Nissan Note e-POWER',
+  'ホンダ N-BOX':'Honda N-Box','スズキ ワゴンR':'Suzuki Wagon R',
+  'ダイハツ タント':'Daihatsu Tanto','トヨタ ハリアー':'Toyota Harrier',
+  'トヨタ アルファード':'Toyota Alphard','ホンダ ヴェゼル':'Honda Vezel',
+  '日産 エクストレイル':'Nissan X-Trail','トヨタ ヴォクシー':'Toyota Voxy',
+  'スズキ ジムニー':'Suzuki Jimny','ホンダ ステップワゴン':'Honda Stepwgn',
+  'マツダ CX-5':'Mazda CX-5','トヨタ RAV4':'Toyota RAV4',
+  '三菱 デリカ D:5':'Mitsubishi Delica D:5','日産 GT-R':'Nissan GT-R',
+  'トヨタ GR86':'Toyota GR86','マツダ ロードスター':'Mazda MX-5',
+  'ホンダ シビック タイプR':'Honda Civic Type R',
+  'スバル WRX STI':'Subaru WRX STI','ミツビシ ランサーエボリューション':'Mitsubishi Lancer Evolution',
+  '日産 フェアレディZ':'Nissan Fairlady Z','トヨタ スープラ':'Toyota Supra',
+  'ホンダ S2000':'Honda S2000','スバル BRZ':'Subaru BRZ',
+  'BMW 3シリーズ':'BMW 3 Series','メルセデス・ベンツ Cクラス':'Mercedes-Benz C-Class',
+  'フォルクスワーゲン ゴルフ':'Volkswagen Golf','アウディ A3':'Audi A3',
+  'ポルシェ 911':'Porsche 911','ミニ クーパー':'Mini Cooper',
+  'ジープ ラングラー':'Jeep Wrangler','テスラ モデル3':'Tesla Model 3',
+  'プジョー 208':'Peugeot 208','ボルボ XC40':'Volvo XC40',
+  'Baby Shark Dance':'Baby Shark','MrBeast':'MrBeast',
+  'Cocomelon':'Cocomelon','PewDiePie':'PewDiePie',
+  // スポーツ
+  'ナイキ ズームフライ':'Nike Zoom Fly',
+  'バボラ ピュアドライブ':'Babolat Pure Drive',
+  'ウィルソン プロ スタッフ':'Wilson Pro Staff',
+  // 犬・猫
+  'トイ・プードル':'Toy Poodle','チワワ':'Chihuahua',
+  '柴犬':'Shiba Inu','ポメラニアン':'Pomeranian',
+  'フレンチ・ブルドッグ':'French Bulldog',
+  'ゴールデン・レトリーバー':'Golden Retriever',
+  'ウェルシュ・コーギー':'Welsh Corgi',
+  'スコティッシュフォールド':'Scottish Fold',
+  'マンチカン':'Munchkin cat','ラグドール':'Ragdoll cat',
+  'ロシアンブルー':'Russian Blue','メインクーン':'Maine Coon',
+  'ベンガル':'Bengal cat',
+  // グルメ
+  'パエリア':'Paella','ビリヤニ':'Biryani',
+  'シュニッツェル':'Schnitzel',
+  // 旅行
+  'サントリーニ島':'Santorini',
+  'バルセロナ':'Barcelona','プラハ':'Prague',
+  'アイスランド':'Iceland',
+};
+
+// メイン画像取得
+async function fetchItemImage(genreId, item) {
+  const key = genreId + '_' + item.title;
+  if (imageCache[key] !== undefined) return imageCache[key];
+
+  let img = null;
+  try {
+    if (genreId === 'book') {
+      img = await fetchBookImage(item.title);
+      if (!img) img = await fetchWikiJa(item.title);
+    } else if (genreId === 'music') {
+      img = await fetchiTunesImage(item.title, 'music');
+      if (!img) img = await fetchWikiJa(item.title);
+      if (!img && EN_MAP[item.title]) img = await fetchWikiEn(EN_MAP[item.title]);
+    } else if (genreId === 'game') {
+      img = await fetchiTunesImage(item.title, 'software');
+      if (!img) img = await fetchWikiJa(item.title);
+    } else if (genreId === 'movie') {
+      img = await fetchiTunesImage(item.title, 'movie');
+      if (!img) img = await fetchWikiJa(item.title);
+    } else if (genreId === 'anime') {
+      img = await fetchiTunesImage(item.title, 'movie');
+      if (!img) img = await fetchWikiJa(item.title);
+      if (!img) img = await fetchBookImage(item.title);
+    } else if (genreId === 'youtube') {
+      img = await fetchiTunesImage(item.title, 'music');
+      if (!img) img = await fetchWikiJa(item.title);
+      if (!img && EN_MAP[item.title]) img = await fetchWikiEn(EN_MAP[item.title]);
+    } else if (genreId === 'keyword') {
+      img = await fetchWikiJa(item.title);
+      if (!img) img = await fetchWikiEn(item.title);
+    } else {
+      // cosme, gourmet, travel, sports, dog, cat, gadget, guinness, usedcar
+      img = await fetchWikiJa(item.title);
+      if (!img && EN_MAP[item.title]) img = await fetchWikiEn(EN_MAP[item.title]);
+      // 短縮キーワードで再試行
+      if (!img) {
+        const short = item.title.split(/[・\s（]/)[0];
+        if (short !== item.title && short.length > 1) {
+          img = await fetchWikiJa(short);
+          if (!img && EN_MAP[short]) img = await fetchWikiEn(EN_MAP[short]);
+        }
+      }
+      // subキーワードで再試行
+      if (!img && item.sub) {
+        const subShort = item.sub.split(/[・\s・/]/)[0];
+        if (subShort.length > 1) img = await fetchWikiJa(subShort);
+      }
+    }
+  } catch(e) { img = null; }
+
+  imageCache[key] = img;
+  return img;
+}
+// ============================================================
+// 日付・ランキング生成
+// ============================================================
+const NOW = new Date();
+const TODAY_STR = `${NOW.getFullYear()}年${NOW.getMonth()+1}月${NOW.getDate()}日`;
+const MONTH_STR = `${NOW.getFullYear()}年${NOW.getMonth()+1}月`;
+
+function getDaySeed() {
+  const d = new Date();
+  return d.getFullYear() * 10000 + (d.getMonth()+1) * 100 + d.getDate();
+}
+function getMonthSeed() {
+  const d = new Date();
+  return d.getFullYear() * 100 + (d.getMonth()+1);
+}
+function getYearSeed() {
+  return new Date().getFullYear();
+}
+const YEAR_STR = `${NOW.getFullYear()}年`;
+function seededRandom(seed) {
+  let s = seed;
+  return () => { s = (s * 1664525 + 1013904223) & 0xffffffff; return (s >>> 0) / 0xffffffff; };
+}
+function getAllItems() {
+  const items = [];
+  Object.entries(ALL_DATA).forEach(([genreId, genreData]) => {
+    Object.entries(genreData.items).forEach(([catName, catItems]) => {
+      catItems.forEach((item, idx) => {
+        items.push({
+          ...item, genreId, catName,
+          genreLabel: GENRES.find(g => g.id === genreId)?.label || genreId,
+          genreColor: GENRES.find(g => g.id === genreId)?.color || '#e74c3c',
+          icon: COVER_ICONS[genreId]?.[idx] || '🏆',
+          coverColors: COVER_COLORS[idx] || ['#e74c3c','#c0392b'],
+        });
+      });
+    });
+  });
+  return items;
+}
+function seededShuffle(arr, seed) {
+  const a = [...arr];
+  const rng = seededRandom(seed);
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function getTodayRanking(genreId) {
+  let all = getAllItems();
+  if (genreId) all = all.filter(item => item.genreId === genreId);
+  return seededShuffle(all, getDaySeed()).slice(0, 20);
+}
+function getMonthlyRanking(genreId) {
+  let all = getAllItems();
+  if (genreId) all = all.filter(item => item.genreId === genreId);
+  return seededShuffle(all, getMonthSeed()).slice(0, 20);
+}
+function getYearlyRanking(genreId) {
+  let all = getAllItems();
+  if (genreId) all = all.filter(item => item.genreId === genreId);
+  return seededShuffle(all, getYearSeed()).slice(0, 20);
+}
+function getOverallRanking(genreId) {
+  // 総合：originalRank順（データ上位から選抜）
+  let all = getAllItems();
+  if (genreId) all = all.filter(item => item.genreId === genreId);
+  // ジャンルごとに上位2件ずつ取得して混合
+  const byGenre = {};
+  all.forEach(item => {
+    if (!byGenre[item.genreId]) byGenre[item.genreId] = [];
+    if (byGenre[item.genreId].length < 2) byGenre[item.genreId].push(item);
+  });
+  const mixed = Object.values(byGenre).flat();
+  return seededShuffle(mixed, 42424242).slice(0, 20);
+}
+
+// ============================================================
+// カード生成
+// ============================================================
+function makeRankNum(i) {
+  if (i === 0) return `<div class="rank-crown">👑</div><div class="rank-num gold" style="font-size:26px">1</div>`;
+  if (i === 1) return `<div class="rank-num silver" style="font-size:22px">2</div>`;
+  if (i === 2) return `<div class="rank-num bronze" style="font-size:20px">3</div>`;
+  return `<div class="rank-num normal" style="font-size:15px">${i+1}</div>`;
+}
+
+function makeCard(item, i, links, showGenre) {
+  const cls = 'card' + (i===0?' top1':i===1?' top2':i===2?' top3':'');
+  const tagsHTML = (item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
+  const linksHTML = links.map(l=>`<a class="link-btn" href="${l.url}" target="_blank" style="background:${l.color}">${l.label}</a>`).join('');
+  const thumbId = `th-${i}-${Math.random().toString(36).slice(2,7)}`;
+  const [c1,c2] = item.coverColors;
+  const genreTag = showGenre ? `<span class="card-genre-label">${item.genreLabel} › ${item.catName}</span>` : '';
+
+  const card = document.createElement('div');
+  card.className = cls;
+  card.style.animationDelay = (i * 0.04) + 's';
+  card.innerHTML = `
+    <div class="rank-col">${makeRankNum(i)}</div>
+    <div class="thumb" id="${thumbId}" style="background:linear-gradient(135deg,${c1},${c2})">${item.icon}</div>
+    <div class="card-info">
+      ${genreTag}
+      <div class="card-title">${item.title}</div>
+      <div class="card-sub">${item.sub}</div>
+      <div class="card-tags">${tagsHTML}</div>
+      <div class="card-reason">💡 ${item.reason}</div>
+      <div class="card-footer">
+        <span class="card-price" style="color:${item.genreColor||'#e74c3c'}">${item.price}</span>
+        <div class="link-btns">${linksHTML}</div>
+      </div>
+    </div>`;
+
+  fetchItemImage(item.genreId, item).then(img => {
+    if (!img) return;
+    const thumb = document.getElementById(thumbId);
+    if (!thumb) return;
+    const imgEl = new Image();
+    imgEl.onload = () => {
+      const t = document.getElementById(thumbId);
+      if (!t) return;
+      t.style.background = '#f0f0f0';
+      t.style.padding = '0';
+      t.innerHTML = '';
+      imgEl.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;';
+      t.appendChild(imgEl);
+    };
+    imgEl.src = img;
+  });
+  return card;
+}
+
+// ============================================================
+// サイドバー
+// ============================================================
+function renderSidebar() {
+  function renderList(items, id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '';
+    items.slice(0, 5).forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'sidebar-item';
+      const rankClass = i===0?'r1':i===1?'r2':i===2?'r3':'rn';
+      div.innerHTML = `
+        <div class="sidebar-rank ${rankClass}">${i+1}</div>
+        <div style="flex:1;min-width:0;">
+          <div class="sidebar-item-title">${item.title}</div>
+          <div class="sidebar-item-genre">${item.genreLabel}</div>
+        </div>`;
+      el.appendChild(div);
+    });
+  }
+  renderList(getTodayRanking(null), 'sidebar-today');
+  renderList(getMonthlyRanking(null), 'sidebar-monthly');
+}
+
+// ============================================================
+// モード管理
+// ============================================================
+let currentMode = 'today';
+let currentGenre = 'book';
+let currentCategory = ALL_DATA.book.categories[0];
+let currentSubMode = 'category'; // category / today / monthly
+let monthlyRendered = false;
+
+function switchMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('mode-' + mode).classList.add('active');
+
+  const isToday = mode === 'today';
+  const isMonthly = mode === 'monthly';
+  const isCat = mode === 'category';
+
+  document.getElementById('today-section').style.display = isToday ? 'block' : 'none';
+  document.getElementById('monthly-section').style.display = isMonthly ? 'block' : 'none';
+  document.getElementById('category-section').style.display = isCat ? 'block' : 'none';
+  document.getElementById('genre-nav').style.display = isCat ? 'block' : 'none';
+  document.getElementById('cat-section').style.display = isCat ? 'block' : 'none';
+  document.getElementById('action-wrap').style.display = 'none'; // カテゴリ別では不要に
+  document.getElementById('ad-bottom').style.display = 'none';
+
+  const label = document.getElementById('banner-label');
+  const dateEl = document.getElementById('today-date');
+  if (isToday) { label.textContent = '🔥 今日'; dateEl.textContent = TODAY_STR; }
+  else if (isMonthly) { label.textContent = '📅 月間'; dateEl.textContent = MONTH_STR;
+    if (!monthlyRendered) { monthlyRendered = true; renderMonthlyRanking(); }
+  } else { label.textContent = '📂 カテゴリ'; dateEl.textContent = 'ジャンルを選んでください'; }
+}
+
+// ============================================================
+// ジャンルグリッド
+// ============================================================
+function buildGenreGrid() {
+  const grid = document.getElementById('genre-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const countMap = {};
+  Object.entries(ALL_DATA).forEach(([id, data]) => {
+    countMap[id] = Object.values(data.items).reduce((s, arr) => s + arr.length, 0);
+  });
+  GENRES.forEach(g => {
+    const item = document.createElement('div');
+    item.className = 'genre-item' + (g.id === currentGenre ? ' active' : '');
+    item.onclick = () => selectGenre(g.id);
+    const emoji = g.label.split(' ')[0];
+    const name = g.label.split(' ').slice(1).join('');
+    item.innerHTML = `
+      <div class="genre-emoji">${emoji}</div>
+      <div class="genre-name">${name}</div>
+      <div class="genre-count">${countMap[g.id]||0}</div>`;
+    grid.appendChild(item);
+  });
+}
+
+// ============================================================
+// カテゴリタブ
+// ============================================================
+function buildCatTabs() {
+  const tabs = document.getElementById('cat-tabs-inner');
+  if (!tabs) return;
+  tabs.innerHTML = '';
+  ALL_DATA[currentGenre].categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn' + (cat === currentCategory ? ' active' : '');
+    btn.textContent = cat;
+    btn.onclick = () => selectCategory(cat);
+    tabs.appendChild(btn);
+  });
+}
+
+// ============================================================
+// ジャンル別サブモードタブ（今日/月間/カテゴリ別）
+// ============================================================
+function buildSubModeTabs() {
+  let el = document.getElementById('sub-mode-tabs');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'sub-mode-tabs';
+    el.style.cssText = 'display:flex;gap:0;background:white;border-bottom:1px solid #eee;max-width:1200px;margin:0 auto;';
+    document.getElementById('cat-section').parentNode.insertBefore(el, document.getElementById('cat-section'));
+  }
+
+  const g = GENRES.find(g => g.id === currentGenre);
+  const color = g?.color || '#e74c3c';
+
+  const modes = [
+    { id:'overall', label:'🏆 総合' },
+    { id:'today',   label:'🔥 今日' },
+    { id:'monthly', label:'📅 月間' },
+    { id:'yearly',  label:'📆 年間' },
+    { id:'category',label:'📂 カテゴリ別' },
+  ];
+  el.innerHTML = modes.map(m => `
+    <button onclick="selectSubMode('${m.id}')" style="padding:9px 16px;border:none;background:${currentSubMode===m.id?'#fff8f8':'transparent'};font-size:12px;font-weight:700;cursor:pointer;color:${currentSubMode===m.id?color:'#888'};border-bottom:2px solid ${currentSubMode===m.id?color:'transparent'};font-family:inherit;white-space:nowrap;transition:all 0.15s;">${m.label}</button>`
+  ).join('');
+}
+
+function selectSubMode(mode) {
+  currentSubMode = mode;
+  buildSubModeTabs();
+
+  const catSection = document.getElementById('cat-section');
+  const catRanking = document.getElementById('category-ranking');
+
+  if (mode === 'category') {
+    catSection.style.display = 'block';
+    if (catRanking) catRanking.style.display = 'none';
+    buildCatTabs();
+    showCategoryRanking();
+  } else {
+    catSection.style.display = 'none';
+    showGenreRanking(mode);
+  }
+}
+
+// ジャンル別今日/月間ランキング表示
+function showGenreRanking(mode) {
+  let el = document.getElementById('category-ranking');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'category-ranking';
+    document.getElementById('category-section').appendChild(el);
+  }
+  el.style.display = 'block';
+  el.innerHTML = `<div style="text-align:center;padding:20px;color:#aaa;font-size:13px;">⏳ 読み込み中...</div>`;
+
+  const g = GENRES.find(g => g.id === currentGenre);
+  let items, dateLabel, modeLabel, badgeLabel;
+  if (mode === 'today') {
+    items = getTodayRanking(currentGenre); dateLabel = TODAY_STR; modeLabel = '🔥 今日'; badgeLabel = 'DAILY';
+  } else if (mode === 'monthly') {
+    items = getMonthlyRanking(currentGenre); dateLabel = MONTH_STR; modeLabel = '📅 月間'; badgeLabel = 'MONTHLY';
+  } else if (mode === 'yearly') {
+    items = getYearlyRanking(currentGenre); dateLabel = YEAR_STR; modeLabel = '📆 年間'; badgeLabel = 'YEARLY';
+  } else { // overall
+    items = getOverallRanking(currentGenre); dateLabel = ''; modeLabel = '🏆 総合'; badgeLabel = 'OVERALL';
+  }
+
+  el.innerHTML = `
+    <div class="section-header" style="margin-bottom:12px;">
+      <h2>${modeLabel} ${g?.label||''} ランキング</h2>
+      <span class="section-badge">${badgeLabel}</span>
+      <span class="section-date">${dateLabel}</span>
+    </div>
+    <div id="genre-ranking-list" style="display:flex;flex-direction:column;gap:8px;"></div>`;
+
+  const list = document.getElementById('genre-ranking-list');
+  items.forEach((item, i) => {
+    const links = getLinks(item.genreId, item);
+    list.appendChild(makeCard(item, i, links, true));
+  });
+}
+
+// カテゴリ別ランキング自動表示
+function showCategoryRanking() {
+  const items = ALL_DATA[currentGenre]?.items[currentCategory] || [];
+  const list = document.getElementById('ranking-list');
+  if (!list) return;
+  list.style.display = 'flex';
+  list.innerHTML = '';
+
+  const g = GENRES.find(g => g.id === currentGenre);
+  const color = g?.color || '#e74c3c';
+
+  // セクションヘッダーを更新
+  let header = document.getElementById('cat-ranking-header');
+  if (!header) {
+    header = document.createElement('div');
+    header.id = 'cat-ranking-header';
+    header.className = 'section-header';
+    header.style.marginBottom = '12px';
+    list.parentNode.insertBefore(header, list);
+  }
+  header.innerHTML = `
+    <h2>${g?.label||''} › ${currentCategory}</h2>
+    <span class="section-badge">TOP${items.length}</span>`;
+  header.style.display = 'flex';
+
+  items.forEach((item, i) => {
+    const enriched = {
+      ...item,
+      genreId: currentGenre,
+      genreLabel: g?.label || currentGenre,
+      genreColor: color,
+      icon: COVER_ICONS[currentGenre]?.[i] || '🏆',
+      coverColors: COVER_COLORS[i] || ['#e74c3c','#c0392b'],
+    };
+    list.appendChild(makeCard(enriched, i, getLinks(currentGenre, item), false));
+  });
+
+  document.getElementById('initial').style.display = 'none';
+  document.getElementById('ad-bottom').style.display = 'block';
+}
+
+// ============================================================
+// ジャンル選択（自動表示）
+// ============================================================
+function selectGenre(id) {
+  currentGenre = id;
+  currentCategory = ALL_DATA[id].categories[0];
+  currentSubMode = 'today'; // ジャンル選択時はまず今日のランキングを表示
+
+  buildGenreGrid();
+  buildSubModeTabs();
+  buildCatTabs();
+
+  // カテゴリ別を隠してジャンル別今日ランキングを自動表示
+  document.getElementById('cat-section').style.display = 'none';
+  showGenreRanking('today');
+
+  // rankingリストをリセット
+  const list = document.getElementById('ranking-list');
+  if (list) { list.innerHTML = ''; list.style.display = 'none'; }
+  document.getElementById('initial').style.display = 'none';
+  document.getElementById('ad-bottom').style.display = 'none';
+}
+
+function selectCategory(cat) {
+  currentCategory = cat;
+  buildCatTabs();
+  showCategoryRanking();
+}
+
+// ============================================================
+// 全体今日・月間ランキング
+// ============================================================
+function renderTodayRanking() {
+  const items = getTodayRanking(null);
+  const list = document.getElementById('today-list');
+  document.getElementById('daily-date-label').textContent = TODAY_STR;
+  list.innerHTML = '';
+  items.forEach((item, i) => list.appendChild(makeCard(item, i, getLinks(item.genreId, item), true)));
+}
+
+function renderMonthlyRanking() {
+  const items = getMonthlyRanking(null);
+  const list = document.getElementById('monthly-list');
+  document.getElementById('monthly-date-label').textContent = MONTH_STR;
+  list.innerHTML = '';
+  items.forEach((item, i) => list.appendChild(makeCard(item, i, getLinks(item.genreId, item), true)));
+}
+function renderYearlyRanking() {
+  const items = getYearlyRanking(null);
+  const list = document.getElementById('yearly-list');
+  if (!list) return;
+  document.getElementById('yearly-date-label').textContent = YEAR_STR;
+  list.innerHTML = '';
+  items.forEach((item, i) => list.appendChild(makeCard(item, i, getLinks(item.genreId, item), true)));
+}
+function renderOverallRanking() {
+  const items = getOverallRanking(null);
+  const list = document.getElementById('overall-list');
+  if (!list) return;
+  list.innerHTML = '';
+  items.forEach((item, i) => list.appendChild(makeCard(item, i, getLinks(item.genreId, item), true)));
+}
+
+function showPrivacyPolicy() { document.getElementById('privacy-modal').style.display = 'block'; }
+function showContact() { document.getElementById('contact-modal').style.display = 'block'; }
+
+// ============================================================
+// 初期化
+// ============================================================
+function init() {
+  document.getElementById('today-date').textContent = TODAY_STR;
+  document.getElementById('daily-date-label').textContent = TODAY_STR;
+  buildGenreGrid();
+  buildCatTabs();
+  buildSubModeTabs();
+  renderTodayRanking();
+  renderSidebar();
+  switchMode('today');
+}
+init();
