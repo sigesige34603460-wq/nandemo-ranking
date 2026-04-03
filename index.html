@@ -558,45 +558,89 @@ const COVER_ICONS = {
 function getLinks(genre, item) {
   const q = encodeURIComponent(item.title + " " + item.sub);
   const qt = encodeURIComponent(item.title);
+  const rakuten_id = '354c0e79-d5be-4c38-8469-e8c2e2df2109'; // 楽天アプリID
+
   if (genre === "travel") return [
-    { label:"楽天トラベル", color:"#bf0000", url:`https://travel.rakuten.co.jp/keyword/?f_free=${qt}` },
-    { label:"じゃらん",     color:"#e60012", url:`https://www.jalan.net/kw/?keyword=${qt}` },
+    { label:"✈ 楽天トラベル", color:"#bf0000", url:`https://travel.rakuten.co.jp/keyword/?f_free=${qt}` },
+    { label:"🏨 じゃらん",    color:"#e60012", url:`https://www.jalan.net/kw/?keyword=${qt}` },
+    { label:"🌐 HIS",         color:"#0066cc", url:`https://www.his-j.com/kokunai/search/?keyword=${qt}` },
   ];
   if (genre === "music") return [
-    { label:"🎵 Apple Music", color:"#fc3c44", url:`https://music.apple.com/jp/search?term=${q}` },
-    { label:"🎧 Spotify",     color:"#1db954", url:`https://open.spotify.com/search/${q}` },
+    { label:"🎵 Apple Music", color:"#fc3c44", url:`https://music.apple.com/jp/search?term=${qt}` },
+    { label:"🎧 Spotify",     color:"#1db954", url:`https://open.spotify.com/search/${qt}` },
+    { label:"🛒 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}&i=popular` },
   ];
   if (genre === "movie") return [
-    { label:"▶ Prime Video", color:"#00a8e1", url:`https://www.amazon.co.jp/s?k=${q}&i=instant-video` },
+    { label:"▶ Prime Video", color:"#00a8e1", url:`https://www.amazon.co.jp/s?k=${qt}&i=instant-video` },
     { label:"▶ Netflix",     color:"#e50914", url:`https://www.netflix.com/search?q=${qt}` },
+    { label:"▶ U-NEXT",      color:"#000000", url:`https://video.unext.jp/search?query=${qt}` },
   ];
-  if (genre === "game" || genre === "sports") return [
-    { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
-    { label:"楽天",       color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${q}/` },
+  if (genre === "anime") return [
+    { label:"▶ dアニメ",     color:"#00a0e9", url:`https://animestore.docomo.ne.jp/animestore/sch_pc?searchKey=${qt}` },
+    { label:"▶ Prime Video", color:"#00a8e1", url:`https://www.amazon.co.jp/s?k=${qt}&i=instant-video` },
+    { label:"📚 楽天ブックス",color:"#bf0000", url:`https://books.rakuten.co.jp/search?sitem=${qt}&g=001` },
+  ];
+  if (genre === "game") return [
+    { label:"🛒 Amazon",  color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=videogames` },
+    { label:"楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/101299/` },
+    { label:"🎮 ゲオ",    color:"#e60012", url:`https://geo-online.co.jp/html/products/search.html?keyword=${qt}` },
+  ];
+  if (genre === "sports") return [
+    { label:"🛒 Amazon",  color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=sporting` },
+    { label:"楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/101240/` },
+    { label:"🏅 ヤフショ", color:"#5f0099", url:`https://shopping.yahoo.co.jp/search?p=${qt}&category_id=2498` },
+  ];
+  if (genre === "book") return [
+    { label:"📚 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=stripbooks` },
+    { label:"📚 楽天ブックス", color:"#bf0000", url:`https://books.rakuten.co.jp/search?sitem=${qt}` },
+    { label:"📖 honto",        color:"#1a6cb3", url:`https://honto.jp/netstore/search.html?srchf=1&kwd=${qt}` },
+  ];
+  if (genre === "gadget") return [
+    { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=electronics` },
+    { label:"楽天",         color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/516/` },
+    { label:"💻 価格.com",  color:"#e60000", url:`https://kakaku.com/search_results/?query=${qt}` },
+  ];
+  if (genre === "cosme") return [
+    { label:"💄 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=beauty` },
+    { label:"💋 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100005/` },
+    { label:"✨ @cosme",   color:"#e91e8c", url:`https://www.cosme.net/search/result/product/?keyword=${qt}` },
+  ];
+  if (genre === "gourmet") return [
+    { label:"🍽 食べログ",  color:"#e60012", url:`https://tabelog.com/search/?vs=1&sa=${qt}` },
+    { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=food-beverage` },
+    { label:"🍱 楽天市場", color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100227/` },
+  ];
+  if (genre === "dog" || genre === "cat") return [
+    { label:"🐾 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=pets` },
+    { label:"楽天",         color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/507968/` },
+    { label:"🐕 チャーム", color:"#0070c0", url:`https://www.charm.jp/search?query=${qt}` },
   ];
   if (genre === "youtube") return [
-    { label:"▶ YouTube検索", color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
-    { label:"🔍 詳細",       color:"#555555", url:`https://www.google.com/search?q=${q}+YouTube` },
+    { label:"▶ YouTube検索",  color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
+    { label:"🔍 Google検索",  color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
   ];
   if (genre === "guinness") return [
-    { label:"🌍 Wikipedia", color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
-    { label:"🔍 詳細",      color:"#555555", url:`https://www.google.com/search?q=${q}+ギネス記録` },
+    { label:"🌍 Wikipedia",  color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
+    { label:"🔍 詳細",       color:"#555555", url:`https://www.google.com/search?q=${q}+ギネス記録` },
   ];
   if (genre === "ishi") return [
-    { label:"💎 楽天", color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/` },
-    { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
+    { label:"💎 楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100533/` },
+    { label:"🛒 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}+天然石` },
+    { label:"✨ minne",       color:"#e6444a", url:`https://minne.com/search?q=${qt}` },
   ];
   if (genre === "shokugyo") return [
-    { label:"🔍 詳細検索", color:"#1a73e8", url:`https://www.google.com/search?q=${qt}+年収+仕事内容` },
-    { label:"💼 求人検索", color:"#2ecc71", url:`https://www.indeed.com/jobs?q=${qt}` },
+    { label:"💼 リクナビ",   color:"#e60012", url:`https://job.rikunabi.com/2025/search/r/?kw=${qt}` },
+    { label:"🔍 indeed",     color:"#2164f3", url:`https://jp.indeed.com/jobs?q=${qt}` },
+    { label:"📊 詳細検索",   color:"#1a73e8", url:`https://www.google.com/search?q=${qt}+年収+仕事内容` },
   ];
   if (genre === "geino") return [
-    { label:"🔍 Google", color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
-    { label:"📺 YouTube", color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
+    { label:"🔍 Google",   color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
+    { label:"📺 YouTube",  color:"#FF0000", url:`https://www.youtube.com/results?search_query=${qt}` },
+    { label:"📰 ニュース", color:"#555",    url:`https://www.google.com/search?q=${qt}&tbm=nws` },
   ];
   if (genre === "seijika_jp" || genre === "seijika_world") return [
     { label:"🔍 Wikipedia", color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
-    { label:"📰 ニュース", color:"#555", url:`https://www.google.com/search?q=${qt}&tbm=nws` },
+    { label:"📰 ニュース",  color:"#555",    url:`https://www.google.com/search?q=${qt}&tbm=nws` },
   ];
   if (genre === "keyword") return [
     { label:"🔍 Google検索", color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
@@ -605,9 +649,12 @@ function getLinks(genre, item) {
   if (genre === "usedcar") return [
     { label:"🚗 カーセンサー", color:"#e60012", url:`https://www.carsensor.net/usedcar/search.php?STID=CS210610&KEYWORD=${qt}` },
     { label:"🚙 グーネット",   color:"#0066cc", url:`https://www.goo-net.com/usedcar/brand/?keyword=${qt}` },
+    { label:"🛒 ヤフオク",     color:"#5f0099", url:`https://auctions.yahoo.co.jp/search/search?p=${qt}&auccat=2084005148` },
   ];
+  // デフォルト
   return [
     { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
+    { label:"楽天",       color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${q}/` },
   ];
 }
 
@@ -2045,10 +2092,13 @@ function getYearlyRanking(genreId) {
   return seededShuffle(all, getYearSeed()).slice(0, 20);
 }
 function getOverallRanking(genreId) {
-  // 総合：originalRank順（データ上位から選抜）
   let all = getAllItems();
-  if (genreId) all = all.filter(item => item.genreId === genreId);
-  // ジャンルごとに上位2件ずつ取得して混合
+  if (genreId) {
+    // ジャンル指定時：そのジャンルを固定シードでシャッフルしてTOP20
+    all = all.filter(item => item.genreId === genreId);
+    return seededShuffle(all, 42424242).slice(0, 20);
+  }
+  // 全ジャンル総合：各ジャンルから上位2件ずつ取得して混合
   const byGenre = {};
   all.forEach(item => {
     if (!byGenre[item.genreId]) byGenre[item.genreId] = [];
