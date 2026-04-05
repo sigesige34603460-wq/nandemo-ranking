@@ -623,7 +623,7 @@ function getLinks(genre, item) {
   const rakuten_id = '354c0e79-d5be-4c38-8469-e8c2e2df2109'; // 楽天アプリID
 
   if (genre === "travel") return [
-    { label:"✈ 楽天トラベル", color:"#bf0000", url:`https://travel.rakuten.co.jp/keyword/?f_free=${qt}` },
+    { label:"✈ 楽天トラベル", color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2Fkeyword%2F%3Ff_free=${encodeURIComponent(qt)}` },
     { label:"🏨 じゃらん",    color:"#e60012", url:`https://www.jalan.net/kw/?keyword=${qt}` },
     { label:"🌐 HIS",         color:"#0066cc", url:`https://www.his-j.com/kokunai/search/?keyword=${qt}` },
   ];
@@ -640,51 +640,51 @@ function getLinks(genre, item) {
   if (genre === "anime") return [
     { label:"▶ dアニメ",     color:"#00a0e9", url:`https://animestore.docomo.ne.jp/animestore/sch_pc?searchKey=${qt}` },
     { label:"▶ Prime Video", color:"#00a8e1", url:`https://www.amazon.co.jp/s?k=${qt}&i=instant-video` },
-    { label:"📚 楽天ブックス",color:"#bf0000", url:`https://books.rakuten.co.jp/search?sitem=${qt}&g=001` },
+    { label:"📚 楽天ブックス",color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D${encodeURIComponent(qt)}%26g%3D001` },
   ];
   if (genre === "game") return [
     { label:"🛒 Amazon",  color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=videogames` },
-    { label:"楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/101299/` },
+    { label:"楽天",        color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F101299` },
     { label:"🎮 ゲオ",    color:"#e60012", url:`https://geo-online.co.jp/html/products/search.html?keyword=${qt}` },
   ];
   if (genre === "sports") return [
     { label:"🛒 Amazon",  color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=sporting` },
-    { label:"楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/101240/` },
+    { label:"楽天",        color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F101240` },
     { label:"🏅 ヤフショ", color:"#5f0099", url:`https://shopping.yahoo.co.jp/search?p=${qt}&category_id=2498` },
   ];
   if (genre === "book") return [
     { label:"📚 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=stripbooks` },
-    { label:"📚 楽天ブックス", color:"#bf0000", url:`https://books.rakuten.co.jp/search?sitem=${qt}` },
+    { label:"📚 楽天ブックス", color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D${encodeURIComponent(qt)}` },
     { label:"📖 honto",        color:"#1a6cb3", url:`https://honto.jp/netstore/search.html?srchf=1&kwd=${qt}` },
   ];
   if (genre === "gadget") return [
     { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=electronics` },
-    { label:"楽天",         color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/516/` },
+    { label:"楽天",         color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F516` },
     { label:"💻 価格.com",  color:"#e60000", url:`https://kakaku.com/search_results/?query=${qt}` },
   ];
   if (genre === "cosme") return [
     { label:"💄 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=beauty` },
-    { label:"💋 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100005/` },
+    { label:"💋 楽天",     color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100005` },
     { label:"✨ @cosme",   color:"#e91e8c", url:`https://www.cosme.net/search/result/product/?keyword=${qt}` },
   ];
   if (genre === "gourmet") return [
     { label:"🍽 食べログ",  color:"#e60012", url:`https://tabelog.com/search/?vs=1&sa=${qt}` },
     { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=food-beverage` },
-    { label:"🍱 楽天市場", color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100227/` },
+    { label:"🍱 楽天市場", color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100227` },
   ];
   if (genre === "dog" || genre === "cat") return [
     { label:"🐾 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=pets` },
-    { label:"楽天",         color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/507968/` },
+    { label:"楽天",         color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F507968` },
     { label:"🐕 チャーム", color:"#0070c0", url:`https://www.charm.jp/search?query=${qt}` },
   ];
   if (genre === "interior") return [
     { label:"🛒 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=furniture` },
-    { label:"🏠 楽天インテリア", color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/213130/` },
+    { label:"🏠 楽天インテリア", color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F213130` },
     { label:"🛍 IKEA",        color:"#0058a3", url:`https://www.ikea.com/jp/ja/search/?q=${qt}` },
   ];
   if (genre === "health") return [
     { label:"💊 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=hpc` },
-    { label:"🌿 楽天健康",    color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/400000/` },
+    { label:"🌿 楽天健康",    color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F400000` },
     { label:"💪 DHCオンライン",color:"#006bb4", url:`https://www.dhc.co.jp/search?keyword=${qt}` },
   ];
   if (genre === "license") return [
@@ -695,41 +695,41 @@ function getLinks(genre, item) {
   if (genre === "baby") return [
     { label:"👶 Amazon",       color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=baby-products` },
     { label:"🍼 西松屋",      color:"#e60012", url:`https://www.24028.jp/search/?q=${qt}` },
-    { label:"🎀 楽天ベビー",  color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/412660/` },
+    { label:"🎀 楽天ベビー",  color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F412660` },
   ];
   if (genre === "fashion") return [
     { label:"👗 ZOZOTOWN",  color:"#000000", url:`https://zozo.jp/search/?keyword=${qt}` },
     { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=apparel` },
-    { label:"楽天ファッション",color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100371/` },
+    { label:"楽天ファッション",color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100371` },
   ];
   if (genre === "wine") return [
-    { label:"🍷 楽天",      color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100309/` },
+    { label:"🍷 楽天",      color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100309` },
     { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=food-beverage` },
     { label:"🍾 ENOTECA",  color:"#722f37", url:`https://www.enoteca.co.jp/search/result/?q=${qt}` },
   ];
   if (genre === "coffee") return [
-    { label:"☕ 楽天",      color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100316/` },
+    { label:"☕ 楽天",      color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100316` },
     { label:"🛒 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=food-beverage` },
     { label:"☕ カルディ",  color:"#006400", url:`https://www.kaldi.co.jp/ec/search/?q=${qt}` },
   ];
   if (genre === "plant") return [
     { label:"🌸 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=garden` },
-    { label:"🪴 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/515608/` },
+    { label:"🪴 楽天",     color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F515608` },
     { label:"🌿 HitoHana", color:"#2e7d32", url:`https://hitohana.tokyo/search?q=${qt}` },
   ];
   if (genre === "art") return [
     { label:"🎨 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}` },
-    { label:"🖼 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/` },
+    { label:"🖼 楽天",     color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F` },
     { label:"🔍 Wikipedia",color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
   ];
   if (genre === "diy") return [
     { label:"🔨 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=tools` },
-    { label:"🪛 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/101230/` },
+    { label:"🪛 楽天",     color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F101230` },
     { label:"🏗 カインズ",  color:"#0075c2", url:`https://www.cainz.com/search.html?query=${qt}` },
   ];
   if (genre === "fish") return [
     { label:"🐠 Amazon",   color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}&i=pets` },
-    { label:"🌊 楽天",     color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/507970/` },
+    { label:"🌊 楽天",     color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F507970` },
     { label:"🐟 チャーム", color:"#0070c0", url:`https://www.charm.jp/search?query=${qt}` },
   ];
   if (genre === "history") return [
@@ -758,7 +758,7 @@ function getLinks(genre, item) {
     { label:"🔍 Google",    color:"#4285f4", url:`https://www.google.com/search?q=${qt}` },
   ];
   if (genre === "world") return [
-    { label:"✈ 楽天トラベル",color:"#bf0000", url:`https://travel.rakuten.co.jp/keyword/?f_free=${qt}` },
+    { label:"✈ 楽天トラベル",color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Ftravel.rakuten.co.jp%2Fkeyword%2F%3Ff_free=${encodeURIComponent(qt)}` },
     { label:"🔍 Wikipedia", color:"#3366cc", url:`https://ja.wikipedia.org/wiki/${qt}` },
     { label:"🌍 外務省",    color:"#003087", url:`https://www.mofa.go.jp/mofaj/area/index.html` },
   ];
@@ -771,7 +771,7 @@ function getLinks(genre, item) {
     { label:"🔍 詳細",       color:"#555555", url:`https://www.google.com/search?q=${q}+ギネス記録` },
   ];
   if (genre === "ishi") return [
-    { label:"💎 楽天",        color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${qt}/100533/` },
+    { label:"💎 楽天",        color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(qt)}%2F100533` },
     { label:"🛒 Amazon",      color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${qt}+天然石` },
     { label:"✨ minne",       color:"#e6444a", url:`https://minne.com/search?q=${qt}` },
   ];
@@ -801,7 +801,7 @@ function getLinks(genre, item) {
   // デフォルト
   return [
     { label:"🛒 Amazon", color:"#FF9900", url:`https://www.amazon.co.jp/s?k=${q}` },
-    { label:"楽天",       color:"#bf0000", url:`https://search.rakuten.co.jp/search/mall/${q}/` },
+    { label:"楽天",       color:"#bf0000", url:`https://hb.afl.rakuten.co.jp/hgc/5292f972.ad60ecfa.5292f973.8e92b317/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F${encodeURIComponent(q)}%2F` },
   ];
 }
 
