@@ -25,12 +25,35 @@ body{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-se
 #site-logo .logo-icon{font-size:26px;}
 #site-logo .logo-text{font-size:20px;font-weight:900;color:white;letter-spacing:1px;text-shadow:0 1px 3px rgba(0,0,0,0.3);}
 #site-logo .logo-sub{font-size:10px;color:rgba(255,255,255,0.75);}
-#header-tagline{
-  margin-left:auto;font-size:11px;color:rgba(255,255,255,0.8);
-  background:rgba(255,255,255,0.15);padding:4px 12px;
-  border-radius:20px;border:1px solid rgba(255,255,255,0.25);
-  white-space:nowrap;
+/* キャッチバッジ群 */
+#header-badges{
+  display:flex;align-items:center;gap:8px;margin-left:12px;flex-wrap:wrap;
 }
+.hbadge{
+  display:flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:20px;
+  font-size:13px;font-weight:800;white-space:nowrap;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);letter-spacing:0.3px;
+}
+.hbadge-ai{
+  background:linear-gradient(135deg,#f8ff00,#ffd700);
+  color:#c0392b;border:2px solid rgba(255,255,255,0.5);
+  animation:badge-pulse 2s ease-in-out infinite;
+}
+.hbadge-daily{
+  background:linear-gradient(135deg,#00e5ff,#0097a7);
+  color:white;border:2px solid rgba(255,255,255,0.4);
+}
+.hbadge-count{
+  background:rgba(255,255,255,0.2);
+  color:white;border:1px solid rgba(255,255,255,0.35);
+  font-size:11px;font-weight:700;
+}
+@keyframes badge-pulse{
+  0%,100%{transform:scale(1);box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+  50%{transform:scale(1.04);box-shadow:0 4px 12px rgba(255,215,0,0.5);}
+}
+#header-tagline{display:none;}
 
 /* ===== モードタブ ===== */
 #mode-nav{background:white;border-bottom:2px solid #e74c3c;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
@@ -334,10 +357,14 @@ footer a{color:#e74c3c;cursor:pointer;}
       <div class="logo-icon">🏆</div>
       <div>
         <div class="logo-text">何でもランキング</div>
-        <div class="logo-sub">AIが厳選・毎日自動更新</div>
+        <div class="logo-sub">38ジャンル・1,520アイテム</div>
       </div>
     </a>
-    <div id="header-tagline">38ジャンル・1,520アイテムのランキング</div>
+    <div id="header-badges">
+      <span class="hbadge hbadge-ai">✨ AIが厳選</span>
+      <span class="hbadge hbadge-daily">🔄 毎日自動更新</span>
+      <span class="hbadge hbadge-count">📂 38ジャンル</span>
+    </div>
   </div>
 </header>
 
