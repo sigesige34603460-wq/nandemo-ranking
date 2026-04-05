@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sigesige34603460-wq.github.io/nandemo-ranking/sitemap.xml
