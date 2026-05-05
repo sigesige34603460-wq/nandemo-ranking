@@ -247,6 +247,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nandemo-ranking.net/blog/anime-2024-fall/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nandemo-ranking.net/blog/skincare-order/</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -254,6 +260,12 @@
   </url>
   <url>
     <loc>https://nandemo-ranking.net/blog/solo-travel-japan/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nandemo-ranking.net/rankings/action-movies/</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
