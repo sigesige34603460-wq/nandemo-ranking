@@ -31,11 +31,14 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate-ranking.mjs
 
+      - name: サイトマップを更新
+        run: node scripts/generate-sitemap.mjs
+
       - name: 変更をコミット・プッシュ
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blog/ rankings/
+          git add blog/ rankings/ sitemap.xml
           if git diff --cached --quiet; then
             echo "新しいコンテンツはありませんでした"
           else
